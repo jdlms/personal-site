@@ -9,9 +9,29 @@ export interface Props {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>jdlms.dev</title>
+    <title>jdlms</title>
   </head>
   <body>
     <slot />
   </body>
+
+  <style>
+    @import "open-props/style";
+
+    html {
+      overflow: hidden;
+    }
+
+    body {
+      margin: 0;
+
+      background-image: var(--gradient-16);
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+  </style>
+
 </html>

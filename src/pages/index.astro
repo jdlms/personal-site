@@ -4,19 +4,92 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Welcome to Astro.">
-  <nav>
+  <nav class="container">
+    <ul></ul>
     <ul>
-      <li><strong> jdlms.dev</strong></li>
-    </ul>
-    <ul>
-      <li><a href="#">Link</a></li>
-      <li><a href="#">Link</a></li>
-      <li><a href="#" role="button">Button</a></li>
+      <li><a href="#about">about</a></li>
+      <li><a href="#">projects</a></li>
+      <li><a href="#">learning</a></li>
+      <li><a href="#">blog</a></li>
     </ul>
   </nav>
+
   <main class="container">
-    <h1>Hi! 👋 I'm Joshua. </h1>
+    <h1>Hi! 👋 I'm Joshua.</h1>
+    <!-- <div class="intro-graph"> -->
+    <article>
+      <p>
+        I’m a web developer living in Berlin, Germany. This my website and digital garden where I
+        post recent projects, track what I'm currently learning, and blog about whatever's on my
+        mind.
+      </p>
+
+      <p>
+        I recently completed a 6-month coding bootcamp at Ironhack and am actively looking for
+        employment as a junior developer on a good team, while I continue learning and developing my
+        skills. If you have leads, suggestions, or a project you’d like to build, please get in
+        touch.🌱
+      </p>
+    </article>
+    <!-- </div> -->
+    <section id="about">
+      <p>
+        Lorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum
+        dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem,
+        ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum
+        dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem,
+        ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum
+        dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem,
+        ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum
+        dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem,
+        ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum
+        dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem,
+        ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum
+        dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem,
+        ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum
+        dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem,
+        ipsum dolor.Lorum
+      </p>
+    </section>
   </main>
 </Layout>
 
-<style></style>
+<style>
+  @import "open-props/style";
+  @import "open-props/fonts";
+
+  div {
+    display: block;
+  }
+
+  h1 {
+    font-family: var(--font-sans);
+    font-weight: var(--font-weight-7);
+    font-size: var(--font-size-fluid-2);
+    animation: var(--animation-fade-in) forwards, var(--animation-slide-in-right) forwards;
+    animation-timing-function: var(--ease-squish-4);
+    animation-duration: 1.2s;
+  }
+
+  p {
+    font-family: var(--font-sans);
+    font-weight: var(--font-weight-5);
+    font-size: var(--font-size-fluid-5);
+  }
+
+  a {
+    color: #e77f5a;
+    font-weight: var(--font-weight-6);
+    font-size: var(--font-size-fluid-6);
+  }
+
+  .intro-graph {
+    padding-block: var(--size-4);
+  }
+
+  article {
+    background-color: #3a465b;
+    margin: var(--size-8);
+    padding: var(--size-6);
+  }
+</style>

@@ -1,21 +1,15 @@
 ---
-import "@picocss/pico/css/pico.css";
 import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import Hero from "../components/Hero.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-  <nav class="container">
-    <ul></ul>
-    <ul>
-      <li><a href="#about">about</a></li>
-      <li><a href="#projects">projects</a></li>
-      <li><a href="#learning">learning</a></li>
-      <li><a href="#blog">blog</a></li>
-    </ul>
-  </nav>
+<Layout title="Welcome to my homepage.">
+  <Nav />
 
   <main class="container">
-    <h1>Hi! 👋 I'm Joshua.</h1>
+    <Hero />
+    <!-- <h1>Hi! 👋 I'm Joshua.</h1>
     <article class="hero">
       <p>
         I’m a web developer living in Berlin, Germany. This my website and digital garden where I
@@ -32,7 +26,7 @@ import Layout from "../layouts/Layout.astro";
     </article>
     <div class="svg">
       <img src="separator_bottom-triangle-right_1.svg" alt="" />
-    </div>
+    </div> -->
     <section id="about">
       <article>
         <header id="about"><a href="#">about</a></header>
@@ -84,59 +78,9 @@ import Layout from "../layouts/Layout.astro";
 </Layout>
 
 <style>
-  h1 {
-    font-family: var(--font-sans);
-    font-weight: var(--font-weight-7);
-    font-size: var(--font-size-fluid-2);
-    animation: var(--animation-fade-in) forwards, var(--animation-slide-in-right) forwards;
-    animation-timing-function: var(--ease-squish-4);
-    animation-duration: 1.2s;
-  }
-
-  img {
-    animation: var(--animation-fade-in) forwards, var(--animation-slide-in-left) forwards;
-    animation-timing-function: var(--ease-squish-4);
-    animation-duration: 1.4s;
-  }
-
-  p {
-    font-family: var(--font-sans);
-    font-weight: var(--font-weight-5);
-    font-size: var(--font-size-fluid-5);
-  }
-
-  a,
   #about,
   #projects {
     font-weight: var(--font-weight-6);
     font-size: var(--font-size-fluid-6);
-  }
-
-  .intro-graph {
-    padding-block: var(--size-4);
-  }
-
-  article {
-    margin: var(--size-8);
-    padding: var(--size-6);
-  }
-
-  header {
-    box-shadow: var(--shadow-3);
-
-  
-  }
-
-  .svg {
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
-    margin-bottom: 5rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid #f5c676;
-  }
-
-  .hero {
-    margin-bottom: 0;
   }
 </style>

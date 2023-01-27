@@ -2,6 +2,8 @@
 export interface Props {
   title: string;
 }
+
+import "@picocss/pico/css/pico.css";
 ---
 
 <!DOCTYPE html>
@@ -9,7 +11,6 @@ export interface Props {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <!-- <link rel="stylesheet" href="/src/styles/styles.css" /> -->
     <title>jdlms</title>
   </head>
   <body>
@@ -22,13 +23,19 @@ export interface Props {
     @import "open-props/fonts";
     body {
       margin: 0;
-
-      /* background-image: var(--gradient-16); */
     }
 
     html,
     body {
       min-height: 100%;
+    }
+
+
+
+
+
+    header {
+      box-shadow: var(--shadow-);
     }
   </style>
 </html>

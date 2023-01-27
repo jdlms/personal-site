@@ -1,22 +1,24 @@
 <h1>Hi! 👋 I'm Joshua.</h1>
-<article class="hero">
-  <p>
-    I’m a web developer living in Berlin, Germany. This my website and digital garden where I post
-    recent projects, track what I'm currently learning, and blog about whatever's on my mind.
-  </p>
+<div class="test">
+  <article class="hero">
+    <p>
+      I’m a web developer living in Berlin, Germany. This my website and digital garden where I post
+      recent projects, track what I'm currently learning, and blog about whatever's on my mind.
+    </p>
 
-  <p>
-    I recently completed a 6-month coding bootcamp at Ironhack and am actively looking for
-    employment as a junior developer on a good team, while I continue learning and developing my
-    skills. If you have leads, suggestions, or a project you’d like to build, please get in touch.🌱
-  </p>
-</article>
-<div class="svg">
-  <img src="separator_bottom-triangle-right_1.svg" alt="" />
+    <p class="hero-p-2">
+      I recently completed a 6-month coding bootcamp at Ironhack and am actively looking for
+      employment as a junior developer on a good team, while I continue learning and developing my
+      skills. If you have leads, suggestions, or a project you’d like to build, please get in
+      touch.🌱
+    </p>
+    <div class="svg-container">
+      <img src="separator_bottom-triangle-right_1.svg" alt="" />
+    </div>
+  </article>
 </div>
 
 <style>
-    
   h1 {
     font-family: var(--font-sans);
     font-weight: var(--font-weight-7);
@@ -30,7 +32,14 @@
     animation: var(--animation-fade-in) forwards, var(--animation-slide-in-left) forwards;
     animation-timing-function: var(--ease-squish-4);
     animation-duration: 1.4s;
+
+    z-index: 1;
+    position: absolute;
+    width: 20vw;
+    height: auto;
   }
+
+
 
   .svg {
     display: flex;
@@ -41,22 +50,25 @@
     border-bottom: 1px solid #f5c676;
   }
 
+  .svg-container {
+    margin-left: 76.5%;
+    margin-bottom: 9%;
+  }
+
   p {
     font-family: var(--font-sans);
     font-weight: var(--font-weight-5);
     font-size: var(--font-size-fluid-5);
   }
 
-  .hero {
-    margin-bottom: 0;
-  }
-
   article {
+    margin-bottom: 0;
     margin: var(--size-8);
     padding: var(--size-6);
   }
-  /* 
-  .intro-graph {
-    padding-block: var(--size-4);
-  } */
+
+  .hero {
+    position: relative;
+  }
+ 
 </style>

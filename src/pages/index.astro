@@ -8,15 +8,15 @@ import Layout from "../layouts/Layout.astro";
     <ul></ul>
     <ul>
       <li><a href="#about">about</a></li>
-      <li><a href="#">projects</a></li>
-      <li><a href="#">learning</a></li>
-      <li><a href="#">blog</a></li>
+      <li><a href="#projects">projects</a></li>
+      <li><a href="#learning">learning</a></li>
+      <li><a href="#blog">blog</a></li>
     </ul>
   </nav>
 
   <main class="container">
     <h1>Hi! 👋 I'm Joshua.</h1>
-    <article>
+    <article class="hero">
       <p>
         I’m a web developer living in Berlin, Germany. This my website and digital garden where I
         post recent projects, track what I'm currently learning, and blog about whatever's on my
@@ -30,9 +30,12 @@ import Layout from "../layouts/Layout.astro";
         touch.🌱
       </p>
     </article>
+    <div class="svg">
+      <img src="separator_bottom-triangle-right_1.svg" alt="" />
+    </div>
     <section id="about">
       <article>
-        <header>About</header>
+        <header id="about"><a href="#">about</a></header>
         <p>
           Lorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum
           dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem,
@@ -51,22 +54,36 @@ import Layout from "../layouts/Layout.astro";
           ipsum dolor.Lorum
         </p>
       </article>
+      <div class="svg"></div>
       <section class="container-fluid" id="projects">
-        <header>Projects</header>
-        <div class="grid">
-          <article><header>Test</header><p>Test</p></article>
-          <article><header>Test</header><p>Test</p></article>
-        </div>
+        <article>
+          <header id="projects"><a href="#">projects</a></header>
+          <div class="grid">
+            <article><header>Test</header><p>Test</p></article>
+            <article><header>Test</header><p>Test</p></article>
+          </div>
+        </article>
+      </section>
+      <div class="svg"></div>
+      <section class="container-fluid" id="learning">
+        <article>
+          <header id="projects"><a href="#">learning</a></header>
+          <div class="grid">
+            <div><p>Test</p></div>
+            <div><p>Test</p></div>
+            <div><p>Test</p></div>
+            <div><p>Test</p></div>
+            <div><p>Test</p></div>
+            <div><p>Test</p></div>
+          </div>
+        </article>
       </section>
     </section>
+    <footer>Built with Astro</footer>
   </main>
 </Layout>
 
 <style>
-  @import "open-props/style";
-  @import "open-props/fonts";
-  /* @import "/src/styles/styles.css"; */
-
   h1 {
     font-family: var(--font-sans);
     font-weight: var(--font-weight-7);
@@ -76,14 +93,21 @@ import Layout from "../layouts/Layout.astro";
     animation-duration: 1.2s;
   }
 
+  img {
+    animation: var(--animation-fade-in) forwards, var(--animation-slide-in-left) forwards;
+    animation-timing-function: var(--ease-squish-4);
+    animation-duration: 1.4s;
+  }
+
   p {
     font-family: var(--font-sans);
     font-weight: var(--font-weight-5);
     font-size: var(--font-size-fluid-5);
   }
 
-  a {
-    /* color: #e77f5a; */
+  a,
+  #about,
+  #projects {
     font-weight: var(--font-weight-6);
     font-size: var(--font-size-fluid-6);
   }
@@ -93,8 +117,26 @@ import Layout from "../layouts/Layout.astro";
   }
 
   article {
-    /* background-color: #3a465b; */
     margin: var(--size-8);
     padding: var(--size-6);
+  }
+
+  header {
+    box-shadow: var(--shadow-3);
+
+  
+  }
+
+  .svg {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    margin-bottom: 5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #f5c676;
+  }
+
+  .hero {
+    margin-bottom: 0;
   }
 </style>

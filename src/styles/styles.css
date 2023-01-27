@@ -1,34 +1,34 @@
-/* Amber Light scheme (Default) */
+/* Grey Light scheme (Default) */
 /* Can be forced with data-theme="light" */
 [data-theme="light"],
 :root:not([data-theme="dark"]) {
-  --primary: #ffb300;
-  --primary-hover: #ffa000;
-  --primary-focus: rgba(255, 179, 0, 0.125);
-  --primary-inverse: rgba(0, 0, 0, 0.75);
+  --primary: #757575;
+  --primary-hover: #616161;
+  --primary-focus: rgba(117, 117, 117, 0.125);
+  --primary-inverse: #fff;
 }
 
-/* Amber Dark scheme (Auto) */
+/* Grey Dark scheme (Auto) */
 /* Automatically enabled if user has Dark mode enabled */
 @media only screen and (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --primary: #ffb300;
-    --primary-hover: #ffc107;
-    --primary-focus: rgba(255, 179, 0, 0.25);
-    --primary-inverse: rgba(0, 0, 0, 0.75);
+    --primary: #757575;
+    --primary-hover: #9e9e9e;
+    --primary-focus: rgba(117, 117, 117, 0.25);
+    --primary-inverse: #fff;
   }
 }
 
-/* Amber Dark scheme (Forced) */
+/* Grey Dark scheme (Forced) */
 /* Enabled if forced with data-theme="dark" */
 [data-theme="dark"] {
-  --primary: #ffb300;
-  --primary-hover: #ffc107;
-  --primary-focus: rgba(255, 179, 0, 0.25);
-  --primary-inverse: rgba(0, 0, 0, 0.75);
+  --primary: #757575;
+  --primary-hover: #9e9e9e;
+  --primary-focus: rgba(117, 117, 117, 0.25);
+  --primary-inverse: #fff;
 }
 
-/* Amber (Common styles) */
+/* Grey (Common styles) */
 :root {
   --form-element-active-border-color: var(--primary);
   --form-element-focus-color: var(--primary-focus);

@@ -16,7 +16,6 @@ import Layout from "../layouts/Layout.astro";
 
   <main class="container">
     <h1>Hi! 👋 I'm Joshua.</h1>
-    <!-- <div class="intro-graph"> -->
     <article>
       <p>
         I’m a web developer living in Berlin, Germany. This my website and digital garden where I
@@ -31,25 +30,34 @@ import Layout from "../layouts/Layout.astro";
         touch.🌱
       </p>
     </article>
-    <!-- </div> -->
     <section id="about">
-      <p>
-        Lorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum
-        dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem,
-        ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum
-        dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem,
-        ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum
-        dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem,
-        ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum
-        dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem,
-        ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum
-        dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem,
-        ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum
-        dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem,
-        ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum
-        dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem,
-        ipsum dolor.Lorum
-      </p>
+      <article>
+        <header>About</header>
+        <p>
+          Lorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum
+          dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem,
+          ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum
+          dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem,
+          ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum
+          dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem,
+          ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum
+          dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem,
+          ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum
+          dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem,
+          ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum
+          dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem,
+          ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum
+          dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem,
+          ipsum dolor.Lorum
+        </p>
+      </article>
+      <section class="container-fluid" id="projects">
+        <header>Projects</header>
+        <div class="grid">
+          <article><header>Test</header><p>Test</p></article>
+          <article><header>Test</header><p>Test</p></article>
+        </div>
+      </section>
     </section>
   </main>
 </Layout>
@@ -57,10 +65,7 @@ import Layout from "../layouts/Layout.astro";
 <style>
   @import "open-props/style";
   @import "open-props/fonts";
-
-  div {
-    display: block;
-  }
+  /* @import "/src/styles/styles.css"; */
 
   h1 {
     font-family: var(--font-sans);
@@ -78,7 +83,7 @@ import Layout from "../layouts/Layout.astro";
   }
 
   a {
-    color: #e77f5a;
+    /* color: #e77f5a; */
     font-weight: var(--font-weight-6);
     font-size: var(--font-size-fluid-6);
   }
@@ -88,7 +93,7 @@ import Layout from "../layouts/Layout.astro";
   }
 
   article {
-    background-color: #3a465b;
+    /* background-color: #3a465b; */
     margin: var(--size-8);
     padding: var(--size-6);
   }

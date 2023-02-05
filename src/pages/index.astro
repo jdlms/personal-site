@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Nav from "../components/Nav.astro";
 import Hero from "../components/Hero.astro";
+import About from "../components/About.astro";
 ---
 
 <Layout title="Welcome to my homepage.">
@@ -9,55 +10,44 @@ import Hero from "../components/Hero.astro";
 
   <main class="container">
     <Hero />
-
-    <section id="about">
+    <About />
+    <section class="container-fluid" id="projects">
       <article>
-        <header id="about"><a href="#">about</a></header>
-        <p>
-          Lorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum
-          dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem,
-          ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum
-          dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem,
-          ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum
-          dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem,
-          ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum
-          dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem,
-          ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum
-          dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem,
-          ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum
-          dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem,
-          ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum
-          dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem, ipsum dolor.LorumLorem,
-          ipsum dolor.Lorum
-        </p>
+        <header id="projects"><a href="#">projects</a></header>
+        <div class="grid">
+          <article>
+            <header>Scout DB</header><p>
+              An internal tool for book scouts, built for gathering info and reporting it out to
+              clients. Built with React, Express, Mongoose, MUI, React Router, React Query,
+              react-hook-forms, and Yup.
+            </p>
+          </article>
+          <article>
+            <header>Kinomania</header><p>
+              Discover movies, track films, create lists. Inspired by Letterboxed. Built with
+              Express, Mongoose, Handlebars and Passport.js.
+            </p>
+          </article>
+          <article><header>Jungle Commander</header><p>Splat the fruit! A browser  arcade-style tank game built with p5.js. </p></article>
+        </div>
       </article>
-      <div class="svg"></div>
-      <section class="container-fluid" id="projects">
-        <article>
-          <header id="projects"><a href="#">projects</a></header>
-          <div class="grid">
-            <article><header>Test</header><p>Test</p></article>
-            <article><header>Test</header><p>Test</p></article>
-          </div>
-        </article>
-      </section>
-      <div class="svg"></div>
-      <section class="container-fluid" id="learning">
-        <article>
-          <header id="projects"><a href="#">learning</a></header>
-          <div class="grid">
-            <div><p>Test</p></div>
-            <div><p>Test</p></div>
-            <div><p>Test</p></div>
-            <div><p>Test</p></div>
-            <div><p>Test</p></div>
-            <div><p>Test</p></div>
-          </div>
-        </article>
-      </section>
     </section>
-    <footer>Built with Astro</footer>
+    <div class="svg"></div>
+    <section class="container-fluid" id="learning">
+      <article>
+        <header id="projects"><a href="#">learning</a></header>
+        <div class="grid">
+          <div><p>Test</p></div>
+          <div><p>Test</p></div>
+          <div><p>Test</p></div>
+          <div><p>Test</p></div>
+          <div><p>Test</p></div>
+          <div><p>Test</p></div>
+        </div>
+      </article>
+    </section>
   </main>
+  <footer>Built with Astro</footer>
 </Layout>
 
 <style>

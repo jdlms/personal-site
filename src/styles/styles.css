@@ -16,6 +16,11 @@
     --primary-hover: #9e9e9e;
     --primary-focus: rgba(117, 117, 117, 0.25);
     --primary-inverse: #fff;
+    /* comment */
+    --background-color: #2a2b2e;
+    --card-background-color: #292a2d;
+    --card-border-color: var(--card-background-color);
+    --card-sectionning-background-color: #38393d;
   }
 }
 
@@ -39,11 +44,6 @@
 a {
   font-weight: var(--font-weight-6);
   font-size: var(--font-size-fluid-6);
-}
-
-a:hover {
-  text-decoration: underline;
-  text-decoration-color: #e77f5a;
 }
 
 h2 {

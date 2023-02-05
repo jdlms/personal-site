@@ -35,3 +35,31 @@
   --switch-color: var(--primary-inverse);
   --switch-checked-background-color: var(--primary);
 }
+
+a {
+  font-weight: var(--font-weight-6);
+  font-size: var(--font-size-fluid-6);
+}
+
+a:hover {
+  text-decoration: underline;
+  text-decoration-color: #e77f5a;
+}
+
+h2 {
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-7);
+  font-size: var(--font-size-fluid-1);
+  margin-bottom: 20px;
+}
+
+p {
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-5);
+  font-size: var(--font-size-fluid-5);
+}
+
+article {
+  margin: var(--size-8);
+  padding: var(--size-6);
+}

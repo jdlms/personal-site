@@ -1,24 +1,24 @@
 <section class="container-fluid" id="projects">
   <h2><a href="#">projects</a></h2>
-  <article>
+  <article class="outer-article">
     <div class="grid">
-      <article>
-        <header class="test">Scout DB</header><p>
+      <article class="inner-article">
+        <header class="project-header">Scout DB</header><p>
           An internal tool for book scouts, built for gathering info and reporting it out to
           clients. Built with React, Express, Mongoose, MUI, React Router, React Query,
           react-hook-forms, and Yup.
         </p>
       </article>
-      <article>
-        <header>Kinomania</header><p>
+      <article class="inner-article">
+        <header class="project-header">Kinomania</header><p>
           Discover movies, track films, create lists. Inspired by Letterboxed. Built with Express,
           Mongoose, Handlebars and Passport.js.
         </p>
       </article>
     </div>
     <div class="grid">
-      <article>
-        <header>Jungle Commander</header><p>
+      <article class="inner-article">
+        <header class="project-header">Jungle Commander</header><p>
           Splat the fruit! A browser arcade-style tank game built with p5.js.
         </p>
       </article>
@@ -28,8 +28,32 @@
 </section>
 
 <style>
-  .test {
-    margin-bottom: 1px;
-    padding-bottom: 1px;
+  a {
+    font-weight: var(--font-weight-6);
+    font-size: var(--font-size-fluid-6);
+    color: #f5c676;
+  }
+
+  .outer-article {
+    margin: var(--size-5);
+    padding: var(--size-6);
+  }
+
+  .project-header {
+    margin-bottom: 6vh;
+    padding-bottom: 8vh;
+    font-family: var(--font-sans);
+    font-weight: var(--font-weight-5);
+    font-size: var(--font-size-fluid-5);
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+  }
+
+  .inner-article:hover {
+    box-shadow: var(--inner-shadow-1);
+
+    header:hover {
+      box-shadow: var(--inner-shadow-1);
+    }
   }
 </style>

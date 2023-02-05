@@ -5,6 +5,7 @@ import Hero from "../components/Hero.astro";
 import About from "../components/About.astro";
 import Divider from "../components/Divider.astro";
 import Projects from "../components/Projects.astro";
+import Learning from "../components/Learning.astro";
 ---
 
 <Layout title="Welcome to my homepage.">
@@ -17,28 +18,8 @@ import Projects from "../components/Projects.astro";
     <Divider />
     <Projects />
     <Divider />
-
-    <section class="container-fluid" id="learning">
-      <article>
-        <header id="projects"><a href="#">learning</a></header>
-        <div class="grid">
-          <div><p>Test</p></div>
-          <div><p>Test</p></div>
-          <div><p>Test</p></div>
-          <div><p>Test</p></div>
-          <div><p>Test</p></div>
-          <div><p>Test</p></div>
-        </div>
-      </article>
-    </section>
+    <Learning />
+    <Divider />
   </main>
   <footer>Built with Astro</footer>
 </Layout>
-
-<style>
-  #about,
-  #projects {
-    font-weight: var(--font-weight-6);
-    font-size: var(--font-size-fluid-6);
-  }
-</style>

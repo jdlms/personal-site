@@ -1,4 +1,4 @@
-<section id="container-fluid projects">
+<section class="container-fluid" id="projects">
   <h2><a href="#">projects</a></h2>
   <article class="outer-article">
     <div class="grid">
@@ -8,7 +8,9 @@
         target="_blank"
       >
         <article class="inner-article">
-          <header class="project-header">Scout DB</header><p>
+          <header class="project-header">Scout DB</header>
+
+          <p>
             An internal tool for gathering, tracking and reporting information. For book scouts and
             their clients. Built with React, Express, Mongoose, MUI, React Router, React Query,
             react-hook-forms, and Yup.
@@ -42,6 +44,7 @@
     font-weight: var(--font-weight-6);
     font-size: var(--font-size-fluid-6);
     color: #f5c676;
+    text-decoration: none;
   }
 
   .project-link {
@@ -49,16 +52,8 @@
     text-decoration: none;
   }
 
-  .outer-article {
-    margin-top: 6vh;
-  }
-
-  .inner-article {
-    margin-top: 6vh;
-    margin-bottom: 6vh;
-  }
   p {
-    height: 30vh;
+    height: 25vh;
     color: #bbc6ce;
   }
 
@@ -73,11 +68,15 @@
     border-bottom-right-radius: var(--border-radius);
   }
 
-  .inner-article:hover {
-    box-shadow: var(--inner-shadow-1);
+  .inner-article {
+    box-shadow: var(--shadow-2);
+  }
 
-    header:hover {
-      box-shadow: var(--inner-shadow-1);
-    }
+  header {
+    box-shadow: var(--shadow-3);
+  }
+
+  header:hover {
+    box-shadow: var(--inner-shadow-1);
   }
 </style>

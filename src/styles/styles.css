@@ -56,11 +56,13 @@ h2 {
 
 p {
   font-family: var(--font-sans);
-  font-weight: var(--font-weight-3);
   font-size: var(--font-size-fluid-5);
+  line-height: var(--font-lineheight-3);
 }
 
 article {
-  padding-top: 8vh;
-  padding-bottom: 5vh;
+  margin-top: 4vh;
+  margin-bottom: 5vh;
+  padding-top: 4vh;
+  padding-bottom: 3vh;
 }

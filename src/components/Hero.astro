@@ -1,6 +1,6 @@
 <h1>Hi! 👋🏼 I'm Joshua.</h1>
 
-<article class="hero">
+<article class="hero container-fluid">
   <p class="hero-p-1">
     I’m a developer who's enthusiastic about JavaScript, building for the web, and tackling new
     challenges. I live in Berlin, Germany and this my small digital garden, where I post recent
@@ -38,29 +38,37 @@
     line-height: var(--font-lineheight-3);
   }
 
-  .hero-p.2 {
-    font-family: var(--font-sans);
-    font-size: var(--font-size-fluid-5);
-    line-height: var(--font-lineheight-3);
-  }
-
   img {
     animation: var(--animation-fade-in) forwards, var(--animation-slide-in-left) forwards;
     animation-timing-function: var(--ease-squish-4);
     animation-duration: 1.4s;
     z-index: 1;
     position: absolute;
-    width: 22vw;
+    width: 21vw;
     height: auto;
   }
 
   .svg-container {
-    margin-left: 76.5%;
-    margin-bottom: 9%;
+    margin-left: 72%;
+    margin-bottom: 11%;
   }
 
   .hero {
-    margin-top: 5vh;
     position: relative;
+  }
+
+  @media only screen and (max-width: 600px) {
+    h1 {
+      font-size: var(--font-size-fluid-3);
+    }
+
+    img {
+      width: 45vw;
+    }
+
+    .svg-container {
+      margin-left: 54%;
+      margin-bottom: 17%;
+    }
   }
 </style>

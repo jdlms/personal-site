@@ -1,7 +1,7 @@
 <h1>Hi! 👋🏼 I'm Joshua.</h1>
 
 <article class="hero">
-  <p>
+  <p class="hero-p-1">
     I’m a developer who's enthusiastic about JavaScript, building for the web, and tackling new
     challenges. I live in Berlin, Germany and this my small digital garden, where I post recent
     projects, track what I've been learning, and blog about life and code. 🌱
@@ -31,9 +31,16 @@
     margin-bottom: 0px;
   }
 
-  p {
+  .hero-p-1 {
     font-family: var(--font-sans);
     font-weight: var(--font-weight-5);
+    font-size: var(--font-size-fluid-5);
+    line-height: var(--font-lineheight-3);
+  }
+
+  .hero-p.2 {
+    font-family: var(--font-sans);
+    font-weight: var(--font-weight-4);
     font-size: var(--font-size-fluid-5);
     line-height: var(--font-lineheight-3);
   }
@@ -54,6 +61,7 @@
   }
 
   .hero {
+    margin-top: 5vh;
     position: relative;
   }
 </style>

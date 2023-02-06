@@ -59,3 +59,8 @@ p {
   font-weight: var(--font-weight-4);
   font-size: var(--font-size-fluid-5);
 }
+
+article {
+  padding-top: 8vh;
+  padding-bottom: 5vh;
+}

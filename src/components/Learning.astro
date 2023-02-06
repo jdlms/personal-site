@@ -1,37 +1,65 @@
 <section class="container-fluid" id="learning">
   <h2><a href="#">learning</a></h2>
   <article>
-    <div class="grid">
-      <div class="chip">Test</div>
-      <div class="chip">Test</div>
-      <div class="chip">Test</div>
-      <div class="chip">Test</div>
+    <div class="chip-container">
+      <div class="chip">Postgres</div>
+      <div class="chip">AWS</div>
+      <div class="chip">Testing</div>
     </div>
-  </article>
-  <article>
-    <div class="grid">
-      <div class="chip">Test</div>
-      <div class="chip">Test</div>
-      <div class="chip">Test</div>
-      <div class="chip">Test</div>
+    <hr />
+    <div class="chip-container">
+      <div class="chip learnings">React</div>
+      <div class="chip learnings">JavaScript</div>
+      <div class="chip learnings">CSS</div>
+      <div class="chip learnings">Node.js</div>
+      <div class="chip learnings">Mongo DB</div>
+      <div class="chip learnings">REST</div>
+      <div class="chip learnings">Express</div>
+      <div class="chip learnings">HTML</div>
+      <div class="chip learnings">Git</div>
+      <div class="chip learnings">Mongoose</div>
     </div>
   </article>
 </section>
 
 <style>
+  .chip-container {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    row-gap: 20px;
+  }
   .chip {
-    height: 52px;
-    background-color: #38393d;
+    height: 32px;
+    width: 100px;
+    background-color: #e77f5a;
+    color: #2a2b2e;
     display: inline-block;
-    background: $md-chip-color;
     padding: 0 12px;
     border-radius: 32px;
-    font-size: 13px;
-    display: grid; /* new */
-    align-items: center; /* new */
+    display: grid;
+    align-items: center;
     justify-items: center;
+    font-family: var(--font-sans);
+    font-weight: var(--font-weight-4);
+    font-size: var(--font-size-0);
+    letter-spacing: var(--font-letterspacing-1);
+    transition: all 1s ease;
   }
 
+  hr {
+    width: 50vw;
+    border: 0.1px solid #38393d;
+  }
+
+  .learnings {
+    background-color: #9fc68d;
+  }
+
+  .learnings:hover {
+    animation: var(--animation-pulse);
+    animation-iteration-count: infinite;
+  }
   a {
     font-weight: var(--font-weight-6);
     font-size: var(--font-size-fluid-6);
@@ -41,5 +69,9 @@
   article {
     margin: var(--size-5);
     padding: var(--size-6);
+    display: flex;
+    flex-direction: column;
+    column-gap: 20px;
+    row-gap: 20px;
   }
 </style>

@@ -21,6 +21,7 @@
     --card-background-color: #292a2d;
     --card-border-color: var(--card-background-color);
     --card-sectionning-background-color: #38393d;
+    --muted-border-color: #292a2d;
   }
 }
 

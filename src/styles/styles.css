@@ -59,8 +59,3 @@ p {
   font-weight: var(--font-weight-4);
   font-size: var(--font-size-fluid-5);
 }
-
-article {
-  margin: var(--size-8);
-  padding: var(--size-6);
-}

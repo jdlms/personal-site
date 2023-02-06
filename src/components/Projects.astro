@@ -2,26 +2,36 @@
   <h2><a href="#">projects</a></h2>
   <article class="outer-article">
     <div class="grid">
-      <article class="inner-article">
-        <header class="project-header">Scout DB</header><p>
-          An internal tool for book scouts, built for gathering info and reporting it out to
-          clients. Built with React, Express, Mongoose, MUI, React Router, React Query,
-          react-hook-forms, and Yup.
-        </p>
-      </article>
-      <article class="inner-article">
-        <header class="project-header">Kinomania</header><p>
-          Discover movies, track films, create lists. Inspired by Letterboxed. Built with Express,
-          Mongoose, Handlebars and Passport.js.
-        </p>
-      </article>
+      <a
+        class="project-link"
+        href="https://fantastic-pithivier-6edba6.netlify.app/"
+        target="_blank"
+      >
+        <article class="inner-article">
+          <header class="project-header">Scout DB</header><p>
+            An internal tool for gathering, tracking and reporting information. For book scouts and
+            their clients. Built with React, Express, Mongoose, MUI, React Router, React Query,
+            react-hook-forms, and Yup.
+          </p>
+        </article>
+      </a>
+      <a class="project-link" href="https://confused-bikini-pike.cyclic.app/" target="_blank">
+        <article class="inner-article">
+          <header class="project-header">Kinomania</header><p>
+            Discover movies, track films, create lists. Inspired by Letterboxed. Built with Express,
+            Mongoose, Handlebars and Passport.js.
+          </p>
+        </article>
+      </a>
     </div>
     <div class="grid">
-      <article class="inner-article">
-        <header class="project-header">Jungle Commander</header><p>
-          Splat the fruit! A browser arcade-style tank game built with p5.js.
-        </p>
-      </article>
+      <a class="project-link" href="https://jdlms.github.io/jungle-commander/" target="_blank">
+        <article class="inner-article">
+          <header class="project-header">Jungle Commander</header><p>
+            Splat the fruit! A browser arcade-style tank game built with p5.js.
+          </p>
+        </article>
+      </a>
       <div></div>
     </div>
   </article>
@@ -34,14 +44,24 @@
     color: #f5c676;
   }
 
+  .project-link {
+    color: #bbc6ce;
+    text-decoration: none;
+  }
+
   .outer-article {
     margin: var(--size-5);
     padding: var(--size-6);
   }
 
+  p {
+    color: #bbc6ce;
+  }
+
   .project-header {
     margin-bottom: 4vh;
     padding-bottom: 5vh;
+    padding-top: 5.5vh;
     font-family: var(--font-sans);
     font-weight: var(--font-weight-5);
     font-size: var(--font-size-fluid-5);

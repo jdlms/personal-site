@@ -11,14 +11,12 @@ import Profile from "./Profile.astro";
       <a href="#" role="button" class="constrast outline">Get in touch</a>
       <a href="#" role="button" class="constrast outline">CV</a>
     </div>
-    <!-- <div class="svg-container">
-      <img src="separator_bottom-triangle-left.svg" alt="" />
-    </div> -->
+
     <svg
       class="svg-snoweb svg-theme-dark"
       height="100"
-      preserveaspectratio="none"
-      viewbox="0 0 100 150"
+      preserveAspectRatio="none"
+      viewBox="0 0 100 150"
       width="30%"
       x="0"
       xmlns="http://www.w3.org/2000/svg"
@@ -33,19 +31,10 @@ import Profile from "./Profile.astro";
 <!-- </section> -->
 
 <style>
-  image {
-    position: absolute;
-    width: 21vw;
-    height: auto;
-    /* position: absolute; */
-  }
-
   .test {
     display: flex;
     flex-direction: row;
-    /* align-items: center; */
     justify-content: center;
-    column-gap: 100px;
     z-index: -1;
   }
   .container {
@@ -56,17 +45,24 @@ import Profile from "./Profile.astro";
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    z-index: -1;
   }
 
   svg {
     z-index: 2;
-    margin-right: 800px;
-    margin-top: 300px;
+    margin-right: 35rem;
+    margin-top: 15rem;
     position: absolute;
   }
 
   polygon {
-    color: #9fc68d;
+    color: #f5c676;
+  }
+
+  @media only screen and (max-width: 600px) {
+    svg {
+      margin-right: 14rem;
+      margin-top: 15rem;
+
+    }
   }
 </style>

@@ -47,22 +47,24 @@
     padding-right: 1rem;
   }
   img {
-    animation: var(--animation-fade-in) forwards, var(--animation-slide-in-left) forwards;
+    /* animation: var(--animation-fade-in) forwards, var(--animation-slide-in-left) forwards;
     animation-timing-function: var(--ease-squish-4);
-    animation-duration: 1.4s;
-    z-index: 1;
-    position: absolute;
-    width: 21vw;
+    animation-duration: 1.4s; */
+    width: 30vw;
     height: auto;
+    position: relative;
+    top: 20px;
+    left: 20px;
   }
 
   .svg-container {
-    margin-left: 72%;
-    margin-bottom: 11%;
+    display: flex;
+    justify-content: end;
+    width: 100%;
   }
 
   .hero {
-    position: relative;
+    /* position: relative; */
   }
 
   @media only screen and (max-width: 600px) {
@@ -71,23 +73,11 @@
     }
 
     img {
-      width: 45vw;
+      width: 55vw;
+      height: auto;
+      position: relative;
+      top: 20px;
+      left: 20px;
     }
-
-    .svg-container {
-      margin-left: 54%;
-      margin-bottom: 17%;
-    }
-  }
-  @media screen and (min-width: 1025px) and (max-width: 1280px) {
-    img {
-      width: 21vw;
-    }
-
-    .svg-container {
-      margin-left: 78%;
-      margin-bottom: 9%;
-    }
-    /* Styles for Desktops */
   }
 </style>

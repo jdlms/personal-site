@@ -2,11 +2,7 @@
   <h2><a href="#">projects</a></h2>
   <article class="outer-article">
     <div class="grid">
-      <a
-        class="project-link"
-        href="https://fantastic-pithivier-6edba6.netlify.app/"
-        target="_blank"
-      >
+      <a class="project-link" href="https://fantastic-pithivier-6edba6.netlify.app/">
         <article class="inner-article">
           <header class="project-header">Scout DB</header>
 
@@ -17,7 +13,7 @@
           </p>
         </article>
       </a>
-      <a class="project-link" href="https://confused-bikini-pike.cyclic.app/" target="_blank">
+      <a class="project-link" href="https://confused-bikini-pike.cyclic.app/">
         <article class="inner-article">
           <header class="project-header">Kinomania</header><p>
             Discover movies, track films, create lists. Inspired by Letterboxed. Built with Express,
@@ -27,7 +23,7 @@
       </a>
     </div>
     <div class="grid">
-      <a class="project-link" href="https://jdlms.github.io/jungle-commander/" target="_blank">
+      <a class="project-link" href="https://jdlms.github.io/jungle-commander/">
         <article class="inner-article">
           <header class="project-header">Jungle Commander</header><p>
             Splat the fruit! A browser arcade-style tank game built with p5.js.
@@ -73,7 +69,7 @@
     margin-bottom: 2rem;
     margin-top: 1rem;
     padding-top: 2rem;
-    height: 15rem;
+    height: 18rem;
   }
 
   header {
@@ -82,5 +78,15 @@
 
   header:hover {
     box-shadow: var(--inner-shadow-1);
+  }
+
+  @media only screen and (max-width: 600px) {
+    .inner-article {
+      box-shadow: var(--shadow-2);
+      margin-bottom: 2rem;
+      margin-top: 1rem;
+      padding-top: 2rem;
+      height: 20rem;
+    }
   }
 </style>

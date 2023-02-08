@@ -1,68 +1,28 @@
 ---
 import Profile from "./Profile.astro";
+import Links from "./Links.astro";
 ---
 
-<!-- <section> -->
 <div class="container">
-  <div class="test">
-    <div></div>
-    <Profile />
-    <div class="button-container">
-      <a href="#" role="button" class="constrast outline">Get in touch</a>
-      <a href="#" role="button" class="constrast outline">CV</a>
-    </div>
-
-    <svg
-      class="svg-snoweb svg-theme-dark"
-      height="100"
-      preserveAspectRatio="none"
-      viewBox="0 0 100 150"
-      width="30%"
-      x="0"
-      xmlns="http://www.w3.org/2000/svg"
-      y="0"
-    >
-      <polygon class="svg-fill-primary" points="0 0, 100 100, 0 100"> </polygon>
-    </svg>
+  <Profile />
+  <div class="button-container">
+    <a href="#" role="button" class="constrast outline">Get in touch</a>
   </div>
-  <div></div>
-  <div></div>
 </div>
-<!-- </section> -->
+<Links />
 
 <style>
-  .test {
+  .container {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    z-index: -1;
-  }
-  .container {
-    position: relative;
+    margin-bottom: 2rem;
   }
 
   .button-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-  }
-
-  svg {
-    z-index: 2;
-    margin-right: 35rem;
-    margin-top: 15rem;
-    position: absolute;
-  }
-
-  polygon {
-    color: #f5c676;
-  }
-
-  @media only screen and (max-width: 600px) {
-    svg {
-      margin-right: 14rem;
-      margin-top: 15rem;
-
-    }
+    justify-content: center;
+    gap: 1rem;
   }
 </style>

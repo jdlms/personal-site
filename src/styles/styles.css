@@ -55,6 +55,10 @@
   --switch-checked-background-color: var(--primary);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 a {
   font-weight: var(--font-weight-6);
   font-size: var(--font-size-fluid-6);

@@ -17,7 +17,7 @@
         
 
         .svg-fill-primary {
-            fill: #f5c676;
+            fill: #dd4462;
         }
 
         .svg-fill-secondary {

@@ -1,5 +1,5 @@
-<section class="container-fluid" id="work">
-  <h2><a href="#">work</a></h2>
+<section class="container-fluid" id="projects">
+  <h2><a href="#">projects</a></h2>
   <article class="outer-article">
     <div class="grid">
       <a class="project-link" href="https://guess-that-dog.vercel.app/">
@@ -7,7 +7,8 @@
           <header class="project-header">Guess that dog</header>
           <p>
             Guess by photo and by name. Correct guesses add to your collection. Project to practice
-            Typescript in React, Next.js, custom hooks and localStorage. Built with the Dog API. Woof! 🐶
+            Typescript in React, Next.js, custom hooks and localStorage. Built with the Dog API.
+            Woof! 🐶
           </p>
         </article>
       </a>
@@ -44,20 +45,20 @@
 
 <style>
   a {
-    font-weight: var(--font-weight-6);
+    font-weight: var(--font-weight-7);
     font-size: var(--font-size-fluid-6);
-    color: #dd4462;
+    color: #0e1e3a;
     text-decoration: none;
   }
 
   .project-link {
-    color: #bbc6ce;
+    color: #222222;
     text-decoration: none;
   }
 
   p {
     height: 9rem;
-    color: #bbc6ce;
+    color: #222222;
   }
 
   .project-header {
@@ -65,28 +66,30 @@
     padding-bottom: 5vh;
     padding-top: 5.5vh;
     font-family: var(--font-sans);
-    font-weight: var(--font-weight-6);
-    font-size: var(--font-size-fluid-5);
+    font-weight: var(--font-weight-7);
+    font-size: var(--font-size-3);
     border-bottom-left-radius: var(--border-radius);
     border-bottom-right-radius: var(--border-radius);
-    color: #ff8b5b;
+    background-color: #dedede;
+    color: #ff6b6b;
   }
 
   .inner-article {
-    box-shadow: var(--shadow-2);
+    box-shadow: var(--shadow-1);
     margin-bottom: 2rem;
     margin-top: 1rem;
     padding-top: 2rem;
     height: 18rem;
+    border: 2px solid #0e1e3a;
   }
 
   header {
-    box-shadow: var(--shadow-3);
+    box-shadow: var(--shadow-2);
   }
 
-  header:hover {
+  /* header:hover {
     box-shadow: var(--inner-shadow-1);
-  }
+  } */
 
   @media only screen and (max-width: 600px) {
     .inner-article {

@@ -2,13 +2,13 @@
 /* Can be forced with data-theme="light" */
 [data-theme="light"],
 :root:not([data-theme="dark"]) {
-  --primary: #bbc6ce;
+  --primary: #efefef;
   --primary-hover: #9e9e9e;
   --primary-focus: rgba(117, 117, 117, 0.25);
   --primary-inverse: #fff;
   /* comment */
   --color: #bbc6ce;
-  --background-color: #2a2b2e;
+  --background-color: #0e1e3a;
   --card-background-color: #292a2d;
   --card-border-color: var(--card-background-color);
   --card-sectionning-background-color: #38393d;
@@ -24,11 +24,12 @@
     --primary-focus: rgba(117, 117, 117, 0.25);
     --primary-inverse: #fff;
     /* comment */
-    --background-color: #2a2b2e;
-    --card-background-color: #292a2d;
-    --card-border-color: var(--card-background-color);
-    --card-sectionning-background-color: #38393d;
-    --muted-border-color: #292a2d;
+    --color: #222222;
+    --background-color: #a8d3ff;
+    --card-background-color: #efefef;
+    --card-border-color: #efefef;
+    --card-sectionning-background-color: #efefef;
+    --muted-border-color: #efefef;
   }
 }
 
@@ -67,8 +68,9 @@ a {
 h2 {
   font-family: var(--font-sans);
   font-weight: var(--font-weight-7);
-  font-size: var(--font-size-fluid-1);
+  font-size: var(--font-size-fluid-2);
   margin-bottom: 20px;
+  color: #0e1e3a;
 }
 
 p {

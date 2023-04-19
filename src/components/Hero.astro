@@ -184,4 +184,54 @@
       left: 26px;
     }
   }
+
+  @media screen and (max-width: 307px) {
+    .wave {
+      width: 70px;
+      height: 70px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: -0.9rem;
+      margin-right: -0.9rem;
+      margin-top: -1.2rem;
+    }
+    h1 {
+      font-size: var(--font-size-3);
+    }
+
+    .triangle {
+      width: 55vw;
+      height: auto;
+      position: relative;
+      top: 40px;
+      left: 26px;
+    }
+  }
+
+  @media screen {
+    media (max-width: 307px) {
+      .wave {
+        width: 70px;
+        height: 70px;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: -0.9rem;
+        margin-right: -0.9rem;
+        margin-top: -1.2rem;
+      }
+      h1 {
+        font-size: var(--font-size-3);
+      }
+
+      .triangle {
+        width: 55vw;
+        height: auto;
+        position: relative;
+        top: 40px;
+        left: 26px;
+      }
+    }
+  }
 </style>
+<!-- 
+@media screen { @media (min-width: 0px) {} } -->

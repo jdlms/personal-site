@@ -1,9 +1,14 @@
-<h1>
-  Hi<span class="ex">!</span>
-  <!-- <span><img src="noun-hand-wave-837189.svg" alt="hand wave" /></span> -->
-  <span>I'm Joshua<span class="ex">.</span></span>
-</h1>
+<span class="h1-wrapper">
+  <h1>
+    Hi<span class="ex">!</span>
+  </h1>
+  <img class="wave" src="hand-wave.svg" alt="hand wave" />
+  <h1>
+    <span></span>I'm Joshua<span class="ex">.</span>
+  </h1>
+</span>
 
+<i class="fa-thin fa-hand-wave" style="color: #0e1e3a;"></i>
 <article class="hero container-fluid">
   <p class="hero-p-1">
     I’m a web developer enthusiastic about taking on challenges and creative problem-solving. I live
@@ -18,26 +23,40 @@
     build, don't hesitate to get in touch.
   </p>
   <div class="svg-container">
-    <img src="separator_bottom-triangle-right_1.svg" alt="" />
+    <img class="triangle" src="separator_bottom-triangle-right_1.svg" alt="" />
   </div>
 </article>
 
 <style>
   h1 {
     font-family: var(--font-sans);
-    /* font-weight: var(--font-weight-2); */
-    font-size: var(--font-size-fluid-2);
-
+    font-size: var(--font-size-7);
     color: #ff6b6b;
     margin-bottom: 0px;
+    display: inline;
   }
 
   span {
     color: #0e1e3a;
   }
 
+  .h1-wrapper {
+    display: flex;
+    justify-content: left;
+  }
+
   .ex {
     color: #ffd700;
+  }
+
+  .wave {
+    width: 200px;
+    height: 200px;
+    margin-left: -2.5rem;
+    margin-right: -2.5rem;
+    margin-top: -2.6rem;
+    display: inline-block;
+    vertical-align: middle;
   }
 
   .hero-p-1 {
@@ -56,11 +75,11 @@
     padding-left: 1rem;
     padding-right: 1rem;
   }
-  img {
+  .triangle {
     width: 30vw;
     height: auto;
     position: relative;
-    top: 74px;
+    top: 38px;
     left: 33px;
   }
 
@@ -71,15 +90,83 @@
   }
 
   .hero {
-    /* position: relative; */
+    margin-top: 0px;
   }
 
-  @media only screen and (max-width: 600px) {
-    h1 {
-      font-size: var(--font-size-fluid-3);
+  @media screen and (max-width: 1200px) {
+    .wave {
+      width: 150px;
+      height: 150px;
+      margin-left: -1.5rem;
+      margin-right: -1.5rem;
+      margin-top: -1.5rem;
+      display: inline-block;
+      vertical-align: middle;
     }
 
-    img {
+    h1 {
+      font-size: var(--font-size-7);
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .wave {
+      width: 120px;
+      height: 120px;
+      margin-left: -1.5rem;
+      margin-right: -1.5rem;
+      margin-top: -1.5rem;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    h1 {
+      font-family: var(--font-sans);
+      font-size: var(--font-size-6);
+      color: #ff6b6b;
+      margin-bottom: 0px;
+      display: inline;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .wave {
+      width: 90px;
+      height: 90px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: -0.9rem;
+      margin-right: -0.9rem;
+      margin-top: -1rem;
+    }
+    h1 {
+      font-size: var(--font-size-5);
+    }
+
+    .triangle {
+      width: 55vw;
+      height: auto;
+      position: relative;
+      top: 40px;
+      left: 26px;
+    }
+  }
+
+  @media screen and (max-width: 307px) {
+    .wave {
+      width: 70px;
+      height: 70px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: -0.9rem;
+      margin-right: -0.9rem;
+      margin-top: -1rem;
+    }
+    h1 {
+      font-size: var(--font-size-4);
+    }
+
+    .triangle {
       width: 55vw;
       height: auto;
       position: relative;

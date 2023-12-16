@@ -17,7 +17,7 @@ export function Loader() {
   useMemo(() => {
     Object.values(materials).forEach((material) => {
       material.map = texture;
-      material.color.set("#E3B294");
+      material.color.set("#e3b294");
       material.needsUpdate = true;
     });
   }, [materials, texture]);

@@ -11,12 +11,12 @@ export function Container() {
           backgroundColor: "#1c1c2d",
           marginTop: "10px",
           height: "300px",
-          width: "auto",
+          width: "4OOpx",
         }}
         camera={{ position: [0, 7, -10], fov: 90 }}
       >
-        <ambientLight intensity={0.6} />
-        <pointLight position={[50, 0, 60]} />
+        <ambientLight intensity={2.4} />
+        <pointLight position={[70, 50, 60]} />
         <Suspense fallback={null}>
           <Loader />
         </Suspense>

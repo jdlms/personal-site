@@ -2,3 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  height: 100%;
+}
+
+.full-page-style {
+  @apply bg-my-blue flex flex-col items-center px-6 min-h-screen;
+}

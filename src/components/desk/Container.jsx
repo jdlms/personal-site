@@ -5,10 +5,9 @@ import { Loader } from "./Loader";
 
 export function Container() {
   return (
-    <div className="canvas-container">
+    <div>
       <Canvas
         style={{
-          backgroundColor: "#1c1c2d",
           marginTop: "10px",
           height: "300px",
           width: "4OOpx",

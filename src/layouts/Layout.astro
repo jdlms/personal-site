@@ -2,19 +2,20 @@
 export interface Props {
   title: string;
 }
-
-import "@picocss/pico/css/pico.css";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta
+      name="viewport"
+      content="width=device-width initial-scale=1"
+    />
 
     <title>jdlms.dev</title>
   </head>
-  <body>
+  <body class="full-page-style">
     <slot />
   </body>
 
@@ -22,17 +23,5 @@ import "@picocss/pico/css/pico.css";
     @import "/src/styles/styles.css";
     @import "open-props/style";
     @import "open-props/fonts";
-    body {
-      margin: 0;
-    }
-
-    html,
-    body {
-      min-height: 100%;
-    }
-
-    header {
-      box-shadow: var(--shadow-);
-    }
   </style>
 </html>

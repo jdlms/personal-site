@@ -2,10 +2,8 @@
 import { Container } from "./desk/Container.jsx";
 ---
 
-<Container client:load />
-
 <div id="hero">
-  <p>
+  <p id="intro">
     <span>Hi, I'm Joshua!</span> I’m a web developer with a
     passion for creative problem-solving and programming. I
     live in Berlin, Germany and this my small digital
@@ -33,6 +31,10 @@ color: #ffd700; -->
   }
   span {
     @apply font-medium;
+  }
+
+  #intro {
+    @apply text-3xl;
   }
   #hero {
     @apply mt-[1px] pt-10 border-t border-solid border-my-orange;

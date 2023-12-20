@@ -1,19 +1,38 @@
+---
+import { Container } from "./desk/Container";
+---
+
 <nav>
-  
   <ul>
-    <li><a class="two" href="/blog">blog</a></li>
-    <li><a class="one"  href="/#skills">skills</a></li>
-    <li><a class="two" href="/#about">about</a></li>
-    <li><a class="one" href="/projects">projects</a></li>
+    <li>
+      <a id="title" href="/">joshua lamorey-salzmann</a>
+    </li>
+    <li class="link two" id="about">
+      <a href="/#about">about</a>
+    </li>
+    <li class="link one">
+      <a href="/projects">projects</a>
+    </li>
+    <li class="link two"><a href="/blog">blog</a></li>
   </ul>
 </nav>
 
+<Container client:load />
+
 <style>
   ul {
-    @apply flex flex-row-reverse py-5;
+    @apply flex py-5;
   }
 
-  li {
+  #about {
+    @apply ml-auto;
+  }
+
+  #title {
+    @apply px-2 text-lg text-gray-400 font-medium;
+  }
+
+  .link {
     @apply px-2 text-lg;
   }
 

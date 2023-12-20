@@ -18,7 +18,7 @@ export default {
     extend: {
       colors: {
         "my-blue": "#0f234b",
-        "my-lighter-blue": "#1e325a",
+        "my-lighter-blue": "#39507f",
         "my-white": "#fafafc",
         "my-off-white": "#dedede",
         "my-orange": "#ff6b6b",

@@ -7,5 +7,5 @@ html {
 }
 
 .full-page-style {
-  @apply bg-my-blue;
+  @apply bg-my-background;
 }

@@ -3,6 +3,7 @@ import { Container } from "./desk/Container.jsx";
 ---
 
 <div id="hero">
+  <div id="break"></div>
   <p id="intro">
     <span>Hi, I'm Joshua!</span> I’m a web developer with a
     passion for creative problem-solving and programming. I
@@ -33,10 +34,11 @@ color: #ffd700; -->
     @apply font-medium;
   }
 
+  #break {
+    @apply h-[1px] bg-my-accent  w-4/5 mx-auto rounded mb-8 mt-3;
+  }
+
   #intro {
     @apply text-3xl;
-  }
-  #hero {
-    @apply mt-[1px] pt-10 border-t border-solid border-my-orange;
   }
 </style>

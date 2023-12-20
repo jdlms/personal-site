@@ -21,7 +21,11 @@ import { Container } from "./desk/Container";
 
 <style>
   ul {
-    @apply flex py-5;
+    @apply flex pb-5 pt-10;
+  }
+
+  a {
+    font-family: var(--font-sans);
   }
 
   #about {
@@ -29,20 +33,20 @@ import { Container } from "./desk/Container";
   }
 
   #title {
-    @apply px-2 text-lg text-gray-400 font-medium;
+    @apply px-2 text-lg text-my-gray font-medium border rounded border-my-accent p-4;
   }
 
   .link {
-    @apply px-2 text-lg;
+    @apply px-2 text-xl;
   }
 
   .two {
-    @apply text-my-off-white;
+    @apply text-my-gray;
   }
   .one {
     color: #ff6b6b;
     font-weight: var(--font-weight-7);
-    font-size: var(--font-size-fluid-6);
+    /* font-size: var(--font-size-fluid-6); */
     text-decoration: underline;
     text-decoration-color: #ffd700;
     text-decoration-thickness: 2px;
@@ -51,7 +55,7 @@ import { Container } from "./desk/Container";
   .two {
     /* color: #0e1e3a; */
     font-weight: var(--font-weight-7);
-    font-size: var(--font-size-fluid-6);
+    /* font-size: var(--font-size-fluid-6); */
     text-decoration: underline;
     text-decoration-color: #ffd700;
     text-decoration-thickness: 2px;

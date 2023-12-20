@@ -5,9 +5,6 @@ import Links from "./Links.astro";
 
 <div class="container">
   <Profile />
-  <div class="button-container">
-    <a href="mailto:lamorey.joshua@gmail.com" role="button" class="constrast outline">Contact me</a>
-  </div>
 </div>
 <Links />
 
@@ -19,7 +16,11 @@ import Links from "./Links.astro";
     margin-bottom: 2rem;
   }
 
-  .button-container {
+  #button {
+    @apply border border-blue-500 text-blue-500 hover:bg-blue-100 hover:text-blue-700 py-2 px-4;
+  }
+
+  #button {
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -1,15 +1,24 @@
 <nav>
+  
   <ul>
-    <li><a class="one" href="/#projects">projects</a></li>
-    <li><a class="two" href="/#about">about</a></li>
-    <li><a class="one" href="/#skills">skills</a></li>
     <li><a class="two" href="/blog">blog</a></li>
+    <li><a class="one"  href="/#skills">skills</a></li>
+    <li><a class="two" href="/#about">about</a></li>
+    <li><a class="one" href="/projects">projects</a></li>
   </ul>
 </nav>
 
 <style>
   ul {
-    @apply flex flex-row-reverse;
+    @apply flex flex-row-reverse py-5;
+  }
+
+  li {
+    @apply px-2 text-lg;
+  }
+
+  .two {
+    @apply text-my-off-white;
   }
   .one {
     color: #ff6b6b;
@@ -21,14 +30,15 @@
   }
 
   .two {
-    color: #0e1e3a;
+    /* color: #0e1e3a; */
     font-weight: var(--font-weight-7);
     font-size: var(--font-size-fluid-6);
     text-decoration: underline;
     text-decoration-color: #ffd700;
     text-decoration-thickness: 2px;
   }
-  .one:hover,
+
+  .two .one:hover,
   .two:hover {
     color: #ffd700;
     text-decoration: underline;

@@ -9,10 +9,11 @@ export function Container() {
       <Canvas
         style={{
           marginTop: "10px",
-          height: "300px",
-          width: "4OOpx",
+          marginBottom: "10px",
+          height: "320px",
+          width: "30Opx",
         }}
-        camera={{ position: [0, 7, -10], fov: 90 }}
+        camera={{ position: [0, 7, -10], fov: 80 }}
       >
         <ambientLight intensity={2.4} />
         <pointLight position={[70, 50, 60]} />
@@ -23,7 +24,7 @@ export function Container() {
           enableZoom={false}
           enablePan={false}
           autoRotate={true}
-          autoRotateSpeed={12.0}
+          autoRotateSpeed={4.5}
           target={[1.5, 2.9, 0]}
         />
       </Canvas>

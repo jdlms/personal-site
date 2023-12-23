@@ -1,5 +1,9 @@
 ---
 import { ViewTransitions } from "astro:transitions";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import { Container } from "../components/desk/Container";
+
 export interface Props {
   title: string;
 }
@@ -18,11 +22,23 @@ export interface Props {
     <ViewTransitions />
   </head>
   <body class="full-page-style">
-    <slot />
+    <main class="container">
+      <Nav />
+      <Container client:load transition:persist />
+
+      <div id="break"></div>
+      <slot />
+      <Footer />
+    </main>
+
     <style>
       @import "/src/styles/styles.css";
       @import "open-props/style";
       @import "open-props/fonts";
+
+      #break {
+        @apply h-[1px] bg-my-accent  w-4/5 mx-auto rounded mb-8 mt-3;
+      }
     </style>
   </body>
 </html>

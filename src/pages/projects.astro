@@ -1,83 +1,76 @@
 ---
-import Nav from "../components/Nav.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="jdlms.dev">
-  <main class="container">
-    <Nav />
-    <br />
-    <section class="container-fluid" id="projects">
-      <h2><a href="#">projects</a></h2>
-      <article class="outer-article">
-        <div class="grid">
-          <a
-            class="project-link"
-            href="https://guess-that-dog.vercel.app/"
-          >
-            <article class="inner-article">
-              <header class="project-header">
-                Guess that dog
-              </header>
-              <p>
-                A dog guessing game built with Next.js and
-                the Dog API. Guess by photo and by name.
-                Correct guesses add to your collection. Made
-                to practice custom hooks, localStorage, and
-                style components. Woof! 🐶
-              </p>
-            </article>
-          </a>
+  <br />
+  <section class="container-fluid" id="projects">
+    <article class="outer-article">
+      <div class="grid">
+        <a
+          class="project-link"
+          href="https://guess-that-dog.vercel.app/"
+        >
+          <article class="inner-article">
+            <header class="project-header">
+              Guess that dog
+            </header>
+            <p>
+              A dog guessing game built with Next.js and the
+              Dog API. Guess by photo and by name. Correct
+              guesses add to your collection. Made to
+              practice custom hooks, localStorage, and style
+              components. Woof! 🐶
+            </p>
+          </article>
+        </a>
 
-          <a
-            class="project-link"
-            href="https://github.com/jdlms/scout-db/"
-          >
-            <article class="inner-article">
-              <header class="project-header">
-                Scout DB
-              </header>
-              <p>
-                An internal tool for book scouts, built for
-                gathering info and reporting to clients.
-                React, Express, Mongoose, MUI, React Router,
-                React Query, and react-hook-forms.
-              </p>
-            </article>
-          </a>
-        </div>
-        <div class="grid">
-          <a
-            class="project-link"
-            href="https://github.com/jdlms/Kinomaniac"
-          >
-            <article class="inner-article">
-              <header class="project-header">
-                Kinomania
-              </header><p>
-                Discover movies, track films, create lists.
-                Inspired by Letterboxed. Built with Express,
-                Mongoose, Handlebars and Passport.js.
-              </p>
-            </article>
-          </a>
-          <a
-            class="project-link"
-            href="https://github.com/jdlms/jungle-commander"
-          >
-            <article class="inner-article">
-              <header class="project-header">
-                Jungle Commander
-              </header><p>
-                Splat the fruit! A browser arcade-style tank
-                game built with p5.js.
-              </p>
-            </article>
-          </a>
-        </div>
-      </article>
-    </section>
-  </main>
+        <a
+          class="project-link"
+          href="https://github.com/jdlms/scout-db/"
+        >
+          <article class="inner-article">
+            <header class="project-header">Scout DB</header>
+            <p>
+              An internal tool for book scouts, built for
+              gathering info and reporting to clients.
+              React, Express, Mongoose, MUI, React Router,
+              React Query, and react-hook-forms.
+            </p>
+          </article>
+        </a>
+      </div>
+      <div class="grid">
+        <a
+          class="project-link"
+          href="https://github.com/jdlms/Kinomaniac"
+        >
+          <article class="inner-article">
+            <header class="project-header">
+              Kinomania
+            </header><p>
+              Discover movies, track films, create lists.
+              Inspired by Letterboxed. Built with Express,
+              Mongoose, Handlebars and Passport.js.
+            </p>
+          </article>
+        </a>
+        <a
+          class="project-link"
+          href="https://github.com/jdlms/jungle-commander"
+        >
+          <article class="inner-article">
+            <header class="project-header">
+              Jungle Commander
+            </header><p>
+              Splat the fruit! A browser arcade-style tank
+              game built with p5.js.
+            </p>
+          </article>
+        </a>
+      </div>
+    </article>
+  </section>
 </Layout>
 
 <style>

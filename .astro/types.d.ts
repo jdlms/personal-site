@@ -174,7 +174,51 @@ declare module 'astro:content' {
 	>;
 
 	type ContentEntryMap = {
-		
+		"projects": {
+"clipit.md": {
+	id: "clipit.md";
+  slug: "clipit";
+  body: string;
+  collection: "projects";
+  data: InferEntrySchema<"projects">
+} & { render(): Render[".md"] };
+"dashboard.md": {
+	id: "dashboard.md";
+  slug: "dashboard";
+  body: string;
+  collection: "projects";
+  data: InferEntrySchema<"projects">
+} & { render(): Render[".md"] };
+"guessthatdog.md": {
+	id: "guessthatdog.md";
+  slug: "guessthatdog";
+  body: string;
+  collection: "projects";
+  data: InferEntrySchema<"projects">
+} & { render(): Render[".md"] };
+"junglecommander.md": {
+	id: "junglecommander.md";
+  slug: "junglecommander";
+  body: string;
+  collection: "projects";
+  data: InferEntrySchema<"projects">
+} & { render(): Render[".md"] };
+"kinomania.md": {
+	id: "kinomania.md";
+  slug: "kinomania";
+  body: string;
+  collection: "projects";
+  data: InferEntrySchema<"projects">
+} & { render(): Render[".md"] };
+"scoutdb.md": {
+	id: "scoutdb.md";
+  slug: "scoutdb";
+  body: string;
+  collection: "projects";
+  data: InferEntrySchema<"projects">
+} & { render(): Render[".md"] };
+};
+
 	};
 
 	type DataEntryMap = {
@@ -183,5 +227,5 @@ declare module 'astro:content' {
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	type ContentConfig = never;
+	type ContentConfig = typeof import("../src/content/config");
 }

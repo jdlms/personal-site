@@ -2,10 +2,12 @@
 import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 
-const posts = await getCollection(projects);
+const posts = await getCollection("projects");
 ---
 
-<Layout title="jdlms.dev" />
+<Layout title="jdlms.dev">
+  {posts.map((post) => <div>{post.data.blurb}</div>)}
+</Layout>
 
 <style>
   h2 {

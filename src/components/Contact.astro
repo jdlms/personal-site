@@ -4,9 +4,16 @@ import Links from "./Links.astro";
 ---
 
 <div class="container">
-  <Profile />
-  <div id="links-container">
-    <Links />
+  <div class="wrapper">
+    <Profile />
+    <button
+      type="button"
+      class="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+      >Light</button
+    >
+    <div id="links-container">
+      <Links />
+    </div>
   </div>
 </div>
 
@@ -17,5 +24,8 @@ import Links from "./Links.astro";
 
   #links-container {
     @apply inline;
+  }
+  .wrapper {
+    @apply flex items-center justify-center mb-12;
   }
 </style>

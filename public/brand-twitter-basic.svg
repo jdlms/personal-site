@@ -10,34 +10,8 @@
 >
 <defs>
     <style>
-        
-            
-            
-            
-        
-
         .svg-fill-primary {
-            fill: #0E1E3A;
-        }
-
-        .svg-fill-secondary {
-            fill: #65CDAE;
-        }
-
-        .svg-fill-tertiary {
-            fill: #f5c676;
-        }
-
-        .svg-stroke-primary {
-            stroke: #f5c676;
-        }
-
-        .svg-stroke-secondary {
-            stroke: #65CDAE;
-        }
-
-        .svg-stroke-tertiary {
-            stroke: #f5c676;
+            fill: #F5F5DC;
         }
     </style>
 </defs>

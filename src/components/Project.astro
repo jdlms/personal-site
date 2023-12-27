@@ -1,31 +1,87 @@
 ---
 import { getCollection } from "astro:content";
-
 const posts = await getCollection("projects");
 ---
 
 {
   posts.map((post) => (
-    <div class="project">
-      <ul>
-        <li>
-          {post.data.tags.map((tag) => (
-            <ul>
-              <li>{tag}</li>
-            </ul>
-          ))}
-          <h3>{post.data.title}</h3>
-          <a href={post.data.link} target="_blank">
-            LINK
-          </a>
-        </li>
-      </ul>
-      <p>{post.data.blurb}</p>
-    </div>
+    <>
+      <article class="project">
+        <a href={post.data.link} target="_blank">
+          <ul>
+            <li>
+              <ul class="chip-wrapper">
+                {post.data.tags.map((tag) => (
+                  <li class="chip">{tag}</li>
+                ))}
+                <i class="gg-arrow-top-right-o" />
+              </ul>
+              <h3>{post.data.title}</h3>
+            </li>
+          </ul>
+        </a>
+        <p>{post.data.blurb}</p>
+      </article>
+    </>
   ))
 }
 
 <style>
+  h3 {
+    @apply text-my-orange text-xl font-bold;
+  }
 
-    
+  h3 {
+    font-family: var(--font-sans);
+  }
+
+  i {
+    @apply text-my-orange;
+  }
+  .project {
+    @apply bg-my-off-white m-2 rounded-lg inline-block p-3;
+  }
+
+  .chip-wrapper {
+    @apply flex flex-col md:flex-row space-x-2;
+  }
+  .chip {
+    @apply border border-my-yellow rounded-lg p-1 inline-block text-my-accent text-sm;
+  }
+
+  .gg-arrow-top-right-o {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    width: 22px;
+    height: 22px;
+    border: 2px solid;
+    transform: scale(var(--ggs, 1));
+    border-radius: 20px;
+  }
+
+  .gg-arrow-top-right-o::after,
+  .gg-arrow-top-right-o::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    right: 4px;
+  }
+
+  .gg-arrow-top-right-o::after {
+    width: 10px;
+    height: 2px;
+    background: currentColor;
+    transform: rotate(-45deg);
+    bottom: 8px;
+  }
+
+  .gg-arrow-top-right-o::before {
+    width: 6px;
+    height: 6px;
+    top: 4px;
+    border-top: 2px solid;
+    border-right: 2px solid;
+  }
 </style>

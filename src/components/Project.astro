@@ -1,0 +1,31 @@
+---
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("projects");
+---
+
+{
+  posts.map((post) => (
+    <div class="project">
+      <ul>
+        <li>
+          {post.data.tags.map((tag) => (
+            <ul>
+              <li>{tag}</li>
+            </ul>
+          ))}
+          <h3>{post.data.title}</h3>
+          <a href={post.data.link} target="_blank">
+            LINK
+          </a>
+        </li>
+      </ul>
+      <p>{post.data.blurb}</p>
+    </div>
+  ))
+}
+
+<style>
+
+    
+</style>

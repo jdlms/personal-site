@@ -9,3 +9,8 @@ html {
 .full-page-style {
   @apply bg-my-background;
 }
+
+.flex-wrap > *:only-child {
+  margin-left: auto;
+  margin-right: auto;
+}

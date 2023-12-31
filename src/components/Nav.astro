@@ -4,9 +4,13 @@ import { Container } from "./desk/Container";
 
 <nav>
   <ul>
-    <li>
+    <li class="hidden sm:block">
       <a id="title" href="/">joshua lamorey-salzmann</a>
     </li>
+    <li class="block sm:hidden">
+      <a id="title" href="/">jdlms</a>
+    </li>
+
     <li class="link two" id="about">
       <a href="/about">about</a>
     </li>
@@ -31,11 +35,14 @@ import { Container } from "./desk/Container";
   }
 
   #title {
-    @apply px-3 text-lg text-my-gray font-medium border-2 rounded border-my-accent p-4;
+    @apply px-3 md:text-lg text-my-gray font-medium border-2 rounded border-my-accent p-4;
   }
 
+  /* <h1 class="hidden sm:block">This is the long headline for desktop and up</h1>
+<h1 class="block sm:hidden">Short headline for mobile</h1> */
+
   .link {
-    @apply px-2 text-xl;
+    @apply px-2 md:text-xl;
   }
 
   .two {

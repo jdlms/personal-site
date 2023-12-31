@@ -1,22 +1,86 @@
-<article class="skills-container">
-  <h2>skills</h2>
-   
+---
+let skills = [
+  "Typescript",
+  "HTML",
+  "CSS",
+  "Node.js",
+  "Express.js",
+  "Go",
+  "Web APIs",
+];
+---
 
-  <!-- <div class="chip-container">
-      <div class="chip">Postgres</div>
-      <div class="chip">AWS</div>
-      <div class="chip">Testing</div>
-      <div class="chip learnings">Typescript</div>
-      <div class="chip learnings">JavaScript</div>
-      <div class="chip learnings">React</div>
-      <div class="chip learnings">CSS</div>
-      <div class="chip learnings">HTML</div>
-      <div class="chip learnings">Node.js</div>
-      <div class="chip learnings">Express</div>
-      <div class="chip learnings">Linux</div>
-      <div class="chip learnings">Git</div>
-      <div class="chip learnings">Mongo db</div>
-      <div class="chip learnings">Mongoose</div> -->
+<article class="skills-container">
+  <p id="intro">
+    Hi, I'm Joshua. I’m a web developer based in Berlin,
+    Germany who values rapid iteration, optimization,
+    creative problem-solving, and loves writing code. This
+    my small digital garden, where I post recent projects,
+    track what I've been learning, and blog about life and
+    code. 🌱
+  </p>
+  <br />
+  <div class="items">
+    <div class="column">
+      <h2>Skills</h2>
+      <div class="list-wrapper">
+        <ul>
+          {skills.map((skill) => <li>{skill}</li>)}
+        </ul>
+      </div>
+    </div>
+    <div class="column">
+      <h2>Skills</h2>
+      <div class="list-wrapper">
+        <ul>
+          {skills.map((skill) => <li>{skill}</li>)}
+        </ul>
+      </div>
+    </div>
+  </div>
 </article>
 
-<style></style>
+<style>
+  p {
+    @apply text-my-off-white text-xl;
+  }
+
+  span {
+    @apply font-medium text-3xl;
+  }
+
+  #intro {
+    @apply text-2xl;
+  }
+
+  h2 {
+    @apply text-my-off-white text-xl font-semibold;
+  }
+
+  ul {
+    @apply grid grid-cols-2;
+  }
+
+  li {
+    @apply text-my-off-white text-base;
+  }
+
+  .skills-container {
+    @apply flex flex-col;
+  }
+  .list-wrapper {
+    @apply w-64;
+  }
+
+  .items {
+    @apply flex flex-row items-center gap-60 mt-10;
+  }
+
+  .column {
+    @apply flex flex-col w-1/2;
+  }
+
+  #break {
+    @apply h-[1px] bg-my-off-white  w-2/5  rounded mb-3 mt-2;
+  }
+</style>

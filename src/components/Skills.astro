@@ -12,32 +12,37 @@ let skills = [
 
 <article class="skills-container">
   <p id="intro">
-    Hi, I'm Joshua. I’m a web developer based in Berlin,
-    Germany who values rapid iteration, optimization,
-    creative problem-solving, and loves writing code. This
-    my small digital garden, where I post recent projects,
-    track what I've been learning, and blog about life and
-    code. 🌱
+    I was born in New England and moved from Brooklyn to
+    Berlin in 2017. I’ve always been a highly-curious
+    autodidact who derives joy from learning complex
+    systems. I value creativity, pragmatism, and efficiency.
+    I enjoy communicating with others and love reading.
   </p>
   <br />
-  <div class="items">
-    <div class="column">
-      <h2>Skills</h2>
-      <div class="list-wrapper">
-        <ul>
-          {skills.map((skill) => <li>{skill}</li>)}
-        </ul>
-      </div>
-    </div>
-    <div class="column">
-      <h2>Skills</h2>
-      <div class="list-wrapper">
-        <ul>
-          {skills.map((skill) => <li>{skill}</li>)}
-        </ul>
-      </div>
-    </div>
-  </div>
+  <p>
+    I currently work for an app startup in Potsdam. Since
+    moving to Germany, I have worked as an office assistant,
+    a freelance editor, translator, and on the DevOps team
+    of a digital music distributor. Prior to relocating, I
+    had a career in New York City book publishing.
+  </p>
+  <p>
+    Recently, I completed a 6-month web development bootcamp
+    at Ironhack Berlin, where I gained in-depth practical
+    experience with many technologies, including HTML, CSS,
+    JavaScript, React, Node, Express, databases, version
+    control, authentication, HTTP and REST. But, most
+    importantly, what I learned was how to take on
+    challenges as a software engineer: by breaking big
+    problems down into small parts, reading the docs, and
+    continuously learning.
+  </p>
+  <p>
+    I'm currently studying algorithms and relational
+    databases, while continuing to build projects in
+    Typescript. My goals for this year (2023) are to grow my
+    portfolio and build a few projects in Go by December.
+  </p>
 </article>
 
 <style>
@@ -45,39 +50,8 @@ let skills = [
     @apply text-my-off-white text-xl;
   }
 
-  span {
-    @apply font-medium text-3xl;
-  }
-
   #intro {
     @apply text-2xl;
-  }
-
-  h2 {
-    @apply text-my-off-white text-xl font-semibold;
-  }
-
-  ul {
-    @apply grid grid-cols-2;
-  }
-
-  li {
-    @apply text-my-off-white text-base;
-  }
-
-  .skills-container {
-    @apply flex flex-col;
-  }
-  .list-wrapper {
-    @apply w-64;
-  }
-
-  .items {
-    @apply flex flex-row items-center gap-60 mt-10;
-  }
-
-  .column {
-    @apply flex flex-col w-1/2;
   }
 
   #break {

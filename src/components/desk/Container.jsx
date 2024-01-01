@@ -5,14 +5,9 @@ import { Loader } from "./Loader";
 
 export function Container() {
   return (
-    <div>
+    <div className="container flex justify-center items-center h-44 md:h-88">
       <Canvas
-        style={{
-          marginTop: "10px",
-          marginBottom: "10px",
-          height: "320px",
-          width: "30Opx",
-        }}
+        style={{ height: "100%", width: "100%" }}
         camera={{ position: [0, 5, -10], fov: 70 }}
       >
         <ambientLight intensity={2.4} />

@@ -16,6 +16,9 @@ export default {
       },
     },
     extend: {
+      spacing: {
+        88: "22rem",
+      },
       colors: {
         // "my-blue": "#6A5ACD",
         // "my-blue": "#483D8B",

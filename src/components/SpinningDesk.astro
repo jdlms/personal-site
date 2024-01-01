@@ -1,0 +1,36 @@
+---
+import { Container } from "./desk/Container";
+---
+
+<div class="myComponent">
+  <Container client:only="react" transition:persist />
+</div>
+
+<div class="spinner">
+  <p class="center-bottom">Loading...</p>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", (event) => {
+    const myComponent =
+      document.querySelector(".myComponent");
+    const spinner = document.querySelector(".spinner");
+
+    if (myComponent instanceof HTMLElement) {
+      myComponent.style.display = "block";
+    }
+
+    if (spinner instanceof HTMLElement) {
+      spinner.style.display = "none";
+    }
+  });
+</script>
+
+<style>
+  .spinner {
+    @apply container flex justify-center items-center;
+  }
+  p {
+    @apply text-my-off-white text-sm;
+  }
+</style>

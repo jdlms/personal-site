@@ -7,9 +7,7 @@ import Links from "./Links.astro";
   <div id="wrapper">
     <Profile />
     <div id="contact-links-wrapper">
-      <a href="mailto:lamorey.joshua@gmail.com"
-        >Get in touch</a
-      >
+      <a href="mailto:lamorey.joshua@gmail.com">Email me</a>
       <div id="links-container">
         <Links />
       </div>
@@ -29,6 +27,6 @@ import Links from "./Links.astro";
     @apply inline;
   }
   #wrapper {
-    @apply flex items-center justify-center mb-12;
+    @apply flex flex-col md:flex-row items-center justify-center mb-2 md:mb-12;
   }
 </style>

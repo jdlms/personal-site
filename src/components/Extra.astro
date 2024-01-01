@@ -3,8 +3,8 @@
     <i class="gg-bell"></i>
   </div>
   <p>
-    In 2024, I'm all in on Go, CDK, React Native, and
-    building for fun and profit.
+    In 2024, I'm all in on building with Go, CDK, & React
+    Native.
   </p>
 </div>
 
@@ -14,12 +14,16 @@
     display: inline;
   }
 
+  i {
+    @apply w-14;
+  }
+
   p {
-    @apply text-my-off-white md:text-xl ml-4;
+    @apply text-my-off-white text-sm md:text-xl ml-4;
   }
 
   #wrapper {
-    @apply w-64 h-32 md:w-96 md:h-32 p-3 md:p-4 my-10 md:my-20 rounded-lg border border-my-orange container flex items-center;
+    @apply w-56 h-24 p-6 my-10 md:w-96 md:h-32 md:p-4 md:my-20 rounded-lg border border-my-orange container flex items-center;
   }
 
   .gg-bell,
@@ -37,6 +41,8 @@
     border-bottom: 0;
     width: 14px;
     height: 14px;
+    /* width: 12px;
+    height: 12px; */
   }
 
   .gg-bell::after,
@@ -57,7 +63,7 @@
 
   .gg-bell::after {
     border-radius: 3px;
-    width: 16px;
+    width: 17px;
     height: 10px;
     border: 6px solid transparent;
     border-top: 1px solid transparent;
@@ -65,6 +71,7 @@
       inset 0 0 0 4px,
       0 -2px 0 0;
     top: 14px;
+    /* top: 12px; */
     left: -3px;
     border-bottom-left-radius: 100px;
     border-bottom-right-radius: 100px;

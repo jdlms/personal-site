@@ -30,7 +30,7 @@ const posts = await getCollection("projects");
 
 <style>
   h3 {
-    @apply text-my-orange text-xl font-bold pt-1 pb-1 pr-1;
+    @apply text-my-orange md:text-xl font-bold md:pt-1 md:pb-1 md:pr-1;
   }
 
   h3 {
@@ -42,61 +42,25 @@ const posts = await getCollection("projects");
   }
 
   p {
-    @apply mt-2 mb-2;
+    @apply text-sm md:text-base mt-2 mb-2;
   }
 
   .project {
-    @apply bg-my-off-white m-2 rounded-lg inline-block pl-5 pt-2 pr-5 pb-2 shadow-sm;
+    @apply bg-my-off-white rounded-lg inline-block w-full m-2 pl-4 pt-1 pr-4 pb-1 md:pl-5 md:pt-2 md:pr-5 md:pb-2 md:w-auto;
   }
 
   .chip-wrapper {
-    @apply flex flex-col  mt-2 mb-3 md:flex-row;
+    @apply flex mt-2 mb-3 flex-row;
   }
   .chips {
-    @apply space-x-2;
+    @apply space-x-1 md:space-x-2;
   }
 
   .chip {
-    @apply border border-my-yellow rounded-lg p-1 inline-block text-my-accent text-sm;
+    @apply border border-my-yellow rounded-lg p-1 inline-block text-my-accent text-xs md:text-sm;
   }
 
   .chip {
     font-family: var(--font-sans);
-  }
-
-  .gg-arrow-top-right-o {
-    box-sizing: border-box;
-    position: relative;
-    display: block;
-    width: 22px;
-    height: 22px;
-    border: 2px solid;
-    transform: scale(var(--ggs, 1));
-    border-radius: 20px;
-  }
-
-  .gg-arrow-top-right-o::after,
-  .gg-arrow-top-right-o::before {
-    content: "";
-    display: block;
-    box-sizing: border-box;
-    position: absolute;
-    right: 4px;
-  }
-
-  .gg-arrow-top-right-o::after {
-    width: 10px;
-    height: 2px;
-    background: currentColor;
-    transform: rotate(-45deg);
-    bottom: 8px;
-  }
-
-  .gg-arrow-top-right-o::before {
-    width: 6px;
-    height: 6px;
-    top: 4px;
-    border-top: 2px solid;
-    border-right: 2px solid;
   }
 </style>

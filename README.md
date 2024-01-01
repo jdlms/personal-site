@@ -10,3 +10,4 @@ todo
 - add prettier config
 - loader for Desk component
 - spin desk on inital load?
+- github icon for projects

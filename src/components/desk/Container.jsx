@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { Loader } from "./Loader";
+import { Spinner } from "./Spinner";
 
 export function Container() {
   return (
@@ -12,7 +13,7 @@ export function Container() {
       >
         <ambientLight intensity={2.4} />
         <pointLight position={[70, 50, 60]} />
-        <Suspense fallback={null}>
+        <Suspense fallback={<Spinner />}>
           <Loader />
         </Suspense>
         <OrbitControls

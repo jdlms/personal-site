@@ -18,7 +18,7 @@ export default {
     "my-orange",
     "my-yellow",
     "my-accent",
-    88,
+    "88",
   ],
   theme: {
     screens: {

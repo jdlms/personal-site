@@ -9,6 +9,17 @@ export default {
       "./src/layouts/**/*.{astro,js,jsx,ts,tsx}",
     ],
   },
+  safelist: [
+    "my-background",
+    "my-lighter-blue",
+    "my-white",
+    "my-gray",
+    "my-off-white",
+    "my-orange",
+    "my-yellow",
+    "my-accent",
+    88,
+  ],
   theme: {
     screens: {
       sm: "640px",

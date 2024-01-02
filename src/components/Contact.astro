@@ -4,29 +4,29 @@ import Links from "./Links.astro";
 ---
 
 <div class="container">
-  <Profile />
-  <div class="button-container">
-    <a href="mailto:lamorey.joshua@gmail.com" role="button" class="constrast outline">Contact me</a>
+  <div id="wrapper">
+    <Profile />
+    <div id="contact-links-wrapper">
+      <a href="mailto:lamorey.joshua@gmail.com">Email me</a>
+      <div id="links-container">
+        <Links />
+      </div>
+    </div>
   </div>
 </div>
-<Links />
 
 <style>
-  .container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-bottom: 2rem;
-  }
-
-  .button-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1rem;
-  }
-
   a {
-    --primary: #ff6b6b;
+    @apply bg-my-background border border-my-accent focus:outline-none focus:ring-4 focus:ring-gray-700 font-normal rounded-lg text-xs md:text-sm px-5 py-2.5 mb-2 text-my-off-white;
+  }
+  #contact-links-wrapper {
+    @apply flex flex-col items-center;
+  }
+
+  #links-container {
+    @apply inline;
+  }
+  #wrapper {
+    @apply flex flex-col md:flex-row items-center justify-center mb-2 md:mb-12;
   }
 </style>

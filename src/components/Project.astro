@@ -1,0 +1,66 @@
+---
+import { getCollection } from "astro:content";
+const posts = await getCollection("projects");
+---
+
+{
+  posts.map((post) => (
+    <>
+      <article class="project">
+        <a href={post.data.link} target="_blank">
+          <ul>
+            <li>
+              <ul class="chip-wrapper">
+                <div class="chips">
+                  {post.data.tags.map((tag) => (
+                    <li class="chip">{tag}</li>
+                  ))}
+                </div>
+                <i class="gg-arrow-top-right-o" />
+              </ul>
+              <h3>{post.data.title}</h3>
+            </li>
+          </ul>
+        </a>
+        <p>{post.data.blurb}</p>
+      </article>
+    </>
+  ))
+}
+
+<style>
+  h3 {
+    @apply text-my-orange md:text-xl font-bold md:pt-1 md:pb-1 md:pr-1;
+  }
+
+  h3 {
+    font-family: var(--font-sans);
+  }
+
+  i {
+    @apply text-my-orange ml-auto;
+  }
+
+  p {
+    @apply text-sm md:text-base mt-2 mb-2;
+  }
+
+  .project {
+    @apply bg-my-off-white rounded-lg inline-block w-full m-2 pl-4 pt-1 pr-4 pb-1 md:pl-5 md:pt-2 md:pr-5 md:pb-2 md:w-auto;
+  }
+
+  .chip-wrapper {
+    @apply flex mt-2 mb-3 flex-row;
+  }
+  .chips {
+    @apply space-x-1 md:space-x-2;
+  }
+
+  .chip {
+    @apply border border-my-yellow rounded-lg p-1 inline-block text-my-accent text-xs md:text-sm;
+  }
+
+  .chip {
+    font-family: var(--font-sans);
+  }
+</style>

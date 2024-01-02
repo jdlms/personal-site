@@ -1,33 +1,71 @@
-<nav class="container">
-  <ul></ul>
+---
+import { Container } from "./desk/Container";
+---
+
+<nav>
   <ul>
-    <li><a class="header-links-one" href="/#projects">projects</a></li>
-    <li><a class="header-links-two" href="/#about">about</a></li>
-    <li><a class="header-links-one" href="/#skills">skills</a></li>
-    <li><a class="header-links-two" href="/blog">blog</a></li>
+    <li class="hidden sm:block">
+      <a id="title" href="/">joshua lamorey-salzmann</a>
+    </li>
+    <li class="block sm:hidden">
+      <a id="title" href="/">jdlms</a>
+    </li>
+
+    <li class="link two" id="about">
+      <a href="/about">about</a>
+    </li>
+    <li class="link one">
+      <a href="/projects">projects</a>
+    </li>
+    <li class="link two"><a href="/blog">blog</a></li>
   </ul>
 </nav>
 
 <style>
-  .header-links-one {
+  ul {
+    @apply flex pb-5 pt-7 md:pt-10;
+  }
+
+  a {
+    @apply text-sm md:text-xl;
+  }
+
+  a {
+    font-family: var(--font-sans);
+  }
+
+  #about {
+    @apply ml-auto;
+  }
+
+  #title {
+    @apply px-3 md:text-lg text-my-gray font-medium border-2 rounded border-my-accent p-4;
+  }
+
+  .link {
+    @apply px-2 md:text-xl;
+  }
+
+  .two {
+    @apply text-my-gray;
+  }
+  .one {
     color: #ff6b6b;
     font-weight: var(--font-weight-7);
-    font-size: var(--font-size-fluid-6);
     text-decoration: underline;
     text-decoration-color: #ffd700;
     text-decoration-thickness: 2px;
   }
 
-  .header-links-two {
-    color: #0e1e3a;
+  .two {
     font-weight: var(--font-weight-7);
-    font-size: var(--font-size-fluid-6);
     text-decoration: underline;
     text-decoration-color: #ffd700;
     text-decoration-thickness: 2px;
   }
-  .header-links-one:hover,
-  .header-links-two:hover {
+
+  .two .one:hover,
+  .two:hover {
     color: #ffd700;
     text-decoration: underline;
     text-decoration-color: #ff6b6b;

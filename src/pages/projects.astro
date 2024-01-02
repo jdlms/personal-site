@@ -1,0 +1,20 @@
+---
+import Project from "../components/Project.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="jdlms.dev">
+  <div
+    id="project-container"
+    class="flex flex-wrap items-center justify-normal"
+  >
+    <Project />
+  </div>
+</Layout>
+
+<style>
+  .flex-wrap > *:only-child {
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>

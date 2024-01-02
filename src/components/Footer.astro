@@ -1,17 +1,27 @@
 <footer class="footer">
-  <p>built with <span><a href="https://astro.build/">Astro</a></span></p>
+  <p>
+    built with <span
+      ><a href="https://astro.build/" target="_blank"
+        >Astro</a
+      ></span
+    >
+  </p>
 </footer>
 
 <style>
   .footer {
+    @apply flex justify-center border-t pt-1 pb-1 mt-8 md:pt-2 md:pb-2 md:mt-14;
+  }
+  /* 
+  .footer {
     display: flex;
     justify-content: center;
-    background-color: #cecece;
+    border-top: 1px solid #bfc9ca;
     padding-top: 8px;
     padding-bottom: 8px;
-    margin-top: 0px;
+    margin-top: 60px;
     align-content: center;
-  }
+  } */
 
   p {
     font-weight: 400;

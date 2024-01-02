@@ -1,7 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   important: true,
-  content: ["./src/**/*.{astro,js,jsx,ts,tsx}"],
+  content: {
+    relative: true,
+    files: [
+      "./src/components/**/*.{astro,js,jsx,ts,tsx}",
+      "./src/pages/**/*.{astro,js,jsx,ts,tsx}",
+      "./src/layouts/**/*.{astro,js,jsx,ts,tsx}",
+    ],
+  },
   theme: {
     screens: {
       sm: "640px",
@@ -21,13 +28,9 @@ export default {
         88: "22rem",
       },
       colors: {
-        // "my-blue": "#6A5ACD",
-        // "my-blue": "#483D8B",
-        // "my-blue": "#5F6A6E",
         "my-background": "#202c3a",
         "my-lighter-blue": "#39507f",
         "my-white": "#fafafc",
-        // "my-off-white": "#dedede",
         "my-gray": "#BFC9CA",
         "my-off-white": "#F5F5DC",
         "my-orange": "#ff6b6b",

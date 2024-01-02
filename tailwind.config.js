@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  important: true,
   content: ["./src/**/*.{astro,js,jsx,ts,tsx}"],
   theme: {
     screens: {

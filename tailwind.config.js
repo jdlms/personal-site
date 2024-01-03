@@ -4,6 +4,7 @@ export default {
   content: {
     relative: true,
     files: [
+      "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
       "./src/components/**/*.{astro,js,jsx,ts,tsx}",
       "./src/pages/**/*.{astro,js,jsx,ts,tsx}",
       "./src/layouts/**/*.{astro,js,jsx,ts,tsx}",

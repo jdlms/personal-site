@@ -14,10 +14,11 @@ export function Spinner() {
         ariaLabel="line-wave-loading"
         wrapperStyle={{
           display: "flex",
-          // justifyContent: "center",
-          // alignItems: "center",
+          justifyContent: "center",
+          alignItems: "center",
+          marginBottom: "12rem",
         }}
-        wrapperClass=""
+        wrapperClass="spinner"
       />
     </Html>
   );

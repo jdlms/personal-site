@@ -1,5 +1,5 @@
 <article class="skills-container">
-  <p class="first-graph">
+  <p id="first-graph">
     I currently work on special projects and internal tools
     @<span>Statista Q</span>. I value creativity,
     efficiency, and simplicity. When it comes to web
@@ -7,7 +7,7 @@
     comfortable setting styles as configuring servers.
   </p>
   <br />
-  <p>
+  <p class="graph">
     In 2022, I followed my love of coding and building for
     the web into a 6-month bootcamp at Ironhack Berlin where
     I learned to take on problems like a software engineer:
@@ -15,7 +15,7 @@
     continuously learning.
   </p>
   <br />
-  <p>
+  <p class="graph">
     While in Berlin I have worked at a motorcyle navigation
     app startup, a digital music distributor, a tax office,
     and as a translator and copy-writer. In a previous life,
@@ -32,7 +32,11 @@
     @apply underline;
   }
 
-  .first-graph {
-    @apply first-line:ml-4;
+  #first-graph {
+    @apply text-xl md:text-2xl;
+  }
+
+  .graph {
+    @apply indent-6;
   }
 </style>

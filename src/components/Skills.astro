@@ -1,16 +1,18 @@
 <article class="skills-container">
   <p id="first-graph">
-    I currently work on special projects and internal tools
-    @<span>Statista Q</span>. I value creativity,
-    efficiency, and simplicity. When it comes to web
-    technology, I am omnivorous; striving to be as
-    comfortable setting styles as configuring servers.
+    <span id="bold">I currently work</span> on special projects
+    and internal tools @<span class="underline"
+      >Statista Q</span
+    >. I value creativity, efficiency, and simplicity. When
+    it comes to web technology, I am omnivorous; striving to
+    be as comfortable setting styles as configuring servers.
   </p>
   <br />
   <p class="graph">
     In 2022, I followed my love of coding and building for
-    the web into a 6-month bootcamp at Ironhack Berlin where
-    I learned to take on problems like a software engineer:
+    the web into a 6-month bootcamp @<span class="underline"
+      >Ironhack Berlin</span
+    > where I learned to take on problems like a software engineer:
     by breaking them into small parts, reading the docs, and
     continuously learning.
   </p>
@@ -25,18 +27,14 @@
 
 <style>
   p {
-    @apply text-my-off-white md:text-xl;
+    @apply text-my-off-white md:text-xl text-left leading-relaxed  break-words;
   }
 
-  span {
+  #underline {
     @apply underline;
   }
 
-  #first-graph {
+  #bold {
     @apply text-xl md:text-2xl;
-  }
-
-  .graph {
-    @apply indent-6;
   }
 </style>

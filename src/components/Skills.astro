@@ -1,28 +1,25 @@
-
 <article class="skills-container">
-  <p id="intro">
-    I’m a curious autodidact who derives joy from systems
-    and pragmatic solutions. I value creativity, efficiency,
-    frank communication, and simplicity. When it comes to
-    web technology, I am omnivorous, as comfortable setting
-    styles as configuring servers.
-  </p>
-  <br />
-  <p>
+  <p class="first-graph">
     I currently work on special projects and internal tools
-    @Statista Q. In Germany I have worked at a motorcyle
-    navigation app startup, a digital music distributor
-    startup, in a tax office, and as a translator and
-    copy-writer. In a previous life, I had a career in New
-    York City book publishing.
+    @<span>Statista Q</span>. I value creativity,
+    efficiency, and simplicity. When it comes to web
+    technology, I am omnivorous; striving to be as
+    comfortable setting styles as configuring servers.
   </p>
   <br />
   <p>
-    In 2022, I followed my love of code and building for the
-    web into a 6-month bootcamp at Ironhack Berlin where I
-    learned to take on challenges by breaking large problems
-    into small parts, reading the docs, and continuously
-    learning.
+    In 2022, I followed my love of coding and building for
+    the web into a 6-month bootcamp at Ironhack Berlin where
+    I learned to take on problems like a software engineer:
+    by breaking them into small parts, reading the docs, and
+    continuously learning.
+  </p>
+  <br />
+  <p>
+    While in Berlin I have worked at a motorcyle navigation
+    app startup, a digital music distributor, a tax office,
+    and as a translator and copy-writer. In a previous life,
+    I had a career in New York City book publishing.
   </p>
 </article>
 
@@ -31,7 +28,11 @@
     @apply text-my-off-white md:text-xl;
   }
 
-  #intro {
-    @apply text-xl md:text-2xl;
+  span {
+    @apply underline;
+  }
+
+  .first-graph {
+    @apply first-line:ml-4;
   }
 </style>

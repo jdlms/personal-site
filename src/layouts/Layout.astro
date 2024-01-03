@@ -28,7 +28,9 @@ export interface Props {
         <Container client:only="react" transition:persist />
       </div>
       <div id="break"></div>
-      <slot />
+      <div id="content">
+        <slot />
+      </div>
       <Footer />
     </main>
 
@@ -39,6 +41,13 @@ export interface Props {
 
       #break {
         @apply h-[1px] bg-my-accent w-4/6 md:w-4/5 mx-auto rounded mb-6 mt-2 md:mb-10 md:mt-3;
+      }
+
+      main {
+        @apply flex flex-col h-screen;
+      }
+      #content {
+        @apply flex-grow;
       }
     </style>
   </body>

@@ -1,10 +1,10 @@
-<div>
+<div id="wrapper">
   <p id="first">
-    <span>Hi, I'm Joshua.</span> I’m a web developer working
-    in Berlin who values rapid iteration, simplicity, creative
-    problem-solving, and loves writing code. This my small digital
-    garden, where I post recent projects, track what I've been
-    learning, and infrequently blog. 🌱
+    <span>Hi, I'm Joshua.</span> I’m a web developer based in
+    Berlin who values rapid iteration, simplicity, creative problem-solving,
+    and loves writing code. This my small digital garden, where
+    I post recent projects, track what I've been learning, and
+    infrequently blog. 🌱
   </p>
   <br />
   <p>
@@ -21,13 +21,16 @@
 
 <style>
   p {
-    @apply text-my-off-white md:text-xl leading-relaxed;
+    @apply text-my-off-white md:text-xl leading-relaxed text-left  break-words;
   }
 
   span {
     @apply font-medium text-2xl md:text-3xl;
   }
 
+  #wrapper {
+    @apply md:container md:max-w-3xl;
+  }
   #first {
     @apply text-xl md:text-2xl;
   }

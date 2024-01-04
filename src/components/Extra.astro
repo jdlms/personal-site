@@ -1,25 +1,30 @@
 <div id="wrapper">
-  <div>
+  <div id="bell">
     <i class="gg-bell"></i>
   </div>
   <p>
-    In 2024, I'm all in on Go, CDK, React Native, & building
-    rapidly for fun.
+    In 2024, I'm focused on building with Go, CDK, React
+    Native.
   </p>
 </div>
 
 <style>
+  /* tailwind does not provide a way to set just color */
   i {
     color: #ffd700;
     display: inline;
   }
 
+  #bell {
+    @apply md:ml-3;
+  }
+
   p {
-    @apply text-my-off-white text-sm md:text-xl ml-4;
+    @apply text-my-off-white text-sm md:text-base ml-4;
   }
 
   #wrapper {
-    @apply w-56 h-24 p-6 my-10 md:w-96 md:h-32 md:p-4 md:my-20 rounded-lg border border-my-orange container flex items-center;
+    @apply w-52 h-24 p-6 my-10 md:w-72 md:h-28 md:p-4 md:my-16 rounded-lg border border-my-orange container flex items-center;
   }
 
   .gg-bell,

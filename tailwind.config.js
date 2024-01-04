@@ -49,6 +49,9 @@ export default {
         "my-yellow": "#ffd700",
         "my-accent": "#ad7753",
       },
+      fontFamily: {
+        mono: ["IBM Plex Mono", "monospace"],
+      },
     },
   },
   plugins: [],

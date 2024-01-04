@@ -3,7 +3,7 @@
     <span id="bold">I currently work</span> on special projects
     and internal tools @<span class="underline"
       >Statista Q</span
-    >. I value creativity, efficiency, and simplicity. When
+    >. I value creativity, efficiency, and readability. When
     it comes to web technology, I am omnivorous; striving to
     be as comfortable setting styles as configuring servers.
   </p>
@@ -33,11 +33,11 @@
     @apply text-my-off-white md:text-xl text-left leading-relaxed  break-words;
   }
 
-  #underline {
-    @apply underline;
+  .underline {
+    @apply text-base tracking-tighter font-semibold font-mono;
   }
 
   #bold {
-    @apply text-xl md:text-2xl;
+    @apply font-medium text-xl md:text-2xl;
   }
 </style>

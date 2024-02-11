@@ -1,7 +1,7 @@
 {
-  "name": "@example/basics",
+  "name": "portfolio",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.8.1",
   "private": true,
   "scripts": {
     "dev": "astro dev",
@@ -32,5 +32,13 @@
   },
   "resolutions": {
     "vite": "^5.0.10"
-  }
+  },
+  "description": "todo",
+  "main": "postcss.config.js",
+  "repository": {
+    "type": "git",
+    "url": "github.com/jdlms/portfolio"
+  },
+  "author": "",
+  "license": "ISC"
 }

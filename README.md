@@ -11,3 +11,8 @@ todo
 - loader for Desk component
 - spin desk on inital load?
 - github icon for projects
+
+- cf worker wave store/repo w/ ci/cd
+- fix image use image tag
+- favicon
+- proper cv link

@@ -1,12 +1,43 @@
 <nav>
-  <ul>
-    <li class="hidden sm:block">
+  <div class="div-container">
+    <div class="hidden sm:block">
       <a id="title" href="/">joshua lamorey-salzmann</a>
-    </li>
-    <li class="block sm:hidden">
+    </div>
+    <div class="block sm:hidden">
       <a id="title" href="/">jdlms</a>
-    </li>
+    </div>
 
+    <div
+      id="menuToggle"
+      class="md:hidden cursor-pointer justify-end"
+    >
+      <span class="gg-menu-round"></span>
+    </div>
+  </div>
+
+  <ul
+    id="menu"
+    class="hidden bg-my-off-white md:flex flex-col md:flex-row md:relative top-full md:top-auto md:right-auto w-full md:w-auto"
+  >
+    <li class="link two">
+      <a href="/about" class="block px-4 py-2 text-sm"
+        >about</a
+      >
+    </li>
+    <li class="link one">
+      <a href="/projects" class="block px-4 py-2 text-sm"
+        >projects</a
+      >
+    </li>
+    <li class="link two">
+      <a href="/blog" class="block px-4 py-2 text-sm"
+        >blog</a
+      >
+    </li>
+  </ul>
+
+  <!-- 
+  <ul>
     <li class="link two" id="about">
       <a href="/about">about</a>
     </li>
@@ -14,10 +45,13 @@
       <a href="/projects">projects</a>
     </li>
     <li class="link two"><a href="/blog">blog</a></li>
-  </ul>
+  </ul> -->
 </nav>
 
 <style>
+  .div-container {
+    @apply flex justify-between items-center p-4;
+  }
   ul {
     @apply flex pb-5 pt-7 md:pt-10;
   }
@@ -70,3 +104,17 @@
     }
   }
 </style>
+
+<script>
+  const menuToggle = document.getElementById("menuToggle");
+  const menu = document.getElementById("menu");
+
+  if (menuToggle) {
+    menuToggle.addEventListener("click", () => {
+      menu?.classList.toggle("hidden");
+      console.log("event firing");
+    });
+  } else {
+    console.error("Menu toggle element not found!");
+  }
+</script>

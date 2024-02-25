@@ -54,7 +54,7 @@
     <li class="link one">
       <a href="/projects">projects</a>
     </li>
-    <li class="link two test">
+    <li class="link two">
       <a href="/blog">blog</a>
     </li>
   </ul>
@@ -62,19 +62,15 @@
 
 <style>
   nav {
-    @apply flex justify-between md:pb-5 md:pt-7 md:pt-10;
+    @apply md:flex justify-between md:pb-5 md:pt-6;
   }
 
   .div-container {
-    @apply flex justify-between items-center p-4;
+    @apply flex justify-between  p-4;
   }
 
   ul {
     @apply md:flex-row flex-col;
-  }
-
-  .test {
-    @apply px-2 md:text-xl;
   }
 
   a {
@@ -124,15 +120,25 @@
 </style>
 
 <script>
-  const menuToggle = document.getElementById("menuToggle");
-  const menu = document.getElementById("menu");
+  function setupMenuToggle() {
+    const menuToggle =
+      document.getElementById("menuToggle");
+    const menu = document.getElementById("menu");
 
-  if (menuToggle) {
-    menuToggle.addEventListener("click", () => {
-      menu?.classList.toggle("hidden");
-      console.log("event firing");
-    });
-  } else {
-    console.error("Menu toggle element not found!");
+    if (menuToggle) {
+      menuToggle.addEventListener("click", () => {
+        menu?.classList.toggle("hidden");
+        console.log("event firing");
+      });
+    } else {
+      console.error("Menu toggle element not found!");
+    }
   }
+
+  setupMenuToggle();
+
+  document.addEventListener(
+    "astro:after-swap",
+    setupMenuToggle,
+  );
 </script>

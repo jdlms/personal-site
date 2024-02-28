@@ -42,12 +42,12 @@ export default {
       colors: {
         "my-background": "#202c3a",
         "my-lighter-blue": "#39507f",
-        "my-white": "#fafafc",
+        "my-white": "#a99a91",
         "my-gray": "#BFC9CA",
         "my-off-white": "#F5F5DC",
         "my-orange": "#ff6b6b",
         "my-yellow": "#ffd700",
-        "my-accent": "#ad7753",
+        "my-accent": "#a1704d",
       },
       fontFamily: {
         mono: ["IBM Plex Mono", "monospace"],
@@ -56,3 +56,5 @@ export default {
   },
   plugins: [],
 };
+
+// green color: #325f11

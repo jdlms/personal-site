@@ -11,7 +11,7 @@ export function Container() {
         style={{ height: "100%", width: "100%" }}
         camera={{ position: [0, 7, -10], fov: 70 }}
       >
-        <ambientLight intensity={1.5} />
+        <ambientLight intensity={2} />
         <pointLight position={[0, 18, -10]} intensity={500} color="#fff" distance={0}/>
         <Suspense fallback={<Spinner />}>
           <Loader />

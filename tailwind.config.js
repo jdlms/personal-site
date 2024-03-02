@@ -47,7 +47,7 @@ export default {
         "my-off-white": "#F5F5DC",
         "my-orange": "#ff6b6b",
         "my-yellow": "#ffd700",
-        "my-accent": "#a1704d",
+        "my-accent": "#966747",
       },
       fontFamily: {
         mono: ["IBM Plex Mono", "monospace"],
@@ -58,3 +58,4 @@ export default {
 };
 
 // green color: #325f11
+// #5f3a25

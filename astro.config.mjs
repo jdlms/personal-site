@@ -10,7 +10,6 @@ export default defineConfig({
   }), react()],
   output: "server",
   adapter: cloudflare({
-    mode: "directory",
-    functionPerRoute: false
+    mode: "directory"
   }),
 });

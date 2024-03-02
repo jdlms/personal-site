@@ -21,8 +21,7 @@ import Extra from "../components/Extra.astro";
 </style>
 
 <script>
-  const button = document.getElementById("callEndpoint");
-  button?.addEventListener("click", () => {
+  function fetchHellowWorld() {
     fetch("/helloworld")
       .then((response) => response.text())
       .then((data) => {
@@ -31,5 +30,5 @@ import Extra from "../components/Extra.astro";
       .catch((error) => {
         console.error("Error:", error);
       });
-  });
+  }
 </script>

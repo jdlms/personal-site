@@ -9,9 +9,6 @@ import Extra from "../components/Extra.astro";
   <Intro />
   <Extra />
   <Contact />
-  <button id="helloButton" type="button">Say Hello</button>
-
-  >
 </Layout>
 
 <style>
@@ -19,23 +16,3 @@ import Extra from "../components/Extra.astro";
     padding-bottom: 3%;
   }
 </style>
-
-<script>
-  document.addEventListener("DOMContentLoaded", (event) => {
-    const button = document.getElementById("helloButton");
-    if (button) {
-      button.addEventListener("click", fetchHelloWorld);
-    }
-  });
-
-  function fetchHelloWorld() {
-    fetch("/helloworld")
-      .then((response) => response.text())
-      .then((data) => {
-        console.log(data); // Handle the data
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-  }
-</script>

@@ -9,5 +9,7 @@ export default defineConfig({
     applyBaseStyles: true
   }), react()],
   output: "server",
-  adapter: cloudflare()
+  adapter: cloudflare({
+	  mode: "directory"
+	}),
 });

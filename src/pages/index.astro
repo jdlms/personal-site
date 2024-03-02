@@ -9,6 +9,9 @@ import Extra from "../components/Extra.astro";
   <Intro />
   <Extra />
   <Contact />
+  <button type="button" onclick="fetchHelloWorld()"
+    >Say Hello</button
+  >
 </Layout>
 
 <style>
@@ -16,3 +19,17 @@ import Extra from "../components/Extra.astro";
     padding-bottom: 3%;
   }
 </style>
+
+<script>
+  const button = document.getElementById("callEndpoint");
+  button?.addEventListener("click", () => {
+    fetch("/helloworld")
+      .then((response) => response.text())
+      .then((data) => {
+        console.log(data); // Or do whatever with the data
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  });
+</script>

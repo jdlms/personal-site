@@ -28,14 +28,20 @@ import Extra from "../components/Extra.astro";
     }
   });
 
-  function fetchHelloWorld() {
-    fetch("/helloworld")
-      .then((response) => response.text())
-      .then((data) => {
-        console.log(data); // Handle the data
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
+  async function fetchHelloWorld() {
+    try {
+      const response = await fetch("/helloworld");
+      if (!response.ok) {
+        // checks if the response status code is not okay (200-299)
+        throw new Error(
+          "Network response was not ok " +
+            response.statusText,
+        );
+      }
+      const data = await response.text(); // or response.json() if you're expecting a JSON response
+      console.log("Response:", data); // Do something with your data
+    } catch (error) {
+      console.error("Error:", error);
+    }
   }
 </script>

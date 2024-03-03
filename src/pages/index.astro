@@ -3,15 +3,16 @@ import Layout from "../layouts/Layout.astro";
 import Intro from "../components/Intro.astro";
 import Contact from "../components/Contact.astro";
 import Extra from "../components/Extra.astro";
+
+const myKV = Astro.locals.runtime.env.jdlmsDotDev;
+const value = await myKV.get("totalWaves");
 ---
 
 <Layout title="jdlms.dev">
   <Intro />
   <Extra />
   <Contact />
-  <button id="helloButton" type="button">Say Hello</button>
-
-  >
+  <h2>Count: {value}</h2>
 </Layout>
 
 <style>
@@ -19,7 +20,7 @@ import Extra from "../components/Extra.astro";
     padding-bottom: 3%;
   }
 </style>
-
+<!-- 
 <script>
   document.addEventListener("DOMContentLoaded", (event) => {
     const button = document.getElementById("helloButton");
@@ -35,7 +36,7 @@ import Extra from "../components/Extra.astro";
         // checks if the response status code is not okay (200-299)
         throw new Error(
           "Network response was not ok " +
-            response.statusText,
+            response.statusText
         );
       }
       const data = await response.text(); // or response.json() if you're expecting a JSON response
@@ -44,4 +45,4 @@ import Extra from "../components/Extra.astro";
       console.error("Error:", error);
     }
   }
-</script>
+</script> -->

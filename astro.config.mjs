@@ -13,14 +13,7 @@ export default defineConfig({
   ],
   output: "server",
   adapter: cloudflare({
-    runtime: {
-      mode: "local",
-      type: "pages",
-      bindings: {
-        KV: {
-          type: "kv",
-        },
-      },
-    },
+    mode: "directory",
+    functionPerRoute: false
   }),
 });

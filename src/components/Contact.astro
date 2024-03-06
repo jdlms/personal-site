@@ -12,8 +12,8 @@ import Links from "./Links.astro";
         onclick="{changeText}"
         id="dynamicButton"
         ><svg
-          width="40pt"
-          height="40pt"
+          width="35pt"
+          height="35pt"
           version="1.1"
           viewBox="0 0 100 100"
           xmlns="http://www.w3.org/2000/svg"
@@ -37,7 +37,7 @@ import Links from "./Links.astro";
             ></path>
           </g>
         </svg>
-        Wave</button
+        <span class="reset-style">Wave</span></button
       >
       <div id="links-container">
         <Links />
@@ -47,12 +47,17 @@ import Links from "./Links.astro";
 </div>
 
 <style>
-  /* button {
-    @apply bg-my-background border border-my-accent flex items-center text-my-off-white focus:outline-none focus:ring-4 focus:ring-gray-700 font-light rounded-lg text-xs md:text-sm px-6 py-1 mb-2 text-my-off-white;
-  } */
-
   button {
-    @apply bg-my-background border border-my-yellow flex justify-center items-center text-my-off-white focus:outline-none focus:ring-2 focus:ring-gray-700 hover:border-my-accent font-light rounded-lg text-xs md:text-sm px-6 py-1 mb-2 w-32 h-10 md:space-x-3;
+    @apply bg-my-background border border-my-yellow flex justify-between items-center text-my-gray font-semibold focus:outline-none focus:ring-2 focus:ring-gray-700 hover:border-my-gray rounded-lg text-xs md:text-sm px-4 py-1 mb-2 w-28 h-10 md:space-x-3;
+  }
+
+  svg {
+    @apply ml-[-4px];
+  }
+
+  .reset-style {
+    margin: 0 !important;
+    padding: 0;
   }
 
   #contact-links-wrapper {
@@ -69,7 +74,10 @@ import Links from "./Links.astro";
 
 <script>
   const button = document.getElementById("dynamicButton");
+  const buttonText = button?.querySelector("span");
   button?.addEventListener("click", () => {
-    button.textContent = "0 Waves";
+    if (buttonText) {
+      buttonText.textContent = "0";
+    }
   });
 </script>

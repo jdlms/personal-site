@@ -1,6 +1,11 @@
 ---
 import Profile from "./Profile.astro";
 import Links from "./Links.astro";
+
+const resp = await fetch(Astro.url + "helloworld");
+
+const waveCount = await resp.text();
+console.log(waveCount);
 ---
 
 <div class="container">
@@ -9,8 +14,8 @@ import Links from "./Links.astro";
     <div id="contact-links-wrapper">
       <button
         type="button"
-        onclick="{changeText}"
         id="dynamicButton"
+        data-wave-count="{waveCount}"
         ><svg
           width="35pt"
           height="35pt"
@@ -41,6 +46,7 @@ import Links from "./Links.astro";
       >
       <div id="links-container">
         <Links />
+        <p>{waveCount}</p>
       </div>
     </div>
   </div>
@@ -76,8 +82,9 @@ import Links from "./Links.astro";
   const button = document.getElementById("dynamicButton");
   const buttonText = button?.querySelector("span");
   button?.addEventListener("click", () => {
+    const waveCount = button.getAttribute("wave-data");
     if (buttonText) {
-      buttonText.textContent = "0";
+      buttonText.textContent = waveCount;
     }
   });
 </script>

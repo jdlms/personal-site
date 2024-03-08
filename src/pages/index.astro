@@ -3,10 +3,6 @@ import Layout from "../layouts/Layout.astro";
 import Intro from "../components/Intro.astro";
 import Contact from "../components/Contact.astro";
 import Extra from "../components/Extra.astro";
-
-const resp = await fetch(Astro.url + "helloworld");
-
-const message = await resp.text();
 ---
 
 <Layout title="jdlms.dev">
@@ -14,7 +10,6 @@ const message = await resp.text();
   <Extra />
   <Contact />
 </Layout>
-<p>{message}</p>
 
 <style>
   .container {

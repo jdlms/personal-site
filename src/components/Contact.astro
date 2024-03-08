@@ -2,7 +2,7 @@
 import Profile from "./Profile.astro";
 import Links from "./Links.astro";
 
-const resp = await fetch(Astro.url + "helloworld");
+const resp = await fetch(Astro.url + "wave");
 
 const waveCount = await resp.text();
 console.log(waveCount);
@@ -46,7 +46,6 @@ console.log(waveCount);
       >
       <div id="links-container">
         <Links />
-        <p>{waveCount}</p>
       </div>
     </div>
   </div>

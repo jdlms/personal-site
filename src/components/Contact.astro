@@ -82,7 +82,9 @@ console.log(waveCount);
   const button = document.getElementById("dynamicButton");
   const buttonText = button?.querySelector("span");
   button?.addEventListener("click", () => {
-    const waveCount = button.getAttribute("wave-data");
+    const waveCount = button.getAttribute(
+      "data-wave-count"
+    );
     if (buttonText) {
       buttonText.textContent = waveCount;
     }

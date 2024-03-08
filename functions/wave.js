@@ -1,15 +1,21 @@
 export async function onRequest(context) {
-  let totalWaves = await context.env.KV_STORE.get(
-    "totalWaves"
-  );
+  try {
+    let totalWaves = await context.env.KV_STORE.get(
+      "totalWaves"
+    );
 
-  totalWaves = totalWaves ? parseInt(totalWaves) : 0;
+    totalWaves = totalWaves ? parseInt(totalWaves) : 0;
 
-  totalWaves += 1;
+    totalWaves += 1;
 
-  increment(totalWaves);
+    increment(context, totalWaves);
 
-  return totalWaves.toString();
+    return new Response(totalWaves.toString());
+  } catch (error) {
+    return new Response("Error processing waves request", {
+      status: 500,
+    });
+  }
 }
 
 async function increment(context, waves) {

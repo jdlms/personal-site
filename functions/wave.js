@@ -33,9 +33,11 @@ export async function onRequest(context) {
     totalWaves = totalWaves ? parseInt(totalWaves, 10) : 0;
     totalWaves += 1;
 
-    context.env.KV_STORE.put(
+    let updateWaves = totalWaves.toString();
+
+    await context.env.KV_STORE.put(
       "totalWaves",
-      totalWaves.toString()
+      updateWaves
     ).catch(console.error);
 
     return new Response(totalWaves.toString(), {

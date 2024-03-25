@@ -1,5 +1,5 @@
 export async function onRequest(context) {
-  const ps = context.env.NORTHWIND_DB.prepare(
+  const ps = context.env.bookmarks.prepare(
     "SELECT * from users"
   );
   const data = await ps.all();

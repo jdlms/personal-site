@@ -16,7 +16,7 @@ export default defineConfig({
     mode: "directory",
     functionPerRoute: false,
     routes: {
-      include: ["/wave"],
+      include: ["/wave", "/getBookmarks"],
     },
   }),
 });

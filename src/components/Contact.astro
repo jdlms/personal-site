@@ -5,6 +5,7 @@ import Links from "./Links.astro";
 const resp = await fetch(Astro.url + "wave");
 
 const waveCount = await resp.text();
+
 ---
 
 <div class="container">

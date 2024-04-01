@@ -5,6 +5,7 @@
 
 type KVNamespace =
   import("@cloudflare/workers-types").KVNamespace;
+
 type ENV = {
   jdlmsDotDev: KVNamespace;
 };

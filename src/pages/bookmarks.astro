@@ -1,17 +1,41 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-const resp = await fetch(Astro.url + "getBookmarks");
+// src/pages/api/data.ts
 
-const bookmarks: any = await resp.json();
+export async function get() {
+  const D1_API_ENDPOINT = `https://api.cloudflare.com/client/v4/accounts/${import.meta.env.cf_account}/d1/database/${import.meta.env.db}/query`;
+  const response = await fetch(`${D1_API_ENDPOINT}`, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${import.meta.env.cf_api_token}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      sql: "SELECT * FROM myTable;",
+    }),
+  });
+
+  if (!response.ok) {
+    // Handle any errors
+    return new Response("Error querying D1 Database", {
+      status: 500,
+    });
+  }
+
+  console.log(response);
+  const data = await response.json();
+  return data;
+}
+
+const bookmarks: any = await get();
 console.log(bookmarks);
 ---
 
 <Layout title="jdlms.dev">
   <h1>bookmarks</h1>
-  <!-- 
-  <ul>
+
+  <!-- <ul>
     {bookmarks.map((item: any) => <li>item={item}</li>)}
-    
   </ul> -->
 </Layout>

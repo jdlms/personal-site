@@ -8,8 +8,12 @@ const bookmarks: any = await resp.json();
 
 <Layout title="jdlms.dev">
   <h1>bookmarks</h1>
-  <p>{bookmarks}</p>
-  <!-- <ul>
-    {bookmarks.map((item: any) => <li>item={item}</li>)}
-  </ul> -->
+
+  <ul>
+    {
+      bookmarks.map((item: any) => (
+        <li>item={item.title}</li>
+      ))
+    }
+  </ul>
 </Layout>

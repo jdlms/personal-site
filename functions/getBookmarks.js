@@ -1,3 +1,9 @@
 export async function onRequestGet(context) {
-  return context.env.getBookmarks.fetch(context.request);
+  const url = new URL(context.request.url);
+  url.pathname = "/api/bookmarks";
+
+  return context.env.getBookmarks.fetch(
+    url.toString(),
+    context.request
+  );
 }

@@ -3,12 +3,12 @@ import Layout from "../layouts/Layout.astro";
 
 const resp = await fetch(Astro.url + "getBookmarks");
 
-const bookmarks: any = await resp.json();
+// const bookmarks: any = await resp.json();
 ---
 
 <Layout title="jdlms.dev">
   <h1>bookmarks</h1>
-  <p>resp</p>
+  <p>{resp}</p>
   <!-- <ul>
     {
       bookmarks.map((item: any) => (

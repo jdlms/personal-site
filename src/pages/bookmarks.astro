@@ -1,19 +1,30 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-const resp = await fetch(Astro.url + "getBookmarks");
-
-// const bookmarks: any = await resp.json();
+let bookmarks: any = [];
+try {
+  const response = await fetch(Astro.url + "getBookmarks");
+  if (response.ok) {
+    bookmarks = await response.json();
+  } else {
+    console.error(
+      "Failed to fetch bookmarks:",
+      response.statusText
+    );
+  }
+} catch (error) {
+  console.error("Error fetching bookmarks:", error);
+}
 ---
 
 <Layout title="jdlms.dev">
   <h1>bookmarks</h1>
-  <p>{resp}</p>
-  <!-- <ul>
+
+  <ul>
     {
       bookmarks.map((item: any) => (
         <li>item={item.title}</li>
       ))
     }
-  </ul> -->
+  </ul>
 </Layout>

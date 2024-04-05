@@ -93,8 +93,6 @@ const waveCount = await response.text();
 
     try {
       const response = await fetch("wave");
-      const storeWaves = await response.text();
-      localStorage.setItem("waves", storeWaves);
 
       if (!response.ok)
         throw new Error("Network response was not ok.");

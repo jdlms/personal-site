@@ -75,7 +75,7 @@ import Links from "./Links.astro";
 
   button?.addEventListener("click", async () => {
     try {
-      const response = await fetch(Astro.url + "wave");
+      const response = await fetch("wave");
       console.log("astro url", Astro.url);
 
       if (!response.ok)

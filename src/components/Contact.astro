@@ -81,25 +81,23 @@ const waveCount = await response.text();
   const buttonText = button?.querySelector("span");
 
   button?.addEventListener("click", async () => {
-    const waveCount = button.getAttribute("data-waves");
+    let waves =
+      localStorage.getItem("waves") ??
+      button.getAttribute("data-waves")!;
+
+    localStorage.setItem("waves", waves);
+
     if (buttonText) {
-      buttonText.textContent = `= ${waveCount}`;
+      buttonText.innerHTML = `<span>=</span> ${waves}`;
     }
 
     try {
       const response = await fetch("wave");
-      console.log("astro url", Astro.url);
+      const storeWaves = await response.text();
+      localStorage.setItem("waves", storeWaves);
 
       if (!response.ok)
         throw new Error("Network response was not ok.");
-
-      // const data = await response.text();
-      // const newWaveCount = data;
-      // button.setAttribute("waves", data);
-
-      // if (buttonText) {
-      //   buttonText.textContent = `= ${data}`;
-      // }
     } catch (error) {
       console.error("There was an error:", error);
     }

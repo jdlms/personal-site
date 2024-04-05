@@ -81,6 +81,11 @@ const waveCount = await response.text();
   const buttonText = button?.querySelector("span");
 
   button?.addEventListener("click", async () => {
+    const waveCount = button.getAttribute("data-waves");
+    if (buttonText) {
+      buttonText.textContent = `= ${waveCount}`;
+    }
+
     try {
       const response = await fetch("wave");
       console.log("astro url", Astro.url);

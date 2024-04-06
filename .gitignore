@@ -20,3 +20,8 @@ pnpm-debug.log*
 .DS_Store
 
 \n.astro
+
+.astro
+.vscode
+.wrangler
+

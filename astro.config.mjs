@@ -5,9 +5,18 @@ import cloudflare from "@astrojs/cloudflare";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind({
-    applyBaseStyles: true
-  }), react()],
+  integrations: [
+    tailwind({
+      applyBaseStyles: true,
+    }),
+    react(),
+  ],
   output: "server",
-  adapter: cloudflare()
+  adapter: cloudflare({
+    mode: "directory",
+    functionPerRoute: false,
+    routes: {
+      include: ["/wave", "/getWaves"],
+    },
+  }),
 });

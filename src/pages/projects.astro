@@ -11,9 +11,9 @@ import Layout from "../layouts/Layout.astro";
   >
     <Project />
   </div>
-  <!-- <div id="links-container">
+  <div id="links-container">
     <Links />
-  </div> -->
+  </div>
 </Layout>
 
 <style>
@@ -26,7 +26,7 @@ import Layout from "../layouts/Layout.astro";
     @apply mb-8;
   }
 
-  .links-container {
-    @apply inline-flex flex-row justify-center mt-12;
+  #links-container {
+    @apply flex flex-col justify-center mt-12;
   }
 </style>

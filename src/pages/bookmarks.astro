@@ -88,15 +88,15 @@ bookmarks.map((item) => {
         ))
       }
     </ul>
-  </div>
-  <div id="links-container">
-    <Links />
+    <div id="links-container">
+      <Links />
+    </div>
   </div>
 </Layout>
 
 <style>
   .wrapper {
-    @apply flex flex-col justify-center items-center mb-8  text-my-off-white;
+    @apply flex flex-col justify-center items-center   text-my-off-white;
   }
 
   p {
@@ -104,7 +104,7 @@ bookmarks.map((item) => {
   }
 
   ul {
-    @apply space-y-2 md:space-y-8 mt-6 md:mt-10;
+    @apply space-y-2 md:space-y-8 mt-6 mb-12 md:mt-10;
   }
 
   li {
@@ -124,6 +124,6 @@ bookmarks.map((item) => {
   }
 
   .links-container {
-    @apply inline mt-2;
+    @apply inline;
   }
 </style>

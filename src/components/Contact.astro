@@ -12,7 +12,7 @@ const waveCount = await response.text();
   <div id="wrapper">
     <Profile />
     <div id="contact-links-wrapper">
-      <Button data={waveCount} client:only />
+      <Button data={waveCount} client:only="react" />
       <div id="links-container">
         <Links />
       </div>

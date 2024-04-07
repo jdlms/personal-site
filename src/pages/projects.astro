@@ -1,4 +1,5 @@
 ---
+import Links from "../components/Links.astro";
 import Project from "../components/Project.astro";
 import Layout from "../layouts/Layout.astro";
 ---
@@ -10,11 +11,22 @@ import Layout from "../layouts/Layout.astro";
   >
     <Project />
   </div>
+  <div id="links-container">
+    <Links />
+  </div>
 </Layout>
 
 <style>
   .flex-wrap > *:only-child {
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .project-container {
+    @apply mb-8;
+  }
+
+  .links-container {
+    @apply inline mt-2;
   }
 </style>

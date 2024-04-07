@@ -1,6 +1,7 @@
 ---
 import Profile from "./Profile.astro";
 import Links from "./Links.astro";
+import Button from "./Button.astro";
 
 const response = await fetch(Astro.url + "getWaves");
 
@@ -11,7 +12,7 @@ const waveCount = await response.text();
   <div id="wrapper">
     <Profile />
     <div id="contact-links-wrapper">
-      <button
+      <!-- <button
         type="button"
         id="dynamicButton"
         data-waves={waveCount}
@@ -42,7 +43,8 @@ const waveCount = await response.text();
           </g>
         </svg>
         <span class="reset-style">Wave</span></button
-      >
+      > -->
+      <Button data={waveCount} client:visible />
       <div id="links-container">
         <Links />
       </div>
@@ -51,19 +53,6 @@ const waveCount = await response.text();
 </div>
 
 <style>
-  button {
-    @apply bg-my-background border border-my-yellow flex justify-center items-center text-my-gray font-semibold focus:outline-none focus:ring-2 focus:ring-gray-700 hover:border-my-gray rounded-lg text-xs md:text-sm px-4 py-1 mb-2 w-28 h-10 md:space-x-3;
-  }
-
-  svg {
-    @apply ml-[-4px];
-  }
-
-  .reset-style {
-    margin: 0 !important;
-    padding: 0;
-  }
-
   #contact-links-wrapper {
     @apply flex flex-col items-center;
   }
@@ -75,29 +64,3 @@ const waveCount = await response.text();
     @apply flex flex-col md:flex-row items-center justify-center mb-2 mt-12 md:mt-16 md:mb-6;
   }
 </style>
-
-<script>
-  const button = document.getElementById("dynamicButton");
-  const buttonText = button?.querySelector("span");
-
-  button?.addEventListener("click", async () => {
-    let waves =
-      localStorage.getItem("waves") ??
-      button.getAttribute("data-waves")!;
-
-    localStorage.setItem("waves", waves);
-
-    if (buttonText) {
-      buttonText.innerHTML = `<span>#</span> ${waves}`;
-    }
-
-    try {
-      const response = await fetch("wave");
-
-      if (!response.ok)
-        throw new Error("Network response was not ok.");
-    } catch (error) {
-      console.error("There was an error:", error);
-    }
-  });
-</script>

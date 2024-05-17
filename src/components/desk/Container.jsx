@@ -6,9 +6,9 @@ import { Spinner } from "./Spinner";
 
 export function Container() {
   return (
-    <div className="container flex justify-center items-center h-44 md:h-88">
+    <div className=" flex justify-center mt-4 mb-6 md:h-80 md:mt-0">
       <Canvas
-        style={{ height: "100%", width: "100%" }}
+        style={{ height: "80%", width: "80%" }}
         camera={{ position: [0, 7, -10], fov: 70 }}
       >
         <ambientLight intensity={2} />

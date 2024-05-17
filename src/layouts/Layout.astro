@@ -13,20 +13,10 @@ export interface Props {
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width initial-scale=1"
-    />
+    <meta name="viewport" content="width=device-width initial-scale=1" />
 
-    <link
-      rel="preconnect"
-      href="https://fonts.googleapis.com"
-    />
-    <link
-      rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
@@ -37,14 +27,18 @@ export interface Props {
   <body class="full-page-style">
     <main class="container">
       <Nav />
-      <div class="h-44 min-h-44 md:h-88 md:min-h-88">
+      <div
+        class="h-44 items-center justify-center min-h-44 md:h-64 md:min-h-64"
+      >
         <Container client:only="react" transition:persist />
       </div>
-      <div id="content">
-        <div id="break"></div>
-        <slot />
+      <div class="wrapper">
+        <div id="content">
+          <!-- <div id="break"></div> -->
+          <slot />
+        </div>
+        <Footer />
       </div>
-      <Footer />
     </main>
 
     <style>
@@ -53,11 +47,14 @@ export interface Props {
       @import "open-props/fonts";
 
       #break {
-        @apply h-[1px] bg-my-accent w-4/6 md:w-4/5 mx-auto rounded mb-6 mt-2 md:mb-10 md:mt-3;
+        @apply h-[1px] bg-my-accent w-4/6 md:w-3/5 mx-auto rounded mb-6 mt-2 md:mb-10 md:mt-3;
       }
 
       main {
         @apply flex flex-col h-screen;
+      }
+      .wrapper {
+        @apply lg:pl-6 lg:pr-6 lg:pt-6;
       }
       #content {
         @apply flex-grow;

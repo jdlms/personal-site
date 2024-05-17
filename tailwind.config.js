@@ -40,7 +40,7 @@ export default {
         88: "22rem",
       },
       colors: {
-        "my-background": "#202c3a",
+        "my-background": "#161e28",
         "my-lighter-blue": "#39507f",
         "my-white": "#a99a91",
         "my-gray": "#BFC9CA",
@@ -48,6 +48,7 @@ export default {
         "my-orange": "#ff6b6b",
         "my-yellow": "#ffd700",
         "my-accent": "#966747",
+        "my-experiment": "#202c3a",
       },
       fontFamily: {
         mono: ["IBM Plex Mono", "monospace"],

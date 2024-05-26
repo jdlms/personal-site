@@ -72,7 +72,7 @@ const { pathname } = Astro.url;
     </div>
   </div>
 
-  <ul id="menu" class="hidden md:flex items-center">
+  <ul id="menu" class="hidden md:flex md:items-center">
     {
       pathname === "/blog" ||
       pathname.includes("/posts") ? (
@@ -151,7 +151,7 @@ const { pathname } = Astro.url;
   }
 
   .more {
-    @apply text-xs text-my-gray font-extrabold font-mono border-b  border-my-accent p-2 md:text-sm flex gap-2;
+    @apply text-xs text-my-gray font-extrabold font-mono md:border-b  border-my-accent p-2 md:text-sm flex gap-2;
   }
 
   .arrow-icon {

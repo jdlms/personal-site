@@ -1,7 +1,12 @@
 ---
-// src/layouts/MarkdownLayout.astro
+import { ViewTransitions } from "astro:transitions";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import { Container } from "../components/desk/Container";
 
-const { children } = Astro.props;
+export interface Props {
+  title: string;
+}
 ---
 
 <!doctype html>
@@ -10,12 +15,51 @@ const { children } = Astro.props;
     <meta charset="UTF-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0"
+      content="width=device-width, initial-scale=1"
     />
+
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>jdlms.dev</title>
+    <ViewTransitions />
   </head>
-  <body>
-    <main>
-      {children}
+  <body class="flex flex-col min-h-screen bg-my-background">
+    <Nav />
+    <main class="flex-grow container mx-auto">
+      <div class="wrapper flex-grow">
+        <div id="content">
+          <slot />
+        </div>
+      </div>
     </main>
+    <Footer class="mt-auto" />
+
+    <style>
+      @import "/src/styles/global.css";
+      @import "open-props/style";
+      @import "open-props/fonts";
+
+      #break {
+        @apply h-[1px] bg-my-accent w-4/6 md:w-3/5 mx-auto rounded mb-6 mt-2 md:mb-10 md:mt-3;
+      }
+
+      .wrapper {
+        @apply lg:pl-6 lg:pr-6 lg:pt-6;
+      }
+      #content {
+        @apply flex-grow;
+      }
+    </style>
   </body>
 </html>

@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import MarkdownLayout from "../../layouts/MarkdownLayout.astro";
 
 const allPosts = await Astro.glob(
   "../../content/blog/*.md"
@@ -19,8 +20,8 @@ if (!post) {
 const { Content, frontmatter } = post;
 ---
 
-<Layout title="jdlms.dev">
-  <article>
+<MarkdownLayout title="jdlms.dev">
+  <article class="text-my-white">
     <h1>{frontmatter.title}</h1>
     <p>
       By {frontmatter.author} on {frontmatter.pubDatetime}
@@ -28,4 +29,4 @@ const { Content, frontmatter } = post;
     <p>{frontmatter.description}</p>
     <Content />
   </article>
-</Layout>
+</MarkdownLayout>

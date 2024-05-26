@@ -11,7 +11,10 @@ const { pathname } = Astro.url;
       <a id="title" href="/">jdlms</a>
     </div>
 
-    <div id="menuToggle" class="md:hidden cursor-pointer justify-end">
+    <div
+      id="menuToggle"
+      class="md:hidden cursor-pointer justify-end"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"
@@ -23,11 +26,27 @@ const { pathname } = Astro.url;
         stroke-linejoin="round"
         class="menu-icon"
       >
-        <line x1="7" y1="12" x2="21" y2="12" stroke="#ad7753" class="line"
-        ></line>
-        <line x1="3" y1="6" x2="21" y2="6" stroke="#ff6b6b" class="line"></line>
-        <line x1="12" y1="18" x2="21" y2="18" stroke="#ffd700" class="line"
-        ></line>
+        <line
+          x1="7"
+          y1="12"
+          x2="21"
+          y2="12"
+          stroke="#ad7753"
+          class="line"></line>
+        <line
+          x1="3"
+          y1="6"
+          x2="21"
+          y2="6"
+          stroke="#ff6b6b"
+          class="line"></line>
+        <line
+          x1="12"
+          y1="18"
+          x2="21"
+          y2="18"
+          stroke="#ffd700"
+          class="line"></line>
       </svg>
     </div>
   </div>
@@ -65,11 +84,14 @@ const { pathname } = Astro.url;
 
 <style>
   nav {
-    @apply md:flex justify-between md:pb-5 md:pt-6;
+    @apply container;
   }
-
   .div-container {
     @apply flex justify-between p-4;
+  }
+
+  nav {
+    @apply md:flex justify-between md:pb-5 md:pt-6;
   }
 
   ul {
@@ -124,7 +146,8 @@ const { pathname } = Astro.url;
 
 <script>
   function setupMenuToggle() {
-    const menuToggle = document.getElementById("menuToggle");
+    const menuToggle =
+      document.getElementById("menuToggle");
     const menu = document.getElementById("menu");
 
     if (menuToggle) {
@@ -139,5 +162,8 @@ const { pathname } = Astro.url;
 
   setupMenuToggle();
 
-  document.addEventListener("astro:after-swap", setupMenuToggle);
+  document.addEventListener(
+    "astro:after-swap",
+    setupMenuToggle
+  );
 </script>

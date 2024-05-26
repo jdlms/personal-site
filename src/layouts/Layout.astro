@@ -15,7 +15,7 @@ export interface Props {
     <meta charset="UTF-8" />
     <meta
       name="viewport"
-      content="width=device-width initial-scale=1"
+      content="width=device-width, initial-scale=1"
     />
 
     <link
@@ -34,21 +34,21 @@ export interface Props {
     <title>jdlms.dev</title>
     <ViewTransitions />
   </head>
-  <body class="full-page-style">
-    <main class="container">
-      <Nav />
+  <body class="flex flex-col min-h-screen bg-my-background">
+    <Nav />
+    <main class="flex-grow container mx-auto">
       <div
-        class="h-44 items-center justify-center flex-grow min-h-44 md:h-64 md:min-h-64"
+        class="h-44 items-center justify-center min-h-44 md:h-64 md:min-h-64"
       >
         <Container client:only="react" transition:persist />
       </div>
-      <div class="wrapper">
+      <div class="wrapper flex-grow">
         <div id="content">
           <slot />
         </div>
-        <Footer />
       </div>
     </main>
+    <Footer class="mt-auto" />
 
     <style>
       @import "/src/styles/global.css";
@@ -59,9 +59,6 @@ export interface Props {
         @apply h-[1px] bg-my-accent w-4/6 md:w-3/5 mx-auto rounded mb-6 mt-2 md:mb-10 md:mt-3;
       }
 
-      main {
-        @apply flex flex-col h-screen;
-      }
       .wrapper {
         @apply lg:pl-6 lg:pr-6 lg:pt-6;
       }

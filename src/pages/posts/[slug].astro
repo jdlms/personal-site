@@ -1,0 +1,31 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const allPosts = await Astro.glob(
+  "../../content/blog/*.md"
+);
+
+const { slug } = Astro.params;
+
+// Find the markdown file that matches the slug
+const post = allPosts.find(
+  (post) => post.frontmatter.slug === slug
+);
+
+if (!post) {
+  throw new Error(`Post not found for slug: ${slug}`);
+}
+
+const { Content, frontmatter } = post;
+---
+
+<Layout title="jdlms.dev">
+  <article>
+    <h1>{frontmatter.title}</h1>
+    <p>
+      By {frontmatter.author} on {frontmatter.pubDatetime}
+    </p>
+    <p>{frontmatter.description}</p>
+    <Content />
+  </article>
+</Layout>

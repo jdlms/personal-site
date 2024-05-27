@@ -18,15 +18,32 @@ if (!post) {
 }
 
 const { Content, frontmatter } = post;
+
+const formatDate = (dateStr: string): string => {
+  const date = new Date(dateStr);
+  const options: Intl.DateTimeFormatOptions = {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
+  return date.toLocaleDateString("en-US", options);
+};
 ---
 
 <MarkdownLayout title="jdlms.dev">
-  <article class="text-my-white">
-    <h1>{frontmatter.title}</h1>
-    <p>
-      By {frontmatter.author} on {frontmatter.pubDatetime}
-    </p>
-    <p>{frontmatter.description}</p>
-    <Content />
+  <article class="container flex flex-col gap-6 ">
+    <div class="gap-4 flex flex-col">
+      <h1
+        class="text-my-white text-5xl text-center font-extrabold"
+      >
+        {frontmatter.title}
+      </h1>
+      <p class="text-xs text-my-gray">
+        {formatDate(frontmatter.pubDatetime)}
+      </p>
+    </div>
+    <div class="prose prose-lg text-my-gray text-wrap">
+      <Content />
+    </div>
   </article>
 </MarkdownLayout>

@@ -1,6 +1,6 @@
 ---
-import Layout from "../../layouts/Layout.astro";
 import MarkdownLayout from "../../layouts/MarkdownLayout.astro";
+import Prose from "../../components/Prose.astro";
 
 const allPosts = await Astro.glob(
   "../../content/blog/*.md"
@@ -31,7 +31,7 @@ const formatDate = (dateStr: string): string => {
 ---
 
 <MarkdownLayout title="jdlms.dev">
-  <article class="container flex flex-col gap-6 ">
+  <article class="container flex flex-col gap-6">
     <div class="gap-4 flex flex-col">
       <h1
         class="text-my-white text-5xl text-center font-extrabold"
@@ -42,8 +42,8 @@ const formatDate = (dateStr: string): string => {
         {formatDate(frontmatter.pubDatetime)}
       </p>
     </div>
-    <div class="prose prose-lg text-my-gray text-wrap">
+    <Prose>
       <Content />
-    </div>
+    </Prose>
   </article>
 </MarkdownLayout>

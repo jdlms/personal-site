@@ -55,7 +55,7 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };
 
 // green color: #325f11

@@ -17,7 +17,7 @@ export function Button({ data: waveCount }) {
       const response = await fetch("wave");
       if (!response.ok)
         throw new Error(
-          "Network response was not ok: ${response.statusText}"
+          `Network response was not ok: ${response.statusText}`
         );
     } catch (error) {
       console.error("There was an error:", error);

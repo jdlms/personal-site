@@ -3,15 +3,38 @@ const { pathname } = Astro.url;
 ---
 
 <nav>
-  <div class="div-container">
-    <div class="hidden sm:block">
-      <a id="title" href="/">joshua lamorey-salzmann</a>
-    </div>
-    <div class="block sm:hidden mt-3">
-      <a id="title" href="/">jdlms</a>
-    </div>
+  <div
+    class="div-container flex items-center justify-between"
+  >
+    {
+      pathname === "/blog" || pathname.includes("/post") ? (
+        <>
+          <div class="block  mt-3">
+            <a id="title" href="/blog">
+              jdlms
+            </a>
+          </div>
+        </>
+      ) : (
+        <>
+          <div class="hidden sm:block">
+            <a id="title" href="/">
+              joshua lamorey-salzmann
+            </a>
+          </div>
+          <div class="block sm:hidden mt-3">
+            <a id="title" href="/">
+              jdlms
+            </a>
+          </div>
+        </>
+      )
+    }
 
-    <div id="menuToggle" class="md:hidden cursor-pointer justify-end">
+    <div
+      id="menuToggle"
+      class="md:hidden cursor-pointer justify-end"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"
@@ -23,27 +46,60 @@ const { pathname } = Astro.url;
         stroke-linejoin="round"
         class="menu-icon"
       >
-        <line x1="7" y1="12" x2="21" y2="12" stroke="#ad7753" class="line"
-        ></line>
-        <line x1="3" y1="6" x2="21" y2="6" stroke="#ff6b6b" class="line"></line>
-        <line x1="12" y1="18" x2="21" y2="18" stroke="#ffd700" class="line"
-        ></line>
+        <line
+          x1="7"
+          y1="12"
+          x2="21"
+          y2="12"
+          stroke="#ad7753"
+          class="line"></line>
+        <line
+          x1="3"
+          y1="6"
+          x2="21"
+          y2="6"
+          stroke="#ff6b6b"
+          class="line"></line>
+        <line
+          x1="12"
+          y1="18"
+          x2="21"
+          y2="18"
+          stroke="#ffd700"
+          class="line"></line>
       </svg>
     </div>
   </div>
 
-  <ul id="menu" class="hidden md:flex">
+  <ul id="menu" class="hidden md:flex md:items-center">
     {
-      pathname === "/blog" ? (
+      pathname === "/blog" || pathname.includes("/post") ? (
         <>
-          <li class="link one">
-            <a href="/">home</a>
-          </li>
-          <li class="link two">
-            <a href="/bookmarks">bookmarks</a>
-          </li>
-          <li class="link one">
-            <a href="/projects">projects</a>
+          <li>
+            <a class="more" href="/">
+              {pathname.includes("post") ? "about" : "more"}
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="arrow-icon"
+              >
+                <>
+                  <path
+                    d="M12.0519 14.8285L13.4661 16.2427L17.7088 12L13.4661 7.7574L12.0519 9.17161L13.8804 11H6.34321V13H13.8803L12.0519 14.8285Z"
+                    fill="currentColor"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M19.7782 19.7782C24.0739 15.4824 24.0739 8.51759 19.7782 4.22183C15.4824 -0.0739417 8.51759 -0.0739417 4.22183 4.22183C-0.0739417 8.51759 -0.0739417 15.4824 4.22183 19.7782C8.51759 24.0739 15.4824 24.0739 19.7782 19.7782ZM18.364 18.364C21.8787 14.8492 21.8787 9.15076 18.364 5.63604C14.8492 2.12132 9.15076 2.12132 5.63604 5.63604C2.12132 9.15076 2.12132 14.8492 5.63604 18.364C9.15076 21.8787 14.8492 21.8787 18.364 18.364Z"
+                    fill="currentColor"
+                  />
+                </>
+              </svg>
+            </a>
           </li>
         </>
       ) : (
@@ -64,12 +120,12 @@ const { pathname } = Astro.url;
 </nav>
 
 <style>
-  nav {
-    @apply md:flex justify-between md:pb-5 md:pt-6;
-  }
-
   .div-container {
     @apply flex justify-between p-4;
+  }
+
+  nav {
+    @apply md:flex container justify-between md:pb-5 md:pt-6;
   }
 
   ul {
@@ -90,6 +146,15 @@ const { pathname } = Astro.url;
 
   #title {
     @apply px-3 md:text-lg text-my-gray font-extrabold font-mono border-2 rounded border-my-accent p-4;
+  }
+
+  .more {
+    @apply text-xs text-my-gray  md:border-b  border-my-orange p-2 md:text-sm flex gap-2;
+    font-weight: var(--font-weight-7);
+  }
+
+  .arrow-icon {
+    @apply text-my-accent;
   }
 
   .two {
@@ -124,7 +189,8 @@ const { pathname } = Astro.url;
 
 <script>
   function setupMenuToggle() {
-    const menuToggle = document.getElementById("menuToggle");
+    const menuToggle =
+      document.getElementById("menuToggle");
     const menu = document.getElementById("menu");
 
     if (menuToggle) {
@@ -139,5 +205,8 @@ const { pathname } = Astro.url;
 
   setupMenuToggle();
 
-  document.addEventListener("astro:after-swap", setupMenuToggle);
+  document.addEventListener(
+    "astro:after-swap",
+    setupMenuToggle
+  );
 </script>

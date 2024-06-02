@@ -1,0 +1,104 @@
+---
+import CV from "../components/icons/CV.astro";
+import Github from "../components/icons/Github.astro";
+---
+
+<footer class="footer">
+  <div class="footer-wrapper">
+    <p>
+      built with <span
+        ><a href="https://astro.build/" target="_blank"
+          >Astro</a
+        ></span
+      >
+    </p>
+  </div>
+
+  <div class="container">
+    <div>
+      <a
+        href="https://drive.google.com/file/d/1Q7sd0yb8ZkpynmPOAsbvwaCgrMg2B6Mg/view?usp=sharing"
+      >
+        <CV />
+      </a>
+    </div>
+    <div>
+      <a href="https://github.com/jdlms">
+        <Github />
+      </a>
+    </div>
+    <!-- <div>
+      <a href="https://mobile.twitter.com/jdlms_">
+        <img
+          src="brand-twitter-basic.svg"
+          alt="Twitter icon"
+        />
+      </a>
+    </div>
+    <div>
+      <a
+        href="https://www.linkedin.com/in/joshua-l-215686198/"
+      >
+        <img src="linkedin-icon.svg" alt="Linkedin icon" />
+      </a>
+    </div>
+  </div> -->
+  </div>
+</footer>
+
+<style>
+  footer {
+    @apply container;
+  }
+
+  .footer-wrapper {
+    @apply flex justify-center  border-t pt-1 pb-1 mt-8 md:pt-2 md:pb-2;
+  }
+
+  p {
+    font-weight: 400;
+    font-size: 9px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    color: #ff6b6b;
+  }
+
+  span {
+    color: #ffd700;
+  }
+
+  a {
+    height: 20px;
+    width: auto;
+    font-weight: 600 !important;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  /* div {
+    display: inline;
+  } */
+
+  img {
+    height: 1.3rem;
+    width: auto;
+  }
+
+  @media (max-width: 767px) {
+    img {
+      height: 20px;
+      width: auto;
+    }
+
+    .container {
+      display: inline-flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 1.5rem;
+      height: 0.2rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      width: 300px;
+    }
+  }
+</style>

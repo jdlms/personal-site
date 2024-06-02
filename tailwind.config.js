@@ -36,9 +36,6 @@ export default {
       },
     },
     extend: {
-      spacing: {
-        88: "22rem",
-      },
       colors: {
         "my-background": "#161e28",
         "my-lighter-blue": "#39507f",
@@ -50,12 +47,26 @@ export default {
         "my-accent": "#966747",
         "my-experiment": "#202c3a",
       },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            strong: {
+              color: theme("colors.my-orange"), // Set to your desired color
+              fontWeight: "600", // Optional: set the desired font weight
+            },
+          },
+        },
+      }),
+      spacing: {
+        88: "22rem",
+      },
+
       fontFamily: {
         mono: ["IBM Plex Mono", "monospace"],
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };
 
 // green color: #325f11

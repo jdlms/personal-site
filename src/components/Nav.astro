@@ -7,8 +7,7 @@ const { pathname } = Astro.url;
     class="div-container flex items-center justify-between"
   >
     {
-      pathname === "/blog" ||
-      pathname.includes("/posts") ? (
+      pathname === "/blog" || pathname.includes("/post") ? (
         <>
           <div class="block  mt-3">
             <a id="title" href="/blog">
@@ -74,12 +73,11 @@ const { pathname } = Astro.url;
 
   <ul id="menu" class="hidden md:flex md:items-center">
     {
-      pathname === "/blog" ||
-      pathname.includes("/posts") ? (
+      pathname === "/blog" || pathname.includes("/post") ? (
         <>
           <li>
             <a class="more" href="/">
-              more
+              {pathname.includes("post") ? "about" : "more"}
               <svg
                 width="20"
                 height="20"

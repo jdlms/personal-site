@@ -9,7 +9,6 @@ const allPosts = await Astro.glob(
 
 const { slug } = Astro.params;
 
-// Find the markdown file that matches the slug
 const post = allPosts.find(
   (post) => post.frontmatter.slug === slug
 );

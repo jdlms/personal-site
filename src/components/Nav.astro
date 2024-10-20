@@ -2,15 +2,17 @@
 const { pathname } = Astro.url;
 ---
 
-<nav>
-  <div
-    class="div-container flex items-center justify-between"
-  >
+<nav class="md:flex container justify-between md:pb-5 md:pt-6">
+  <div class="div-container flex items-center justify-between p-4">
     {
       pathname === "/blog" || pathname.includes("/post") ? (
         <>
-          <div class="block  mt-3">
-            <a id="title" href="/blog">
+          <div class="block mt-3">
+            <a
+              id="title"
+              href="/blog"
+              class="px-3 md:text-lg text-my-gray font-extrabold font-mono border-2 rounded border-my-accent p-4"
+            >
               jdlms
             </a>
           </div>
@@ -18,12 +20,20 @@ const { pathname } = Astro.url;
       ) : (
         <>
           <div class="hidden sm:block">
-            <a id="title" href="/">
+            <a
+              id="title"
+              href="/"
+              class="px-3 md:text-lg text-my-gray font-extrabold font-mono border-2 rounded border-my-accent p-4"
+            >
               joshua lamorey-salzmann
             </a>
           </div>
           <div class="block sm:hidden mt-3">
-            <a id="title" href="/">
+            <a
+              id="title"
+              href="/"
+              class="px-3 md:text-lg text-my-gray font-extrabold font-mono border-2 rounded border-my-accent p-4"
+            >
               jdlms
             </a>
           </div>
@@ -31,10 +41,7 @@ const { pathname } = Astro.url;
       )
     }
 
-    <div
-      id="menuToggle"
-      class="md:hidden cursor-pointer justify-end"
-    >
+    <div id="menuToggle" class="md:hidden cursor-pointer justify-end">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"
@@ -46,37 +53,28 @@ const { pathname } = Astro.url;
         stroke-linejoin="round"
         class="menu-icon"
       >
-        <line
-          x1="7"
-          y1="12"
-          x2="21"
-          y2="12"
-          stroke="#ad7753"
-          class="line"></line>
-        <line
-          x1="3"
-          y1="6"
-          x2="21"
-          y2="6"
-          stroke="#ff6b6b"
-          class="line"></line>
-        <line
-          x1="12"
-          y1="18"
-          x2="21"
-          y2="18"
-          stroke="#ffd700"
-          class="line"></line>
+        <line x1="7" y1="12" x2="21" y2="12" stroke="#ad7753" class="line"
+        ></line>
+        <line x1="3" y1="6" x2="21" y2="6" stroke="#ff6b6b" class="line"></line>
+        <line x1="12" y1="18" x2="21" y2="18" stroke="#ffd700" class="line"
+        ></line>
       </svg>
     </div>
   </div>
 
-  <ul id="menu" class="hidden md:flex md:items-center">
+  <ul
+    id="menu"
+    class="hidden md:flex md:items-center flex flex-col items-end md:flex-row"
+  >
     {
       pathname === "/blog" || pathname.includes("/post") ? (
         <>
           <li>
-            <a class="more" href="/">
+            <a
+              class="more text-xs text-my-gray md:border-b border-my-orange p-2 md:text-sm flex gap-2"
+              style="font-weight: var(--font-weight-7);"
+              href="/"
+            >
               {pathname.includes("post") ? "about" : "more"}
               <svg
                 width="20"
@@ -84,7 +82,7 @@ const { pathname } = Astro.url;
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                class="arrow-icon"
+                class="arrow-icon text-my-accent"
               >
                 <>
                   <path
@@ -104,13 +102,22 @@ const { pathname } = Astro.url;
         </>
       ) : (
         <>
-          <li class="link one">
+          <li
+            class="link one block px-4 py-2 text-sm md:px-2 md:text-xl"
+            style="color: #ff6b6b; font-weight: var(--font-weight-7); text-decoration: underline; text-decoration-color: #ffd700; text-decoration-thickness: 1px;"
+          >
             <a href="/bookmarks">bookmarks</a>
           </li>
-          <li class="link two">
+          <li
+            class="link two block px-4 py-2 text-sm md:px-2 md:text-xl text-my-gray"
+            style="font-weight: var(--font-weight-7); text-decoration: underline; text-decoration-color: #ffd700; text-decoration-thickness: 1px;"
+          >
             <a href="/projects">projects</a>
           </li>
-          <li class="link one">
+          <li
+            class="link one block px-4 py-2 text-sm md:px-2 md:text-xl"
+            style="color: #ff6b6b; font-weight: var(--font-weight-7); text-decoration: underline; text-decoration-color: #ffd700; text-decoration-thickness: 1px;"
+          >
             <a href="/blog">blog</a>
           </li>
         </>
@@ -119,78 +126,9 @@ const { pathname } = Astro.url;
   </ul>
 </nav>
 
-<style>
-  .div-container {
-    @apply flex justify-between p-4;
-  }
-
-  nav {
-    @apply md:flex container justify-between md:pb-5 md:pt-6;
-  }
-
-  ul {
-    @apply flex flex-col items-end md:flex-row;
-  }
-
-  a {
-    @apply text-sm md:text-xl;
-  }
-
-  a {
-    font-family: var(--font-sans);
-  }
-
-  .link {
-    @apply block px-4 py-2 text-sm   md:px-2 md:text-xl;
-  }
-
-  #title {
-    @apply px-3 md:text-lg text-my-gray font-extrabold font-mono border-2 rounded border-my-accent p-4;
-  }
-
-  .more {
-    @apply text-xs text-my-gray  md:border-b  border-my-orange p-2 md:text-sm flex gap-2;
-    font-weight: var(--font-weight-7);
-  }
-
-  .arrow-icon {
-    @apply text-my-accent;
-  }
-
-  .two {
-    @apply text-my-gray;
-  }
-
-  .one {
-    color: #ff6b6b;
-    font-weight: var(--font-weight-7);
-    text-decoration: underline;
-    text-decoration-color: #ffd700;
-    text-decoration-thickness: 1px;
-  }
-
-  .two {
-    font-weight: var(--font-weight-7);
-    text-decoration: underline;
-    text-decoration-color: #ffd700;
-    text-decoration-thickness: 1px;
-  }
-
-  @media (max-width: 767px) {
-    .one {
-      text-decoration-thickness: 1px;
-    }
-
-    .two {
-      text-decoration-thickness: 1px;
-    }
-  }
-</style>
-
 <script>
   function setupMenuToggle() {
-    const menuToggle =
-      document.getElementById("menuToggle");
+    const menuToggle = document.getElementById("menuToggle");
     const menu = document.getElementById("menu");
 
     if (menuToggle) {
@@ -205,8 +143,5 @@ const { pathname } = Astro.url;
 
   setupMenuToggle();
 
-  document.addEventListener(
-    "astro:after-swap",
-    setupMenuToggle
-  );
+  document.addEventListener("astro:after-swap", setupMenuToggle);
 </script>

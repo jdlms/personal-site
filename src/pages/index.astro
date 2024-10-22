@@ -3,10 +3,31 @@ import Layout from "../layouts/Layout.astro";
 import Intro from "../components/Intro.astro";
 import Contact from "../components/Contact.astro";
 import Extra from "../components/Extra.astro";
+
+const { jdlmsDotDev } = Astro.locals.runtime.env;
+console.log(jdlmsDotDev);
+
+let value;
+
+try {
+  // Correctly passing the options object
+  value = await jdlmsDotDev.get("totalWaves", { type: "text" });
+
+  if (value !== null) {
+    // Use value as a string
+    console.log("KV Value:", value);
+  } else {
+    // Handle the null case
+    console.log("KV Value is null.");
+  }
+} catch (err) {
+  console.error("KV Fetch Error:", err);
+}
 ---
 
 <Layout title="jdlms.dev">
   <Intro />
+  <p>VALUE: {value}</p>
   <Extra />
   <Contact />
 </Layout>

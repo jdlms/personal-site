@@ -1,6 +1,11 @@
-export async function onRequest(context) {
+import type { APIContext } from "astro";
+
+export async function onRequest({ locals }: APIContext) {
+  // the type KVNamespace comes from the @cloudflare/workers-types package
+  const { MY_KV } = locals.runtime.env;
+
   try {
-    let totalWaves = await context.env.KV_STORE.get(
+    let totalWaves = await MY_KV.get(
       "totalWaves"
     );
 

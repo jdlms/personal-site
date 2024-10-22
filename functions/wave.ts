@@ -1,14 +1,23 @@
-export async function onRequest(context) {
+import type { APIContext } from "astro";
+
+
+export async function onRequest({ locals }: APIContext) {
+  const { MY_KV } = locals.runtime.env;
+
+
   try {
-    let totalWaves = await context.env.KV_STORE.get(
+    let totalWaves = await MY_KV.get(
       "totalWaves"
     );
+
+    console.log("logging totalWaves:", totalWaves);
+
     totalWaves = totalWaves ? parseInt(totalWaves, 10) : 0;
     totalWaves += 1;
 
     let updateWaves = totalWaves.toString();
 
-    await context.env.KV_STORE.put(
+    await MY_KV.put(
       "totalWaves",
       updateWaves
     ).catch(console.error);

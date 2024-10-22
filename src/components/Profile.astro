@@ -1,14 +1,5 @@
----
-const { env } = Astro.locals.runtime;
-const myKV = env.jdlmsDotDev;
-
-const value = await myKV.get("totalWaves");
----
-
 <div class="image inline-block mb-10 md:mb-1 h-40 w-40 md:h-48 md:w-48 md:mr-4">
-  <p>Value! {value}</p>
 </div>
-<div></div>
 
 <style>
   .image {

@@ -3,8 +3,7 @@ import Profile from "./Profile.astro";
 import Links from "./Links.astro";
 import { Button } from "./Button";
 
-const response = await fetch(Astro.url + "getWaves");
-
+const response = await fetch("/api/getWaves");
 const waveCount = await response.text();
 ---
 

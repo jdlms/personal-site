@@ -27,3 +27,10 @@ export function Container() {
     </div>
   );
 }
+
+
+// <Canvas
+// style={{ height: "80%", width: "80%" }}
+// camera={{ position: [0, 7, -10], fov: 75 }}
+// className="bg-[#8d4f5e] h-62 w-64 rounded-full"
+// >

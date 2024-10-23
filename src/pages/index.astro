@@ -4,14 +4,13 @@ import Intro from "../components/Intro.astro";
 import Contact from "../components/Contact.astro";
 import Extra from "../components/Extra.astro";
 
-const KV_STORE = Astro.locals.runtime.env.KV_STORE;
-const value = await KV_STORE.get("totalWaves");
-console.log("VALUE", value);
+// const KV_STORE = Astro.locals.runtime.env.KV_STORE;
+// const value = await KV_STORE.get("totalWaves");
+// console.log("VALUE", value);
 ---
 
 <Layout title="jdlms.dev">
   <Intro />
-  <p>VALUE: {value}</p>
   <Extra />
   <Contact />
 </Layout>

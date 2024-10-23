@@ -1,21 +1,23 @@
 import { useEffect, useState } from "react";
 
+
 export function Button({ data: initialWaveCount }) {
-  const [spanClicked, setSpanClicked] = useState(false);
+  const [clicked, setClicked] = useState(false); 
   const [waves, setWaves] = useState(() => {
-    return localStorage.getItem("waves") || initialWaveCount;
+    const storedWaves = localStorage.getItem("waves");
+    return storedWaves ? parseInt(storedWaves, 10) : initialWaveCount;
   });
 
   useEffect(() => {
-    localStorage.setItem("waves", waves);
+    if (waves) {
+      localStorage.setItem("waves", waves);
+    }
   }, [waves]);
 
   const handleClick = async () => {
-    if (spanClicked) return;
+    if (clicked) return;
 
-    setSpanClicked(true);
-    const newWaveCount = parseInt(waves, 10) + 1;
-    setWaves(newWaveCount);
+    setClicked(true); // Mark as clicked
 
     try {
       const response = await fetch("/api/updateWaves", {
@@ -27,10 +29,13 @@ export function Button({ data: initialWaveCount }) {
       }
 
       const { waveCount } = await response.json();
-      setWaves(waveCount); 
+      
+      setWaves(waveCount);
     } catch (error) {
       console.error("There was an error:", error);
-      setWaves(parseInt(initialWaveCount, 10)); 
+      const storedWaves = localStorage.getItem("waves");
+      setWaves(storedWaves ? parseInt(storedWaves, 10) : initialWaveCount);
+      setClicked(false); // Re-enable click in case of error
     }
   };
 
@@ -58,7 +63,7 @@ export function Button({ data: initialWaveCount }) {
             <path d="m59.371 36.75c-0.15234 0-0.25-0.050781-0.35156-0.15234-3.0234-3.0234-7.0547-4.6836-11.336-4.6836-0.30078 0-0.50391-0.20312-0.50391-0.50391 0-0.30078 0.25-0.50391 0.50391-0.50391 4.5352 0 8.8164 1.7617 12.043 4.9883 0.20313 0.20312 0.20313 0.50391 0 0.70703-0.10547 0.097657-0.25391 0.14844-0.35547 0.14844z"></path>
             <path d="m47.684 33.625c3.7773 0.10156 7.3555 1.6641 10.027 4.332 0.20312 0.20312 0.20312 0.50391 0 0.70703-0.10156 0.10156-0.25 0.15234-0.35156 0.15234s-0.25-0.050781-0.35156-0.15234c-2.4688-2.4688-5.793-3.9297-9.3203-4.0312-0.30078 0-0.50391-0.25-0.50391-0.50391-0.054688-0.30078 0.19531-0.55469 0.5-0.50391z"></path>
         </g>        </svg>
-        {!spanClicked ? (
+         {!clicked ? (
           <span className="m-0 p-0">Wave</span>
         ) : (
           <span className="m-0 p-0">#{waves}</span>

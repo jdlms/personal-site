@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import { g } from "../../dist/_astro/index.IjapIUQK";
 
-export function Button({ data: waves }) {
+export function Button({ data: totalWaves }) {
   const [spanClicked, setSpanClicked] = useState(false);
   const [waves, setWaves] = useState(() => {
     return localStorage.getItem("waves") || waves;
   });
 
   useEffect(() => {
-    localStorage.setItem("waves", waves);
+    localStorage.setItem("waves", totalWaves);
   }, [waves]);
 
   const handleClick = async () => {
@@ -32,7 +32,7 @@ export function Button({ data: waves }) {
     } catch (error) {
       console.error("There was an error:", error);
       // Revert if the backend call fails
-      setWaves(parseInt(waves, 10) - 1);
+      setWaves(parseInt(totalWaves, 10) - 1);
     }
   };
 

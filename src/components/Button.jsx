@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { g } from "../../dist/_astro/index.IjapIUQK";
 
 export function Button({ data: totalWaves }) {
   const [spanClicked, setSpanClicked] = useState(false);

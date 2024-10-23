@@ -1,22 +1,20 @@
 import { defineConfig } from "astro/config";
-import tailwind from "@astrojs/tailwind";
-import react from "@astrojs/react";
 import cloudflare from "@astrojs/cloudflare";
+import react from "@astrojs/react";
+import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
+  output: "server",
   integrations: [
     tailwind({
       applyBaseStyles: true,
     }),
     react(),
   ],
-  output: "server",
   adapter: cloudflare({
-    mode: "directory",
-    functionPerRoute: false,
-    routes: {
-      include: ["/wave", "/getWaves"],
+    platformProxy: {
+      enabled: true,
     },
   }),
 });

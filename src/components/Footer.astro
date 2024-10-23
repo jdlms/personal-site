@@ -1,39 +1,15 @@
-<footer class="footer">
-  <div class="footer-wrapper">
-    <p>
-      built with <span
-        ><a href="https://astro.build/" target="_blank"
-          >Astro</a
+<footer class="container">
+  <div
+    class="footer-wrapper flex justify-center border-t pt-1 pb-1 mt-8 md:pt-2 md:pb-2"
+  >
+    <p class="font-normal text-[9px] pb-0 mb-0" style="color: #ff6b6b;">
+      built with <span style="color: #ffd700;"
+        ><a
+          href="https://astro.build/"
+          target="_blank"
+          class="font-semibold no-underline">Astro</a
         ></span
       >
     </p>
   </div>
 </footer>
-
-<style>
-  footer {
-    @apply container;
-  }
-
-  .footer-wrapper {
-    @apply flex justify-center  border-t pt-1 pb-1 mt-8 md:pt-2 md:pb-2;
-  }
-
-  p {
-    font-weight: 400;
-    font-size: 9px;
-    padding-bottom: 0px;
-    margin-bottom: 0px;
-    color: #ff6b6b;
-  }
-
-  span {
-    color: #ffd700;
-  }
-
-  a {
-    font-weight: 600 !important;
-    color: inherit;
-    text-decoration: none;
-  }
-</style>

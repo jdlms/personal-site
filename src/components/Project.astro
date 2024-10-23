@@ -6,61 +6,34 @@ const posts = await getCollection("projects");
 {
   posts.map((post) => (
     <>
-      <article class="project">
+      <article class="bg-my-off-white rounded-lg inline-block w-full m-3 pl-2 pr-1 pb-1 md:pl-5 md:pt-2 md:pr-5 md:pb-2 md:w-auto">
         <a href={post.data.link} target="_blank">
           <ul>
             <li>
-              <ul class="chip-wrapper">
-                <div class="chips">
+              <ul class="flex mt-2 mb-3 flex-row">
+                <div class="space-x-1 md:space-x-2">
                   {post.data.tags.map((tag) => (
-                    <li class="chip">{tag}</li>
+                    <li
+                      class="chip border border-my-yellow rounded-lg p-1 inline-block text-my-accent text-xs md:text-sm"
+                      style="font-family: var(--font-sans);"
+                    >
+                      {tag}
+                    </li>
                   ))}
                 </div>
-                <i class="gg-arrow-top-right-o" />
+                <i class="gg-arrow-top-right-o text-my-orange ml-auto" />
               </ul>
-              <h3>{post.data.title}</h3>
+              <h3
+                class="text-my-orange md:text-xl font-bold md:pt-1 md:pb-1 md:pr-1"
+                style="font-family: var(--font-sans);"
+              >
+                {post.data.title}
+              </h3>
             </li>
           </ul>
         </a>
-        <p>{post.data.blurb}</p>
+        <p class="text-xs mt-2 mb-2">{post.data.blurb}</p>
       </article>
     </>
   ))
 }
-
-<style>
-  h3 {
-    @apply text-my-orange md:text-xl font-bold md:pt-1 md:pb-1 md:pr-1;
-  }
-
-  h3 {
-    font-family: var(--font-sans);
-  }
-
-  i {
-    @apply text-my-orange ml-auto;
-  }
-
-  p {
-    @apply text-xs md:text-base mt-2 mb-2;
-  }
-
-  .project {
-    @apply bg-my-off-white rounded-lg inline-block w-full m-3 pl-2 pr-1 pb-1 md:pl-5 md:pt-2 md:pr-5 md:pb-2 md:w-auto;
-  }
-
-  .chip-wrapper {
-    @apply flex mt-2 mb-3 flex-row;
-  }
-  .chips {
-    @apply space-x-1 md:space-x-2;
-  }
-
-  .chip {
-    @apply border border-my-yellow rounded-lg p-1 inline-block text-my-accent text-xs md:text-sm;
-  }
-
-  .chip {
-    font-family: var(--font-sans);
-  }
-</style>

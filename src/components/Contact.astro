@@ -3,32 +3,21 @@ import Profile from "./Profile.astro";
 import Links from "./Links.astro";
 import { Button } from "./Button";
 
-const response = await fetch(Astro.url + "getWaves");
-
+const response = await fetch("/api/getWaves");
 const waveCount = await response.text();
 ---
 
 <div class="container">
-  <div id="wrapper">
+  <div
+    id="wrapper"
+    class="flex flex-col md:flex-row items-center justify-center mb-2 mt-12 md:mt-16 md:mb-6"
+  >
     <Profile />
-    <div id="contact-links-wrapper">
+    <div id="contact-links-wrapper" class="flex flex-col items-center">
       <Button data={waveCount} client:only="react" />
-      <div id="links-container">
+      <div id="links-container" class="inline">
         <Links />
       </div>
     </div>
   </div>
 </div>
-
-<style>
-  #contact-links-wrapper {
-    @apply flex flex-col items-center;
-  }
-
-  #links-container {
-    @apply inline;
-  }
-  #wrapper {
-    @apply flex flex-col md:flex-row items-center justify-center mb-2 mt-12 md:mt-16 md:mb-6;
-  }
-</style>

@@ -13,25 +13,20 @@ export interface Props {
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link
-      rel="preconnect"
-      href="https://fonts.googleapis.com"
-    />
-    <link
-      rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <title>jdlms.dev</title>
+    <style>
+      @import "/src/styles/global.css";
+      @import "open-props/style";
+      @import "open-props/fonts";
+    </style>
     <ViewTransitions />
   </head>
   <body class="flex flex-col min-h-screen bg-my-background">
@@ -42,29 +37,12 @@ export interface Props {
       >
         <Container client:only="react" transition:persist />
       </div>
-      <div class="wrapper flex-grow">
-        <div id="content">
+      <div class="wrapper flex-grow lg:pl-6 lg:pr-6 lg:pt-6">
+        <div id="content" class="flex-grow">
           <slot />
         </div>
       </div>
     </main>
     <Footer class="mt-auto" />
-
-    <style>
-      @import "/src/styles/global.css";
-      @import "open-props/style";
-      @import "open-props/fonts";
-
-      #break {
-        @apply h-[1px] bg-my-accent w-4/6 md:w-3/5 mx-auto rounded mb-6 mt-2 md:mb-10 md:mt-3;
-      }
-
-      .wrapper {
-        @apply lg:pl-6 lg:pr-6 lg:pt-6;
-      }
-      #content {
-        @apply flex-grow;
-      }
-    </style>
   </body>
 </html>

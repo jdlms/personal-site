@@ -37,7 +37,7 @@ export default {
     },
     extend: {
       colors: {
-        "my-background": "#161e28",
+        "my-background": "#1e1f1f",
         "my-lighter-blue": "#39507f",
         "my-white": "#a99a91",
         "my-gray": "#BFC9CA",

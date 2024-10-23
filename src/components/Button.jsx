@@ -1,37 +1,36 @@
 import { useEffect, useState } from "react";
 
-export function Button({ data: totalWaves }) {
+export function Button({ data: initialWaveCount }) {
   const [spanClicked, setSpanClicked] = useState(false);
   const [waves, setWaves] = useState(() => {
-    return localStorage.getItem("waves") || waves;
+    return localStorage.getItem("waves") || initialWaveCount;
   });
 
   useEffect(() => {
-    localStorage.setItem("waves", totalWaves);
+    localStorage.setItem("waves", waves);
   }, [waves]);
 
   const handleClick = async () => {
-    // Prevent multiple clicks
     if (spanClicked) return;
 
     setSpanClicked(true);
-
-    // Optimistically update the count
     const newWaveCount = parseInt(waves, 10) + 1;
     setWaves(newWaveCount);
 
     try {
-      const response = await fetch("/api/getWaves");
+      const response = await fetch("/api/updateWaves", {
+        method: 'PUT',
+      });
+
       if (!response.ok) {
         throw new Error(`Network response was not ok: ${response.statusText}`);
       }
 
       const { waveCount } = await response.json();
-      setWaves(waveCount); // Sync back with the accurate count from the server
+      setWaves(waveCount); 
     } catch (error) {
       console.error("There was an error:", error);
-      // Revert if the backend call fails
-      setWaves(parseInt(totalWaves, 10) - 1);
+      setWaves(parseInt(initialWaveCount, 10)); 
     }
   };
 

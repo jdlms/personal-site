@@ -5,17 +5,12 @@ import Contact from "../components/Contact.astro";
 import Extra from "../components/Extra.astro";
 import { GET } from "./api/getWaves.ts";
 
-// const KV_STORE = Astro.locals.runtime.env.KV_STORE;
-// const value = await KV_STORE.get("totalWaves");
-// console.log("VALUE", value);
-
 type WaveResponse = {
   waveCount: number;
   error?: string;
 };
 
 let response = await GET(Astro);
-// const response = await fetch("api/getWaves");
 
 const data: WaveResponse = await response.json();
 const waveCount = data.waveCount;

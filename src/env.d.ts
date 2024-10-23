@@ -4,7 +4,7 @@
 type KVNamespace = import("@cloudflare/workers-types").KVNamespace;
 type ENV = {
   // replace `MY_KV` with your KV namespace
-  jdlmsDotDev: KVNamespace;
+  KV_STORE: KVNamespace;
 };
 
 // use a default runtime configuration (advanced mode).

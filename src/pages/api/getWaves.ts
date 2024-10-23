@@ -23,10 +23,10 @@ export const GET: APIRoute = async ({ locals }) => {
     await KV_STORE.put("totalWaves", waveCount.toString());
 
     // Return the updated count
-    return new Response(waveCount.toString(), {
+    return new Response(JSON.stringify({ waveCount }), {
       status: 200,
       headers: {
-        'Content-Type': 'text/plain',
+        'Content-Type': 'application/json',
       },
     });
   } catch (error: any) {

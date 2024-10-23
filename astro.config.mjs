@@ -13,9 +13,4 @@ export default defineConfig({
     react(),
   ],
   adapter: cloudflare(),
-  vite: {
-    build: {
-      minify: false,
-    },
-  },
 });

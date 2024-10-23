@@ -3,8 +3,7 @@ import Profile from "./Profile.astro";
 import Links from "./Links.astro";
 import { Button } from "./Button";
 
-const response = await fetch("/api/getWaves");
-const waveCount = await response.text();
+const { totalWaves } = Astro.props;
 ---
 
 <div class="container">
@@ -14,7 +13,7 @@ const waveCount = await response.text();
   >
     <Profile />
     <div id="contact-links-wrapper" class="flex flex-col items-center">
-      <Button data={waveCount} client:only="react" />
+      <Button data={totalWaves} client:only="react" />
       <div id="links-container" class="inline">
         <Links />
       </div>

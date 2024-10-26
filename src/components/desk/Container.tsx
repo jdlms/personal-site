@@ -7,12 +7,19 @@ import { Spinner } from "./Spinner";
 export function Container() {
   return (
     <div className=" flex justify-center mt-2 mb-4 md:h-80 md:mt-0">
- <Canvas
-style={{ height: "80%", width: "80%" }}
-camera={{ position: [0, 7, -10], fov: 75 }}
-className="bg-[#8d4f5e] h-62 w-64 rounded-full bg-opacity-20 shadow-lg"
->        <ambientLight intensity={2} />
-        <pointLight position={[0, 18, -10]} intensity={500} color="#fff" distance={0}/>
+      <Canvas
+        style={{ height: "80%", width: "80%" }}
+        camera={{ position: [0, 7, -10], fov: 75 }}
+        className="bg-[#8d4f5e] h-62 w-64 rounded-full bg-opacity-20 shadow-lg"
+      >
+        {" "}
+        <ambientLight intensity={2} />
+        <pointLight
+          position={[0, 18, -10]}
+          intensity={500}
+          color="#fff"
+          distance={0}
+        />
         <Suspense fallback={<Spinner />}>
           <Loader />
         </Suspense>
@@ -27,10 +34,3 @@ className="bg-[#8d4f5e] h-62 w-64 rounded-full bg-opacity-20 shadow-lg"
     </div>
   );
 }
-
-
-// <Canvas
-// style={{ height: "80%", width: "80%" }}
-// camera={{ position: [0, 7, -10], fov: 75 }}
-// className="bg-[#8d4f5e] h-62 w-64 rounded-full"
-// >

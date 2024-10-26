@@ -4,9 +4,13 @@ import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 import { Container } from "../components/desk/Container";
 
-export interface Props {
+import "styles/global.css";
+import "open-props/style";
+import "open-props/fonts";
+
+export type Props = {
   title: string;
-}
+};
 ---
 
 <!doctype html>
@@ -22,11 +26,7 @@ export interface Props {
       rel="stylesheet"
     />
     <title>jdlms.dev</title>
-    <style>
-      @import "/src/styles/global.css";
-      @import "open-props/style";
-      @import "open-props/fonts";
-    </style>
+
     <ViewTransitions />
   </head>
   <body class="flex flex-col min-h-screen bg-my-background">

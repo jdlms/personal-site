@@ -2,8 +2,6 @@
 import Profile from "./Profile.astro";
 import Links from "./Links.astro";
 import { Button } from "./Button";
-
-const { totalWaves } = Astro.props;
 ---
 
 <div class="container">
@@ -13,7 +11,7 @@ const { totalWaves } = Astro.props;
   >
     <Profile />
     <div id="contact-links-wrapper" class="flex flex-col items-center">
-      <Button data={totalWaves} client:only="react" />
+      <Button client:only="react" />
       <div id="links-container" class="inline">
         <Links />
       </div>

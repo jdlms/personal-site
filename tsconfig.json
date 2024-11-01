@@ -6,6 +6,12 @@
     "jsxImportSource": "react",
     "strictNullChecks": true,
     "noImplicitAny": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    },
     "allowJs": true,
     "types": ["@cloudflare/workers-types", "@astrojs/cloudflare"]  }
   

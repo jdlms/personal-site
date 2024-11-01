@@ -1,4 +1,8 @@
 ---
+import "src/styles/global.css";
+import "open-props/style";
+import "open-props/fonts";
+
 import { ViewTransitions } from "astro:transitions";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
@@ -12,20 +16,10 @@ export interface Props {
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link
-      rel="preconnect"
-      href="https://fonts.googleapis.com"
-    />
-    <link
-      rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
@@ -45,10 +39,6 @@ export interface Props {
     <Footer class="mt-auto" />
 
     <style>
-      @import "/src/styles/global.css";
-      @import "open-props/style";
-      @import "open-props/fonts";
-
       #break {
         @apply h-[1px] bg-my-accent w-4/6 md:w-3/5 mx-auto rounded mb-6 mt-2 md:mb-10 md:mt-3;
       }

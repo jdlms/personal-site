@@ -1,6 +1,21 @@
 ---
 import { getCollection } from "astro:content";
-const posts = await getCollection("projects");
+
+type Post = {
+  id: string;
+  slug: string;
+  body: string;
+  collection: string;
+  data: {
+    id: number;
+    title: string;
+    tags: string[];
+    link: string;
+    blurb: string;
+  };
+};
+
+const posts: Post[] = await getCollection("projects");
 ---
 
 {

@@ -1,17 +1,13 @@
 ---
 import MarkdownLayout from "../../layouts/MarkdownLayout.astro";
 import Prose from "../../components/Prose.astro";
-import Calendar from "../../components/icons/Calendar.astro";
+import { Icon } from "astro-icon/components";
 
-const allPosts = await Astro.glob(
-  "../../content/blog/*.md"
-);
+const allPosts = await Astro.glob("../../content/blog/*.md");
 
 const { slug } = Astro.params;
 
-const post = allPosts.find(
-  (post) => post.frontmatter.slug === slug
-);
+const post = allPosts.find((post) => post.frontmatter.slug === slug);
 
 if (!post) {
   throw new Error(`Post not found for slug: ${slug}`);
@@ -31,17 +27,13 @@ const formatDate = (dateStr: string): string => {
 ---
 
 <MarkdownLayout title="jdlms.dev">
-  <article
-    class="flex flex-col inline-block gap-6 mt-14 md:mt-2 mb-10"
-  >
+  <article class="flex flex-col inline-block gap-6 mt-14 md:mt-2 mb-10">
     <div class="gap-4 flex flex-col mb-2">
       <h1 class="text-my-white text-5xl font-extrabold">
         {frontmatter.title}
       </h1>
-      <p
-        class="text-xs text-my-gray flex items-center gap-2"
-      >
-        <Calendar />
+      <p class="text-xs text-my-gray flex items-center gap-2">
+        <Icon name="calendar" />
         {formatDate(frontmatter.pubDatetime)}
       </p>
     </div>

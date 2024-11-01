@@ -38,7 +38,7 @@ export function Button() {
     <button
       type="button"
       id="dynamicButton"
-      className="bg-my-background border border-my-yellow flex justify-center items-center text-my-gray font-semibold focus:outline-none focus:ring-2 focus:ring-gray-700 hover:border-my-gray rounded-lg text-xs md:text-sm px-4 py-1 mb-2 w-28 h-10 md:space-x-2"
+      className="bg-my-background border cursor-pointer border-my-accent flex justify-center items-center text-my-gray font-semibold focus:outline-none focus:ring-2 focus:ring-gray-700 hover:border-my-sundown-orange rounded-lg text-xs md:text-sm px-4 py-1 mb-2 w-28 h-10 md:space-x-2"
       onClick={handleClick}
     >
       <svg

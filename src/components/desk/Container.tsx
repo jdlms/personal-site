@@ -10,9 +10,8 @@ export function Container() {
       <Canvas
         style={{ height: "80%", width: "80%" }}
         camera={{ position: [0, 7, -10], fov: 75 }}
-        className="bg-[#8d4f5e] w-44 h-44 md:h-64 md:w-64 cursor-pointer rounded-full bg-opacity-55 shadow-inner"
+        className="bg-neutral-800 w-44 h-44 md:h-64 md:w-64 cursor-pointer rounded-full  shadow-inner"
       >
-        {" "}
         <ambientLight intensity={2} />
         <pointLight
           position={[0, 18, -10]}

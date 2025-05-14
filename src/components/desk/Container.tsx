@@ -19,7 +19,7 @@ export function Container() {
           color="#fff"
           distance={0}
         />
-        <Suspense>
+        <Suspense fallback={<Spinner />}>
           <Loader />
         </Suspense>
         <OrbitControls

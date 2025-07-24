@@ -3,7 +3,7 @@ import "src/styles/global.css";
 import "open-props/style";
 import "open-props/fonts";
 
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 import { Container } from "../components/desk/Container";
@@ -25,8 +25,7 @@ export type Props = {
       rel="stylesheet"
     />
     <title>jdlms.dev</title>
-    <!-- todo fix view transitions which is deprecated -->
-    <ViewTransitions />
+    <ClientRouter />
   </head>
   <body class="flex flex-col min-h-screen bg-my-background">
     <Nav />

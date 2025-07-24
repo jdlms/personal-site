@@ -2,146 +2,78 @@
 const { pathname } = Astro.url;
 ---
 
-<nav class="md:flex container justify-between md:pb-5 md:pt-6">
-  <div class="div-container flex items-center justify-between p-4">
-    {
-      pathname === "/blog" || pathname.includes("/post") ? (
-        <>
-          <div class="block mt-3">
-            <a
-              id="title"
-              href="/blog"
-              class="px-3 md:text-lg text-my-gray font-extrabold font-mono border-2 rounded border-my-accent p-4"
-            >
-              jdlms
-            </a>
-          </div>
-        </>
-      ) : (
-        <>
-          <div class="hidden sm:block">
-            <a
-              id="title"
-              href="/"
-              class="px-3 md:text-lg text-my-gray font-extrabold font-mono border-2 rounded border-my-accent p-4"
-            >
-              joshua lamorey-salzmann
-            </a>
-          </div>
-          <div class="block sm:hidden mt-3">
-            <a
-              id="title"
-              href="/"
-              class="px-3 md:text-lg text-my-gray font-extrabold font-mono border-2 rounded border-my-accent p-4"
-            >
-              jdlms
-            </a>
-          </div>
-        </>
-      )
-    }
-
-    <div id="menuToggle" class="md:hidden cursor-pointer justify-end">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke-width="1.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        class="menu-icon"
-      >
-        <line x1="7" y1="12" x2="21" y2="12" stroke="#ad7753" class="line"
-        ></line>
-        <line x1="3" y1="6" x2="21" y2="6" stroke="#ff6b6b" class="line"></line>
-        <line x1="12" y1="18" x2="21" y2="18" stroke="#ffd700" class="line"
-        ></line>
-      </svg>
-    </div>
+<nav class="flex container justify-between pb-5 pt-6">
+  <div class="flex items-center p-4">
+    <a
+      href={pathname === "/blog" || pathname.includes("/post") ? "/blog" : "/"}
+      class="px-3 text-lg text-my-gray font-extrabold font-mono border-2 rounded border-my-accent p-4"
+    >
+      jdlms
+    </a>
   </div>
 
-  <ul
-    id="menu"
-    class="hidden md:flex md:items-center flex flex-col items-end md:flex-row"
-  >
-    {
-      pathname === "/blog" || pathname.includes("/post") ? (
-        <>
-          <li>
-            <a
-              class="more text-xs text-my-gray md:border-b border-my-orange p-2 md:text-sm flex gap-2"
-              style="font-weight: var(--font-weight-7);"
-              href="/"
-            >
-              {pathname.includes("post") ? "about" : "more"}
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                class="arrow-icon text-my-accent"
-              >
-                <>
-                  <path
-                    d="M12.0519 14.8285L13.4661 16.2427L17.7088 12L13.4661 7.7574L12.0519 9.17161L13.8804 11H6.34321V13H13.8803L12.0519 14.8285Z"
-                    fill="currentColor"
-                  />
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M19.7782 19.7782C24.0739 15.4824 24.0739 8.51759 19.7782 4.22183C15.4824 -0.0739417 8.51759 -0.0739417 4.22183 4.22183C-0.0739417 8.51759 -0.0739417 15.4824 4.22183 19.7782C8.51759 24.0739 15.4824 24.0739 19.7782 19.7782ZM18.364 18.364C21.8787 14.8492 21.8787 9.15076 18.364 5.63604C14.8492 2.12132 9.15076 2.12132 5.63604 5.63604C2.12132 9.15076 2.12132 14.8492 5.63604 18.364C9.15076 21.8787 14.8492 21.8787 18.364 18.364Z"
-                    fill="currentColor"
-                  />
-                </>
-              </svg>
-            </a>
-          </li>
-        </>
-      ) : (
-        <>
-          <li
-            class="link one block px-4 py-2 text-sm md:px-2 md:text-xl"
+  {
+    pathname === "/blog" || pathname.includes("/post") ? (
+      <div class="flex items-center">
+        <a
+          class="text-xs text-my-gray border-b border-my-orange p-2 flex gap-2"
+          style="font-weight: var(--font-weight-7);"
+          href="/"
+        >
+          {pathname.includes("post") ? "about" : "more"}
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="arrow-icon text-my-accent"
+          >
+            <path
+              d="M12.0519 14.8285L13.4661 16.2427L17.7088 12L13.4661 7.7574L12.0519 9.17161L13.8804 11H6.34321V13H13.8803L12.0519 14.8285Z"
+              fill="currentColor"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M19.7782 19.7782C24.0739 15.4824 24.0739 8.51759 19.7782 4.22183C15.4824 -0.0739417 8.51759 -0.0739417 4.22183 4.22183C-0.0739417 8.51759 -0.0739417 15.4824 4.22183 19.7782C8.51759 24.0739 15.4824 24.0739 19.7782 19.7782ZM18.364 18.364C21.8787 14.8492 21.8787 9.15076 18.364 5.63604C14.8492 2.12132 9.15076 2.12132 5.63604 5.63604C2.12132 9.15076 2.12132 14.8492 5.63604 18.364C9.15076 21.8787 14.8492 21.8787 18.364 18.364Z"
+              fill="currentColor"
+            />
+          </svg>
+        </a>
+      </div>
+    ) : (
+      <ul class="flex items-center gap-2">
+        <li>
+          <a 
+            href="/bookmarks"
+            class="px-4 py-2 text-sm md:px-2 md:text-xl"
             style="color: #ff6b6b; font-weight: var(--font-weight-7); text-decoration: underline; text-decoration-color: #ffd700; text-decoration-thickness: 1px;"
           >
-            <a href="/bookmarks">bookmarks</a>
-          </li>
-          <li
-            class="link two block px-4 py-2 text-sm md:px-2 md:text-xl text-my-gray"
+            bookmarks
+          </a>
+        </li>
+        <li>
+          <a 
+            href="/projects"
+            class="px-4 py-2 text-sm md:px-2 md:text-xl text-my-gray"
             style="font-weight: var(--font-weight-7); text-decoration: underline; text-decoration-color: #ffd700; text-decoration-thickness: 1px;"
           >
-            <a href="/projects">projects</a>
-          </li>
-          <li
-            class="link one block px-4 py-2 text-sm md:px-2 md:text-xl"
+            projects
+          </a>
+        </li>
+        <li>
+          <a 
+            href="/blog"
+            class="px-4 py-2 text-sm md:px-2 md:text-xl"
             style="color: #ff6b6b; font-weight: var(--font-weight-7); text-decoration: underline; text-decoration-color: #ffd700; text-decoration-thickness: 1px;"
           >
-            <a href="/blog">blog</a>
-          </li>
-        </>
-      )
-    }
-  </ul>
+            blog
+          </a>
+        </li>
+      </ul>
+    )
+  }
 </nav>
 
-<script>
-  function setupMenuToggle() {
-    const menuToggle = document.getElementById("menuToggle");
-    const menu = document.getElementById("menu");
 
-    if (menuToggle) {
-      menuToggle.addEventListener("click", () => {
-        menu?.classList.toggle("hidden");
-        console.log("event firing");
-      });
-    } else {
-      console.error("Menu toggle element not found!");
-    }
-  }
-
-  setupMenuToggle();
-
-  document.addEventListener("astro:after-swap", setupMenuToggle);
-</script>

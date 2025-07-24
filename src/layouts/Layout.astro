@@ -6,7 +6,7 @@ import "open-props/fonts";
 import { ClientRouter } from "astro:transitions";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
-import { Container } from "../components/desk/Container";
+import DeskWrapper from "../components/desk/DeskWrapper.astro";
 
 export type Props = {
   title: string;
@@ -30,15 +30,9 @@ export type Props = {
   <body class="flex flex-col min-h-screen bg-my-background">
     <Nav />
     <main class="flex-grow container mx-auto">
-      <div
-        class="h-44 items-center justify-center min-h-44 md:h-64 md:min-h-64"
-      >
-        <div id="desk-canvas-placeholder" class="mx-auto w-44 h-44 md:w-64 md:h-64 rounded-full shadow-inner bg-neutral-800 flex items-center justify-center">
-          <div class="w-6 h-6 border-2 border-my-gray border-t-transparent rounded-full animate-spin"></div>
-        </div>
-        <Container client:only="react" transition:persist />
-      </div>
-      <div class="wrapper flex-grow lg:pl-6 lg:pr-6 lg:pt-6">
+<div class="h-44 items-center justify-center min-h-44 md:h-64 md:min-h-64">
+  <DeskWrapper />
+</div>      <div class="wrapper flex-grow lg:pl-6 lg:pr-6 lg:pt-6">
         <div id="content" class="flex-grow">
           <slot />
         </div>

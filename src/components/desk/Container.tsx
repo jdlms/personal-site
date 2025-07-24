@@ -1,23 +1,10 @@
-import { Suspense, useEffect } from "react";
+import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { Loader } from "./Loader";
 
 export function Container() {
-  useEffect(() => {
-    let tries = 0;
-    const maxTries = 20;
-    const interval = setInterval(() => {
-      const el = document.getElementById("desk-canvas-placeholder");
-      if (el) {
-        el.remove();
-        clearInterval(interval);
-      } else if (++tries > maxTries) {
-        clearInterval(interval);
-      }
-    }, 50);
-    return () => clearInterval(interval);
-  }, []);
+  
   return (
     <div className="flex justify-center mt-8 mb-12 md:mt-0">
       <Canvas

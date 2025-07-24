@@ -1,0 +1,17 @@
+{
+	"name": "portfolio",
+	"compatibility_date": "2024-10-11",
+	"compatibility_flags": ["nodejs_compat"],
+	"main": "./dist/_worker.js/index.js",
+	"assets": {
+		"directory": "./dist",
+		"binding": "ASSETS"
+	},
+	"kv_namespaces": [
+		{
+			"binding": "KV_STORE",
+			"id": "24b03d4777f640ef8134d105098cb585",
+			"preview_id": "c6c57255a6364b49a86c2ed9d9fa3965"
+		}
+	]
+}

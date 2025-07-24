@@ -5,8 +5,18 @@ import { Loader } from "./Loader";
 
 export function Container() {
   useEffect(() => {
-    const el = document.getElementById("desk-canvas-placeholder");
-    if (el) el.remove();
+    let tries = 0;
+    const maxTries = 20;
+    const interval = setInterval(() => {
+      const el = document.getElementById("desk-canvas-placeholder");
+      if (el) {
+        el.remove();
+        clearInterval(interval);
+      } else if (++tries > maxTries) {
+        clearInterval(interval);
+      }
+    }, 50);
+    return () => clearInterval(interval);
   }, []);
   return (
     <div className="flex justify-center mt-8 mb-12 md:mt-0">

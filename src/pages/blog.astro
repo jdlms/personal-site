@@ -5,17 +5,18 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="jdlms.dev">
-  <div class="wrapper">
+  <div class="flex flex-col justify-center items-center text-my-off-white">
     <div class="text-my-off-white mb-12 mt-4 flex flex-col gap-6">
       {
         posts.map((post) => (
-          <a href={`/post/${post.slug}`}>
+          <a href={`/post/${post.slug}`} class="flex flex-row font-mono space-x-12 md:space-x-24 items-center justify-around bg-my-background p-4 rounded-md border border-my-off-white">
             <svg
               width="16"
               height="16"
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
+              class="space-x-24"
             >
               <>
                 <path
@@ -44,28 +45,10 @@ import Layout from "../layouts/Layout.astro";
             </svg>
             <p>{post.data.title}</p>
 
-            <span>{post.data.pubDatetime.toLocaleDateString()}</span>
+            <span class="inline-block text-my-orange text-xs font-semibold m-0">{post.data.pubDatetime.toLocaleDateString()}</span>
           </a>
         ))
       }
     </div>
   </div>
 </Layout>
-
-<style>
-  .wrapper {
-    @apply flex flex-col justify-center items-center  text-my-off-white;
-  }
-
-  a {
-    @apply flex flex-row font-mono space-x-12 md:space-x-24  items-center justify-around  bg-my-background p-4 rounded-md border border-my-off-white;
-  }
-
-  svg {
-    @apply space-x-24;
-  }
-
-  span {
-    @apply inline-block text-my-orange text-xs font-semibold m-0;
-  }
-</style>

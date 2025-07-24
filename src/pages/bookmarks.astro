@@ -39,19 +39,21 @@ bookmarks.map((item) => {
 ---
 
 <Layout title="jdlms.dev">
-  <div class="wrapper">
-    <p>An auto-updating list of interesting blog posts from around the web.</p>
-    <ul>
+  <div class="flex flex-col justify-center items-center text-my-off-white">
+    <p class="w-32 italic text-xs md:w-96">An auto-updating list of interesting blog posts from around the web.</p>
+    <ul class="space-y-2 md:space-y-8 mt-6 mb-12 md:mt-10">
+      <!-- todo insert table with pages, summary of post from rss feed? -->
       {
         bookmarks.map((item: any) => (
           <>
-            <li>
+            <li class="flex flex-row space-x-6 items-start justify-center">
               <svg
                 width="16"
                 height="16"
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                class="mt-1"
               >
                 <>
                   <path
@@ -68,49 +70,15 @@ bookmarks.map((item) => {
                   />
                 </>
               </svg>
-              <a href={item.url}>{item.title}</a>
-              <span>{item.published}</span>
+              <a href={item.url} class="underline decoration-my-accent hover:text-my-gray hover:no-underline w-52 md:w-96">{item.title}</a>
+              <span class="inline-block text-my-orange text-xs m-0">{item.published}</span>
             </li>
           </>
         ))
       }
     </ul>
-    <div id="links-container">
+    <div class="inline">
       <Links />
     </div>
   </div>
 </Layout>
-
-<style>
-  .wrapper {
-    @apply flex flex-col justify-center items-center   text-my-off-white;
-  }
-
-  p {
-    @apply w-32 italic text-xs md:w-96;
-  }
-
-  ul {
-    @apply space-y-2 md:space-y-8 mt-6 mb-12 md:mt-10;
-  }
-
-  li {
-    @apply flex flex-row space-x-6 items-start justify-center;
-  }
-
-  a {
-    @apply underline decoration-my-accent hover:text-my-gray hover:no-underline w-52 md:w-96;
-  }
-
-  span {
-    @apply inline-block text-my-orange text-xs m-0;
-  }
-
-  svg {
-    @apply mt-1;
-  }
-
-  .links-container {
-    @apply inline;
-  }
-</style>

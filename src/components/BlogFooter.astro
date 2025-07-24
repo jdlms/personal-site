@@ -1,53 +1,15 @@
----
-import CV from "../components/icons/CV.astro";
-import Github from "../components/icons/Github.astro";
----
 
-<footer class="container">
-  <div
-    class="footer-wrapper flex justify-center border-t pt-1 pb-1 mt-8 md:pt-2 md:pb-2"
-  >
-    <p class="font-normal text-[9px] pb-0 mb-0" style="color: #ff6b6b;">
-      built with <span style="color: #ffd700;"
-        ><a
+
+<footer class="inline-flex flex-row justify-center gap-6 h-0.5 mt-8 mb-4 w-75 md:block">
+  <div class="flex justify-center border-t pt-1 pb-1 mt-8 md:pt-2 md:pb-2">
+    <p class="font-normal text-[9px] pb-0 mb-0 text-my-orange">
+      built with <span class="text-yellow-400">
+        <a
           href="https://astro.build/"
           target="_blank"
-          class="font-semibold no-underline">Astro</a
-        ></span
-      >
+          class="font-semibold no-underline h-5 w-auto font-semibold text-inherit"
+        >Astro</a>
+      </span>
     </p>
   </div>
 </footer>
-
-<style>
-  a {
-    height: 20px;
-    width: auto;
-    font-weight: 600 !important;
-    color: inherit;
-    text-decoration: none;
-  }
-
-  img {
-    height: 1.3rem;
-    width: auto;
-  }
-
-  @media (max-width: 767px) {
-    img {
-      height: 20px;
-      width: auto;
-    }
-
-    .container {
-      display: inline-flex;
-      flex-direction: row;
-      justify-content: center;
-      gap: 1.5rem;
-      height: 0.2rem;
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-      width: 300px;
-    }
-  }
-</style>

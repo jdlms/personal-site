@@ -25,6 +25,7 @@ export type Props = {
       rel="stylesheet"
     />
     <title>jdlms.dev</title>
+    <!-- todo fix view transitions which is deprecated -->
     <ViewTransitions />
   </head>
   <body class="flex flex-col min-h-screen bg-my-background">
@@ -33,6 +34,7 @@ export type Props = {
       <div
         class="h-44 items-center justify-center min-h-44 md:h-64 md:min-h-64"
       >
+      <!-- todo fix container background pop-in on load -->
         <Container client:only="react" transition:persist />
       </div>
       <div class="wrapper flex-grow lg:pl-6 lg:pr-6 lg:pt-6">

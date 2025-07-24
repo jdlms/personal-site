@@ -30,25 +30,12 @@ export interface Props {
   <body class="flex flex-col min-h-screen bg-my-background">
     <Nav />
     <main class="flex-grow container mx-auto">
-      <div class="wrapper flex-grow">
-        <div id="content">
+      <div class="flex-grow lg:pl-6 lg:pr-6 lg:pt-6">
+        <div class="flex-grow flex flex-col items-center justify-center">
           <slot />
         </div>
       </div>
     </main>
     <Footer class="mt-auto" />
-
-    <style>
-      #break {
-        @apply h-[1px] bg-my-accent w-4/6 md:w-3/5 mx-auto rounded mb-6 mt-2 md:mb-10 md:mt-3;
-      }
-
-      .wrapper {
-        @apply lg:pl-6 lg:pr-6 lg:pt-6;
-      }
-      #content {
-        @apply flex-grow flex flex-col items-center justify-center;
-      }
-    </style>
   </body>
 </html>

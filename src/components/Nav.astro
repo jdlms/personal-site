@@ -5,7 +5,7 @@ const { pathname } = Astro.url;
 <nav class="flex container justify-between pb-5 pt-6">
   <div class="flex items-center p-4">
     <a
-      href={pathname === "/blog" || pathname.includes("/post") ? "/blog" : "/"}
+      href="/"
       class="px-3 text-lg text-my-gray font-extrabold font-mono border-2 rounded border-my-accent p-4"
     >
       jdlms
@@ -13,14 +13,14 @@ const { pathname } = Astro.url;
   </div>
 
   {
-    pathname === "/blog" || pathname.includes("/post") ? (
+    pathname === "/posts" || pathname.includes("/post") ? (
       <div class="flex items-center">
         <a
           class="text-xs text-my-gray border-b border-my-orange p-2 flex gap-2"
           style="font-weight: var(--font-weight-7);"
-          href="/"
+          href={pathname.includes("/post/") ? "/posts" : "/"}
         >
-          {pathname.includes("post") ? "about" : "more"}
+          more
           <svg
             width="20"
             height="20"
@@ -46,29 +46,29 @@ const { pathname } = Astro.url;
       <ul class="flex items-center gap-2">
         <li>
           <a 
-            href="/bookmarks"
+            href="/reading"
             class="px-4 py-2 text-sm md:px-2 md:text-xl"
             style="color: #ff6b6b; font-weight: var(--font-weight-7); text-decoration: underline; text-decoration-color: #ffd700; text-decoration-thickness: 1px;"
           >
-            bookmarks
+            reading
           </a>
         </li>
         <li>
           <a 
-            href="/projects"
+            href="/code"
             class="px-4 py-2 text-sm md:px-2 md:text-xl text-my-gray"
             style="font-weight: var(--font-weight-7); text-decoration: underline; text-decoration-color: #ffd700; text-decoration-thickness: 1px;"
           >
-            projects
+            code
           </a>
         </li>
         <li>
           <a 
-            href="/blog"
+            href="/posts"
             class="px-4 py-2 text-sm md:px-2 md:text-xl"
             style="color: #ff6b6b; font-weight: var(--font-weight-7); text-decoration: underline; text-decoration-color: #ffd700; text-decoration-thickness: 1px;"
           >
-            blog
+            posts
           </a>
         </li>
       </ul>

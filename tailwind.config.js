@@ -20,6 +20,7 @@ export default {
     "my-orange",
     "my-yellow",
     "my-accent",
+    "my-nav-link",
     "88",
   ],
   theme: {
@@ -43,11 +44,12 @@ export default {
         "my-white": "#a99a91",
         "my-gray": "#BFC9CA",
         "my-off-white": "#F5F5DC",
-        "my-orange": "#ff6b6b",
-        "my-yellow": "#ffd700",
+        "my-orange": "#e67e7e",
+        "my-yellow": "#e6c79a",
         "my-sundown-orange": "#7a4e0e",
 
         "my-accent": "#966747",
+        "my-nav-link": "#ff6b6b",
         "my-experiment": "#202c3a",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",

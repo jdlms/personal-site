@@ -1,20 +1,18 @@
 ---
-import Profile from "./Profile.astro";
 import Links from "./Links.astro";
 import { Button } from "./Button";
 ---
 
-<div class="container">
+<div class="container mx-auto">
   <div
     id="wrapper"
-    class="flex flex-col md:flex-row items-center justify-center mb-2 mt-12 md:mt-16 md:mb-6"
+    class="flex flex-col items-center pt-6 pb-12 md:pt-8 md:pb-16 gap-6"
   >
-    <Profile />
-    <div id="contact-links-wrapper" class="flex flex-col items-center">
+    <div>
       <Button client:only="react" />
-      <div id="links-container" class="inline">
-        <Links />
-      </div>
+    </div>
+    <div id="links-container">
+      <Links />
     </div>
   </div>
 </div>

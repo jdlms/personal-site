@@ -6,8 +6,13 @@ const { pathname } = Astro.url;
   <div class="flex items-center p-4">
     <a
       href="/"
-      class="px-3 text-lg text-my-gray font-extrabold font-mono border-2 rounded border-my-accent p-4"
+      class="px-6 py-4 text-lg text-my-gray font-extrabold font-mono border-2 rounded border-my-accent flex items-center gap-3"
     >
+      <img 
+        src="https://github.com/jdlms.png" 
+        alt="Profile" 
+        class="w-8 h-8 rounded-full object-cover"
+      />
       jdlms
     </a>
   </div>
@@ -16,7 +21,7 @@ const { pathname } = Astro.url;
     pathname === "/posts" || pathname.includes("/post") ? (
       <div class="flex items-center">
         <a
-          class="text-xs text-my-gray border-b border-my-orange p-2 flex gap-2"
+          class="text-xs text-my-nav-link border-b border-my-orange p-2 flex gap-2"
           style="font-weight: var(--font-weight-7);"
           href={pathname.includes("/post/") ? "/posts" : "/"}
         >
@@ -43,12 +48,12 @@ const { pathname } = Astro.url;
         </a>
       </div>
     ) : (
-      <ul class="flex items-center gap-2">
+      <ul class="flex items-center gap-1">
         <li>
           <a 
             href="/reading"
-            class="px-4 py-2 text-sm md:px-2 md:text-xl"
-            style="color: #ff6b6b; font-weight: var(--font-weight-7); text-decoration: underline; text-decoration-color: #ffd700; text-decoration-thickness: 1px;"
+            class="px-2 py-2 text-sm md:px-2 md:text-xl text-my-nav-link"
+            style="font-weight: var(--font-weight-7); text-decoration: underline; text-decoration-color: #ffd700; text-decoration-thickness: 1px;"
           >
             reading
           </a>
@@ -56,7 +61,7 @@ const { pathname } = Astro.url;
         <li>
           <a 
             href="/code"
-            class="px-4 py-2 text-sm md:px-2 md:text-xl text-my-gray"
+            class="px-2 py-2 text-sm md:px-2 md:text-xl text-my-gray"
             style="font-weight: var(--font-weight-7); text-decoration: underline; text-decoration-color: #ffd700; text-decoration-thickness: 1px;"
           >
             code
@@ -65,8 +70,8 @@ const { pathname } = Astro.url;
         <li>
           <a 
             href="/posts"
-            class="px-4 py-2 text-sm md:px-2 md:text-xl"
-            style="color: #ff6b6b; font-weight: var(--font-weight-7); text-decoration: underline; text-decoration-color: #ffd700; text-decoration-thickness: 1px;"
+            class="px-2 py-2 text-sm md:px-2 md:text-xl text-my-nav-link"
+            style="font-weight: var(--font-weight-7); text-decoration: underline; text-decoration-color: #ffd700; text-decoration-thickness: 1px;"
           >
             posts
           </a>

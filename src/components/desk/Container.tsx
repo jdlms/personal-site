@@ -6,7 +6,7 @@ import { Loader } from "./Loader";
 export function Container() {
   
   return (
-    <div className="flex justify-center mt-8 mb-12 md:mt-0">
+    <div className="flex justify-center">
       <Canvas
         style={{ height: "80%", width: "80%" }}
         camera={{ position: [0, 7, -10], fov: 75 }}

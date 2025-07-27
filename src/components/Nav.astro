@@ -18,12 +18,12 @@ const { pathname } = Astro.url;
   </div>
 
   {
-    pathname === "/posts" || pathname.includes("/post") ? (
+    pathname === "/blog" || pathname.includes("/post") ? (
       <div class="flex items-center">
         <a
           class="text-xs text-my-nav-link border-b border-my-orange p-2 flex gap-2"
           style="font-weight: var(--font-weight-7);"
-          href={pathname.includes("/post/") ? "/posts" : "/"}
+          href={pathname.includes("/post/") ? "/blog" : "/"}
         >
           more
           <svg
@@ -69,11 +69,11 @@ const { pathname } = Astro.url;
         </li>
         <li>
           <a 
-            href="/posts"
+            href="/blog"
             class="px-2 py-2 text-sm md:px-2 md:text-xl text-my-nav-link"
             style="font-weight: var(--font-weight-7); text-decoration: underline; text-decoration-color: #ffd700; text-decoration-thickness: 1px;"
           >
-            posts
+            blog
           </a>
         </li>
       </ul>

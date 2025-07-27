@@ -1,6 +1,8 @@
 ---
 import Links from "../components/Links.astro";
 import Layout from "../layouts/Layout.astro";
+import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "../components/ui/table";
+import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "../components/ui/pagination";
 
 const response = await fetch("https://get_bookmarks.jdlms.dev");
 
@@ -31,54 +33,141 @@ function sortNewestToOldest(data: Bookmarks[]) {
 
 const unsortedBookmarks: Bookmarks[] = await response.json();
 
-const bookmarks: Bookmarks[] = sortNewestToOldest(unsortedBookmarks);
+const allBookmarks: Bookmarks[] = sortNewestToOldest(unsortedBookmarks);
 
-bookmarks.map((item) => {
+allBookmarks.forEach((item) => {
   item.published = formatDate(item.published);
 });
+
+// Pagination setup
+const itemsPerPage = 15;
+const totalPages = Math.ceil(allBookmarks.length / itemsPerPage);
 ---
 
 <Layout title="jdlms.dev">
   <div class="flex flex-col justify-center items-center text-my-off-white">
-    <p class="w-32 italic text-xs md:w-96">An auto-updating list of interesting blog posts from around the web.</p>
-    <ul class="space-y-2 md:space-y-8 mt-6 mb-12 md:mt-10">
-      <!-- todo insert table with pages, summary of post from rss feed? -->
-      {
-        bookmarks.map((item: any) => (
-          <>
-            <li class="flex flex-row space-x-6 items-start justify-center">
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                class="mt-1"
+    <p class="w-32 italic text-xs md:w-96 mb-8">An auto-updating list of interesting blog posts from around the web.</p>
+    
+    <div class="w-full max-w-2xl mx-auto mb-12">
+      <div id="bookmarks-list" class="space-y-6">
+        {allBookmarks.slice(0, itemsPerPage).map((item) => (
+          <div class="flex items-start gap-4">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="mt-1 flex-shrink-0"
+            >
+              <path
+                d="M14.8284 12L16.2426 13.4142L19.071 10.5858C20.6331 9.02365 20.6331 6.49099 19.071 4.9289C17.509 3.3668 14.9763 3.3668 13.4142 4.9289L10.5858 7.75732L12 9.17154L14.8284 6.34311C15.6095 5.56206 16.8758 5.56206 17.6568 6.34311C18.4379 7.12416 18.4379 8.39049 17.6568 9.17154L14.8284 12Z"
+                fill="currentColor"
+              />
+              <path
+                d="M12 14.8285L13.4142 16.2427L10.5858 19.0711C9.02372 20.6332 6.49106 20.6332 4.92896 19.0711C3.36686 17.509 3.36686 14.9764 4.92896 13.4143L7.75739 10.5858L9.1716 12L6.34317 14.8285C5.56212 15.6095 5.56212 16.8758 6.34317 17.6569C7.12422 18.4379 8.39055 18.4379 9.1716 17.6569L12 14.8285Z"
+                fill="currentColor"
+              />
+              <path
+                d="M14.8285 10.5857C15.219 10.1952 15.219 9.56199 14.8285 9.17147C14.4379 8.78094 13.8048 8.78094 13.4142 9.17147L9.1716 13.4141C8.78107 13.8046 8.78107 14.4378 9.1716 14.8283C9.56212 15.2188 10.1953 15.2188 10.5858 14.8283L14.8285 10.5857Z"
+                fill="currentColor"
+              />
+            </svg>
+            <div class="flex-1 min-w-0">
+              <a 
+                href={item.url} 
+                class="underline decoration-my-accent hover:text-my-gray hover:no-underline text-my-off-white text-lg"
               >
-                <>
-                  <path
-                    d="M14.8284 12L16.2426 13.4142L19.071 10.5858C20.6331 9.02365 20.6331 6.49099 19.071 4.9289C17.509 3.3668 14.9763 3.3668 13.4142 4.9289L10.5858 7.75732L12 9.17154L14.8284 6.34311C15.6095 5.56206 16.8758 5.56206 17.6568 6.34311C18.4379 7.12416 18.4379 8.39049 17.6568 9.17154L14.8284 12Z"
-                    fill="currentColor"
-                  />
-                  <path
-                    d="M12 14.8285L13.4142 16.2427L10.5858 19.0711C9.02372 20.6332 6.49106 20.6332 4.92896 19.0711C3.36686 17.509 3.36686 14.9764 4.92896 13.4143L7.75739 10.5858L9.1716 12L6.34317 14.8285C5.56212 15.6095 5.56212 16.8758 6.34317 17.6569C7.12422 18.4379 8.39055 18.4379 9.1716 17.6569L12 14.8285Z"
-                    fill="currentColor"
-                  />
-                  <path
-                    d="M14.8285 10.5857C15.219 10.1952 15.219 9.56199 14.8285 9.17147C14.4379 8.78094 13.8048 8.78094 13.4142 9.17147L9.1716 13.4141C8.78107 13.8046 8.78107 14.4378 9.1716 14.8283C9.56212 15.2188 10.1953 15.2188 10.5858 14.8283L14.8285 10.5857Z"
-                    fill="currentColor"
-                  />
-                </>
-              </svg>
-              <a href={item.url} class="underline decoration-my-accent hover:text-my-gray hover:no-underline w-52 md:w-96">{item.title}</a>
-              <span class="inline-block text-my-orange text-xs m-0">{item.published}</span>
-            </li>
-          </>
-        ))
-      }
-    </ul>
+                {item.title}
+              </a>
+            </div>
+            <div class="text-my-orange text-sm flex-shrink-0">
+              {item.published}
+            </div>
+          </div>
+        ))}
+      </div>
+      
+      {totalPages > 1 && (
+        <div class="mt-8 flex justify-end">
+          <Pagination>
+            <PaginationContent>
+              <PaginationItem>
+                <button id="prev-btn" class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 gap-1 pl-2.5" disabled>
+                  <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m15 18-6-6 6-6"/>
+                  </svg>
+                </button>
+              </PaginationItem>
+              <PaginationItem>
+                <button id="next-btn" class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 gap-1 pr-2.5">
+                  <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m9 18 6-6-6-6"/>
+                  </svg>
+                </button>
+              </PaginationItem>
+            </PaginationContent>
+          </Pagination>
+        </div>
+      )}
+    </div>
+    
     <div class="inline">
       <Links />
     </div>
   </div>
 </Layout>
+
+<script define:vars={{ allBookmarks, itemsPerPage }}>
+  let currentPage = 1;
+  const totalPages = Math.ceil(allBookmarks.length / itemsPerPage);
+  
+  const prevBtn = document.getElementById('prev-btn');
+  const nextBtn = document.getElementById('next-btn');
+  const bookmarksList = document.getElementById('bookmarks-list');
+  
+  function renderPage(page) {
+    const startIndex = (page - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const pageBookmarks = allBookmarks.slice(startIndex, endIndex);
+    
+    bookmarksList.innerHTML = pageBookmarks.map(item => `
+      <div class="flex items-start gap-4 mb-6">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="mt-1 flex-shrink-0">
+          <path d="M14.8284 12L16.2426 13.4142L19.071 10.5858C20.6331 9.02365 20.6331 6.49099 19.071 4.9289C17.509 3.3668 14.9763 3.3668 13.4142 4.9289L10.5858 7.75732L12 9.17154L14.8284 6.34311C15.6095 5.56206 16.8758 5.56206 17.6568 6.34311C18.4379 7.12416 18.4379 8.39049 17.6568 9.17154L14.8284 12Z" fill="currentColor"/>
+          <path d="M12 14.8285L13.4142 16.2427L10.5858 19.0711C9.02372 20.6332 6.49106 20.6332 4.92896 19.0711C3.36686 17.509 3.36686 14.9764 4.92896 13.4143L7.75739 10.5858L9.1716 12L6.34317 14.8285C5.56212 15.6095 5.56212 16.8758 6.34317 17.6569C7.12422 18.4379 8.39055 18.4379 9.1716 17.6569L12 14.8285Z" fill="currentColor"/>
+          <path d="M14.8285 10.5857C15.219 10.1952 15.219 9.56199 14.8285 9.17147C14.4379 8.78094 13.8048 8.78094 13.4142 9.17147L9.1716 13.4141C8.78107 13.8046 8.78107 14.4378 9.1716 14.8283C9.56212 15.2188 10.1953 15.2188 10.5858 14.8283L14.8285 10.5857Z" fill="currentColor"/>
+        </svg>
+        <div class="flex-1 min-w-0">
+          <a href="${item.url}" class="underline decoration-my-accent hover:text-my-gray hover:no-underline text-my-off-white text-lg">
+            ${item.title}
+          </a>
+        </div>
+        <div class="text-my-orange text-sm flex-shrink-0">
+          ${item.published}
+        </div>
+      </div>
+    `).join('');
+    
+    // Update button states
+    prevBtn.disabled = page === 1;
+    nextBtn.disabled = page === totalPages;
+  }
+  
+  prevBtn.addEventListener('click', () => {
+    if (currentPage > 1) {
+      currentPage--;
+      renderPage(currentPage);
+    }
+  });
+  
+  nextBtn.addEventListener('click', () => {
+    if (currentPage < totalPages) {
+      currentPage++;
+      renderPage(currentPage);
+    }
+  });
+  
+  // Initialize
+  renderPage(currentPage);
+</script>

@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Intro from "../components/Intro.astro";
 import Contact from "../components/Contact.astro";
 import Extra from "../components/Extra.astro";
+import Links from "../components/Links.astro";
 import { GET } from "./api/getWaves.ts";
 
 type WaveResponse = {
@@ -17,7 +18,13 @@ const waveCount = data.waveCount;
 ---
 
 <Layout title="jdlms.dev">
-  <Intro />
-  <Extra />
-  <Contact totalWaves={waveCount} />
+  <div class="flex flex-col justify-center items-center text-my-off-white">
+    <Intro />
+    <Extra />
+    <Contact totalWaves={waveCount} />
+    
+    <div class="inline">
+      <Links />
+    </div>
+  </div>
 </Layout>

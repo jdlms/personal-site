@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 const posts = await getCollection("blog");
 import Layout from "../layouts/Layout.astro";
+import Links from "../components/Links.astro";
 ---
 
 <Layout title="jdlms.dev">
@@ -49,6 +50,10 @@ import Layout from "../layouts/Layout.astro";
           </a>
         ))
       }
+    </div>
+    
+    <div class="inline">
+      <Links />
     </div>
   </div>
 </Layout>

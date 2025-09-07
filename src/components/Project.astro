@@ -16,10 +16,11 @@ type Post = {
 };
 
 const posts: Post[] = await getCollection("projects");
+const sortedPosts = posts.sort((a, b) => b.data.id - a.data.id);
 ---
 
 {
-  posts.map((post) => (
+  sortedPosts.map((post) => (
     <>
       <article class="bg-my-off-white rounded-lg inline-block w-full m-3 pl-2 pr-1 pb-1 md:pl-5 md:pt-2 md:pr-5 md:pb-2 md:w-auto">
         <a href={post.data.link} target="_blank">

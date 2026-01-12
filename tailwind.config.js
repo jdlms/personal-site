@@ -39,7 +39,8 @@ export default {
     },
     extend: {
       colors: {
-        "my-background": "#1e1f1f",
+        // "my-background": "#1e1f1f",
+        "my-background": "#1c2433",
         "my-lighter-blue": "#39507f",
         "my-white": "#a99a91",
         "my-gray": "#BFC9CA",
@@ -49,7 +50,7 @@ export default {
         "my-sundown-orange": "#7a4e0e",
 
         "my-accent": "#966747",
-        "my-nav-link": "#ff6b6b",
+        "my-nav-link": "#e67e7e",
         "my-experiment": "#202c3a",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",

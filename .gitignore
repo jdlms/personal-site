@@ -27,3 +27,7 @@ pnpm-debug.log*
 
 wrangler.toml
 .opencode
+
+CLAUDE.md
+COLORS.md
+MIGRATION_GUIDE.md

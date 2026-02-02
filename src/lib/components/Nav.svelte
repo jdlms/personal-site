@@ -54,18 +54,18 @@
 		<ul class="flex items-center gap-1">
 			<li>
 				<a
-					href="/about"
+					href="/reading"
 					class="px-2 py-2 text-xs md:text-sm text-link font-bold underline decoration-text/20 decoration-1"
 				>
-					about
+					reading
 				</a>
 			</li>
 			<li>
 				<a
-					href="/reading"
+					href="/about"
 					class="px-2 py-2 text-xs md:text-sm text-text-muted font-bold underline decoration-text/20 decoration-1"
 				>
-					reading
+					about
 				</a>
 			</li>
 			<li>

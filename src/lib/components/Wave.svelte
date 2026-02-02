@@ -46,7 +46,7 @@
 
 <button
 	type="button"
-	class="group bg-surface border border-accent cursor-pointer flex justify-center items-center text-text-muted font-semibold text-sm py-1.5 px-4 rounded-full gap-2 hover:border-link focus:outline-none focus:ring-2 focus:ring-gray-700 transition-colors"
+	class="group bg-surface border border-accent cursor-pointer flex justify-center items-center text-text-muted font-semibold text-sm py-1.5 px-4 rounded-full gap-2 hover:border-link focus:outline-none focus:ring-2 focus:ring-gray-700 transition-colors min-w-14 min-h-10"
 	onclick={handleClick}
 >
 	{#if clicked && waveNumber !== null}

@@ -1,18 +1,41 @@
 <script lang="ts">
 	let { data } = $props();
+
+	const itemsPerPage = 30;
+	let currentPage = $state(1);
+
+	let totalPages = $derived(Math.ceil(data.bookmarks.length / itemsPerPage));
+	let startIndex = $derived((currentPage - 1) * itemsPerPage);
+	let paginatedBookmarks = $derived(data.bookmarks.slice(startIndex, startIndex + itemsPerPage));
+
+	function prevPage() {
+		if (currentPage > 1) currentPage--;
+	}
+
+	function nextPage() {
+		if (currentPage < totalPages) currentPage++;
+	}
+
+	function formatDate(dateString: string): string {
+		const date = new Date(dateString);
+		const month = String(date.getMonth() + 1).padStart(2, '0');
+		let year = date.getFullYear();
+		if (year === 200) year = 2025;
+		return `${month}/${year}`;
+	}
 </script>
 
 <div class="max-w-2xl mx-auto px-4 pb-20">
 	<div class="flex justify-center mb-8">
 		<div class="flex-1 mt-4 px-6 md:pt-2">
 			<p class="text-text-heading text-sm md:text-sm font-light">
-				More and more of my reading time on the web is taken up by blogs about software and systems, and less and less by, well, pretty much everything else. I often find provocative, informative, or bizarre posts that deeply resonate with me, that I want to hold on to and bookmark. This running, auto-updating list is my attempt to do that. It's just the posts, projects, and thoughts I find particularly interesting. If you're passing by, maybe you'll find something to enjoy too.
+			More and more of my reading time on the web is taken up by blogs and less and less by, well, pretty much everything else. This running, auto-updating list is an attempt to bookmark posts and projects from the world of software development that I've found particularly interesting and want to hold on to. If you're passing through, you might find something to enjoy too.
 			</p>
 		</div>
 	</div>
 
 	<div class="space-y-4">
-		{#each data.bookmarks as bookmark}
+		{#each paginatedBookmarks as bookmark}
 			<div class="flex items-center gap-4">
 				<svg
 					class="w-4 h-4 shrink-0 text-text-muted"
@@ -36,7 +59,38 @@
 				>
 					{bookmark.title}
 				</a>
+				<span class="text-xs text-highlight shrink-0 font-mono">
+					{formatDate(bookmark.published)}
+				</span>
 			</div>
 		{/each}
 	</div>
+
+	{#if totalPages > 1}
+		<div class="mt-8 flex justify-end gap-2">
+			<button
+				onclick={prevPage}
+				disabled={currentPage === 1}
+				aria-label="Previous page"
+				class="p-2 rounded text-text-muted hover:text-text-heading disabled:opacity-30 disabled:cursor-not-allowed"
+			>
+				<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<path d="m15 18-6-6 6-6"/>
+				</svg>
+			</button>
+			<span class="text-text-muted text-sm flex items-center">
+				{currentPage} / {totalPages}
+			</span>
+			<button
+				onclick={nextPage}
+				disabled={currentPage === totalPages}
+				aria-label="Next page"
+				class="p-2 rounded text-text-muted hover:text-text-heading disabled:opacity-30 disabled:cursor-not-allowed"
+			>
+				<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<path d="m9 18 6-6-6-6"/>
+				</svg>
+			</button>
+		</div>
+	{/if}
 </div>

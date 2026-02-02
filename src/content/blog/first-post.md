@@ -1,12 +1,12 @@
 ---
-author: JDLMS
-pubDatetime: 2024-06-02T20:23:34.298Z
 title: First Post
+pubDatetime: 2024-06-02T20:23:34.298Z
+description: "My first post"
+author: joshua
 slug: first-post
 featured: false
 tags:
   - release
-description: "My first post"
 ---
 
 In modern web development, writing the first post of a blog can be challenging, especially as personal blogs grow in complexity. One effective solution to this problem is the use a blog to create posts. In this blog post, we'll dive into what an post is is, how it works, and why you might want to use one in your blog.

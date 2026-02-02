@@ -1,33 +1,25 @@
-# build output
-dist/
-.output/
+node_modules
 
-# dependencies
-node_modules/
-
-# logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-
-
-# environment variables
-.env
-.env.production
-
-# macOS-specific files
-.DS_Store
-
-\n.astro
-
-.astro
-.vscode
+# Output
+.output
+.vercel
+.netlify
 .wrangler
+/.svelte-kit
+/build
+/dist
+.astro
 
-wrangler.toml
-.opencode
+# OS
+.DS_Store
+Thumbs.db
 
-CLAUDE.md
-COLORS.md
-MIGRATION_GUIDE.md
+# Env
+.env
+.env.*
+!.env.example
+!.env.test
+
+# Vite
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*

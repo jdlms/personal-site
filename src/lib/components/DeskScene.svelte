@@ -11,7 +11,7 @@
 	};
 </script>
 
-<div class="{sizeClasses[size]} rounded-full overflow-hidden shadow-inner cursor-pointer mx-auto bg-zinc-800">
+<div class="{sizeClasses[size]} rounded-full overflow-hidden shadow-inner cursor-pointer mx-auto bg-zinc-800 relative">
 	<Canvas toneMapping={ACESFilmicToneMapping}>
 		<DeskModel />
 	</Canvas>

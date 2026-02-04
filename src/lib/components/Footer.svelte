@@ -1,5 +1,11 @@
+<script>
+	import RoadCar from './RoadCar.svelte';
+</script>
+
 <footer class="max-w-2xl mx-auto px-4 w-full">
-	<div class="border-t border-accent"></div>
+	<div class="border-t border-accent relative">
+		<RoadCar />
+	</div>
 	<div class="flex justify-end items-center pt-2.5 pr-1 pl-1 pb-2">
 		<div class="flex items-center gap-1.5">
 			<span class="text-[9px] text-link">made with</span>

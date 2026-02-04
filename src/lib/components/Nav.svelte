@@ -13,7 +13,7 @@
 		>
 			<div class="w-15 h-15">
 				{#await import('./DeskScene.svelte')}
-					<div class="w-[60px] h-[60px] rounded-full bg-zinc-800 flex items-center justify-center">
+					<div class="w-15 h-15 rounded-full bg-desk-background flex items-center justify-center">
 						<div class="w-5 h-5 border-2 border-zinc-600 border-t-zinc-400 rounded-full animate-spin"></div>
 					</div>
 				{:then DeskScene}
@@ -57,7 +57,7 @@
 			<li>
 				<a
 					href="/reading"
-					class="px-2 py-2 text-xs md:text-sm text-link font-bold underline decoration-text/20 decoration-1"
+					class="px-2 py-2 text-xs md:text-sm text-link font-bold underline decoration-green decoration-1"
 				>
 					reading
 				</a>
@@ -65,7 +65,7 @@
 			<li>
 				<a
 					href="/about"
-					class="px-2 py-2 text-xs md:text-sm text-text-muted font-bold underline decoration-text/20 decoration-1"
+					class="px-2 py-2 text-xs md:text-sm text-text-muted font-bold underline decoration-green decoration-1"
 				>
 					about
 				</a>
@@ -73,7 +73,7 @@
 			<li>
 				<a
 					href="/blog"
-					class="px-2 py-2 text-xs md:text-sm text-link font-bold underline decoration-text/20 decoration-1"
+					class="px-2 py-2 text-xs md:text-sm text-link font-bold underline decoration-green decoration-1"
 				>
 					blog
 				</a>

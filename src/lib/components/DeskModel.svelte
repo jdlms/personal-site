@@ -4,6 +4,7 @@
 	import { Color } from 'three';
 
 	const { renderer } = useThrelte();
+	renderer.setClearColor('#262e3d');
 	renderer.toneMappingExposure = 0.9;
 
 	const dracoLoader = useDraco();
@@ -29,7 +30,7 @@
 	/>
 </T.PerspectiveCamera>
 
-<T.Color attach="background" args={['#27272a']} />
+<T.Color attach="background" args={['#262e3d']} />
 
 <T.AmbientLight intensity={2} />
 <T.PointLight position={[0, 18, -10]} intensity={500} color="#fff5eb" distance={0} />

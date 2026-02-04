@@ -50,7 +50,7 @@
 	onclick={handleClick}
 >
 	{#if clicked && waveNumber !== null}
-		<span>{waveNumber}</span>
+		<span class="text-green text-xs font-[system-ui]">{waveNumber}</span>
 	{:else}
 		<span class="text-lg inline-block origin-bottom-right group-hover:animate-wave">👋🏻</span>
 	{/if}

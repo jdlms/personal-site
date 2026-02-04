@@ -4,15 +4,16 @@
 
 @theme {
 	/* Colors */
-	--color-surface: #1e1f1f;
-	/* --color-surface: #1c2433; */
+	/* --color-surface: #1e1f1f; */
+	--color-surface: #1c2433;
 	--color-text: #a99a91;
 	--color-text-muted: #BFC9CA;
 	--color-text-heading: #F5F5DC;
 	--color-link: #e67e7e;
 	--color-highlight: #e6c79a;
 	--color-accent: #966747;
-
+	--color-desk-background: #262e3d;
+	--color-green: #609822;
 	/* Font */
 	--font-sans: 'Chivo Variable', system-ui, sans-serif;
 

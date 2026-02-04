@@ -1,6 +1,6 @@
 <footer class="max-w-2xl mx-auto px-4 w-full">
-	<div class="border-t border-text/20"></div>
-	<div class="flex justify-center items-center pt-2.5 pr-1 pl-1 pb-2">
+	<div class="border-t border-accent"></div>
+	<div class="flex justify-end items-center pt-2.5 pr-1 pl-1 pb-2">
 		<div class="flex items-center gap-1.5">
 			<span class="text-[9px] text-link">made with</span>
 			<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 text-highlight" fill="currentColor">

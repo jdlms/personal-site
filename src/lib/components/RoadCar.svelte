@@ -3,114 +3,99 @@
 
 	const vehicles = ['🚗', '🚙', '🚚', '🚕', '🚛', '🛻'];
 
-	let position = $state(110);
-	let opacity = $state(0);
-	let vehicle = $state(vehicles[0]);
-	let showPuff = $state(false);
-	let driving = $state(false);
+	type Car = {
+		id: number;
+		position: number;
+		opacity: number;
+		vehicle: string;
+		showPuff: boolean;
+		speed: number;
+		fadeOutAt: number;
+	};
+
+	let cars = $state<Car[]>([]);
 	let mounted = $state(false);
+	let nextId = 0;
 
 	function pickVehicle() {
 		return vehicles[Math.floor(Math.random() * vehicles.length)];
 	}
 
-	function generateVisibilityWindows() {
-		const numAppearances = Math.random() < 0.5 ? 4 : 5;
-		const windows: { start: number; end: number }[] = [];
-		const totalRange = 75; // 90 to 15
-		const segmentSize = totalRange / numAppearances;
+	function spawnCar() {
+		// Random start position anywhere along the road (15-95%)
+		const startPosition = Math.random() * 80 + 15;
+		const speed = Math.random() * 0.2 + 0.4; // 0.4-0.6 speed variation
+		const visibleDuration = Math.random() * 10 + 8; // Will be visible for 8-18 units
 
-		for (let i = 0; i < numAppearances; i++) {
-			const segmentStart = 90 - i * segmentSize;
-			const segmentEnd = segmentStart - segmentSize;
+		// Make sure fadeOutAt doesn't go below 5%
+		const fadeOutAt = Math.max(5, startPosition - visibleDuration);
 
-			// Random start within first half of segment
-			const start = segmentStart - Math.random() * (segmentSize * 0.3);
-			// Visible for max 1 second (at 0.5 per 30ms = ~16 units max)
-			const maxVisibleDistance = 16;
-			const visibleDistance = Math.min(maxVisibleDistance, Math.random() * 10 + 6);
-			const end = start - visibleDistance;
+		const car: Car = {
+			id: nextId++,
+			position: startPosition,
+			opacity: 0,
+			vehicle: pickVehicle(),
+			showPuff: Math.random() > 0.4,
+			speed,
+			fadeOutAt
+		};
 
-			windows.push({ start, end: Math.max(end, segmentEnd + 5) });
-		}
+		cars.push(car);
 
-		return windows;
+		// Fade in
+		setTimeout(() => {
+			const c = cars.find((x) => x.id === car.id);
+			if (c) c.opacity = 1;
+		}, 50);
 	}
 
 	onMount(() => {
 		mounted = true;
-		let driveInterval: ReturnType<typeof setInterval>;
 
-		const startDrive = () => {
-			if (driving) return;
-			driving = true;
-			position = 100;
-			opacity = 1;
-			vehicle = pickVehicle();
-			showPuff = Math.random() > 0.4;
+		// Main animation loop
+		const driveInterval = setInterval(() => {
+			cars = cars
+				.map((car) => {
+					car.position -= car.speed;
 
-			const windows = generateVisibilityWindows();
-			// Set first window to start at 100 so car is visible immediately
-			windows[0].start = 100;
-			let currentWindowIndex = 0;
-			let isVisible = true;
-
-			// Animate position
-			driveInterval = setInterval(() => {
-				position -= 0.5;
-
-				// Check visibility windows
-				if (currentWindowIndex < windows.length) {
-					const window = windows[currentWindowIndex];
-
-					// Fade in when entering window
-					if (!isVisible && position <= window.start) {
-						isVisible = true;
-						opacity = 1;
-						vehicle = pickVehicle();
-						showPuff = Math.random() > 0.4;
+					// Fade out when reaching fadeOutAt point
+					if (car.position <= car.fadeOutAt && car.opacity > 0) {
+						car.opacity = 0;
 					}
 
-					// Fade out when exiting window
-					if (isVisible && position <= window.end) {
-						isVisible = false;
-						opacity = 0;
-						currentWindowIndex++;
-					}
-				}
+					return car;
+				})
+				.filter((car) => car.position > -15 && (car.opacity > 0 || car.position > car.fadeOutAt - 5));
+		}, 30);
 
-				// Stop when off screen
-				if (position < -10) {
-					clearInterval(driveInterval);
-					driving = false;
-					opacity = 0;
-				}
-			}, 30);
+		// Spawn cars at random intervals
+		const spawnLoop = () => {
+			// Only spawn if we don't have too many cars
+			if (cars.length < 3) {
+				spawnCar();
+			}
+
+			// Random interval between spawns (800ms - 2000ms)
+			const nextSpawn = Math.random() * 1200 + 800;
+			setTimeout(spawnLoop, nextSpawn);
 		};
 
-		// Initial delay
-		const initialTimeout = setTimeout(startDrive, 1000);
-
-		// Repeat the circuit
-		const repeatInterval = setInterval(() => {
-			if (!driving) {
-				startDrive();
-			}
-		}, 5000);
+		// Initial spawn
+		setTimeout(spawnLoop, 500);
 
 		return () => {
-			clearTimeout(initialTimeout);
-			clearInterval(repeatInterval);
 			clearInterval(driveInterval);
 		};
 	});
 </script>
 
 {#if mounted}
-	<div
-		class="absolute -top-5 pointer-events-none select-none text-sm transition-opacity duration-300 whitespace-nowrap flex items-center"
-		style="left: {position}%; opacity: {opacity};"
-	>
-		<span>{vehicle}</span>{#if showPuff}<span>💨</span>{/if}
-	</div>
+	{#each cars as car (car.id)}
+		<div
+			class="absolute -top-5 pointer-events-none select-none text-sm transition-opacity duration-300 whitespace-nowrap flex items-center"
+			style="left: {car.position}%; opacity: {car.opacity};"
+		>
+			<span>{car.vehicle}</span>{#if car.showPuff}<span>💨</span>{/if}
+		</div>
+	{/each}
 {/if}

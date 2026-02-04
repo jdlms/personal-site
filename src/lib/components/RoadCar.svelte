@@ -16,9 +16,24 @@
 	let cars = $state<Car[]>([]);
 	let mounted = $state(false);
 	let nextId = 0;
+	let recentPuffs: boolean[] = [];
 
 	function pickVehicle() {
 		return vehicles[Math.floor(Math.random() * vehicles.length)];
+	}
+
+	function shouldShowPuff() {
+		// If last 2 cars had puffs, no puff this time
+		if (recentPuffs.length >= 2 && recentPuffs.slice(-2).every(Boolean)) {
+			recentPuffs.push(false);
+			if (recentPuffs.length > 5) recentPuffs.shift();
+			return false;
+		}
+
+		const show = Math.random() > 0.4;
+		recentPuffs.push(show);
+		if (recentPuffs.length > 5) recentPuffs.shift();
+		return show;
 	}
 
 	function spawnCar() {
@@ -35,7 +50,7 @@
 			position: startPosition,
 			opacity: 0,
 			vehicle: pickVehicle(),
-			showPuff: Math.random() > 0.4,
+			showPuff: shouldShowPuff(),
 			speed,
 			fadeOutAt
 		};
@@ -71,7 +86,7 @@
 		// Spawn cars at random intervals
 		const spawnLoop = () => {
 			// Only spawn if we don't have too many cars
-			if (cars.length < 3) {
+			if (cars.length < 5) {
 				spawnCar();
 			}
 
@@ -80,8 +95,8 @@
 			setTimeout(spawnLoop, nextSpawn);
 		};
 
-		// Initial spawn
-		setTimeout(spawnLoop, 500);
+		// Start immediately
+		spawnLoop();
 
 		return () => {
 			clearInterval(driveInterval);

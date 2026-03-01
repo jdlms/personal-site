@@ -26,12 +26,8 @@
 </script>
 
 <div class="max-w-2xl mx-auto px-4 pb-20">
-	<div class="flex justify-center mb-8">
-		<div class="flex-1 mt-4 px-6 md:pt-2">
-			<p class="text-text-heading text-sm md:text-sm font-light">
-			More and more of my reading time on the web is taken up by blogs and less and less by pretty much everything else. This running, auto-updating list is an attempt to bookmark posts and projects about software development that I've found particularly interesting and want to hold on to. If you're passing through, you might find something to enjoy too.
-			</p>
-		</div>
+	<div class="mb-8 mt-4 text-center">
+		<p class="text-xs italic text-text-muted">More and more of my reading time on the web is taken up by blogs and less and less by pretty much everything else. This running, auto-updating list is an attempt to bookmark posts and projects about software development that I've found particularly interesting and want to hold on to. If you're passing through, you might find something to enjoy too.</p>
 	</div>
 
 	<div class="space-y-4">

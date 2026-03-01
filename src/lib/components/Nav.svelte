@@ -64,10 +64,10 @@
 			</li>
 			<li>
 				<a
-					href="/about"
+					href="/projects"
 					class="px-2 py-2 text-xs md:text-sm text-text-muted font-bold underline decoration-green decoration-1"
 				>
-					about
+					projects
 				</a>
 			</li>
 			<li>

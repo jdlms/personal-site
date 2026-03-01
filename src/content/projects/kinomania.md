@@ -1,7 +1,7 @@
 ---
 id: 2
 title: "Kinomania"
-tags: ["express", "handlebars", "mongo"]
+tags: ["express", "mongodb"]
 link: "https://kinomaniac.onrender.com"
 blurb: "Discover movies, track films, create lists."
 ---

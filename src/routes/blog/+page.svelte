@@ -20,7 +20,7 @@
 		.sort((a, b) => (b.date?.getTime() ?? 0) - (a.date?.getTime() ?? 0));
 </script>
 
-<div class="flex flex-col justify-center pt-24 items-center text-text-heading">
+<div class="flex flex-col justify-center pt-12 items-center text-text-heading">
 	<div class=" text-text-heading mb-12 mt-4 flex flex-col gap-6">
 		{#if posts.length === 0}
 			<p class="text-text-muted">No posts yet.</p>
@@ -28,7 +28,7 @@
 			{#each posts as post}
 				<a
 					href={`/post/${post.slug}`}
-					class="flex flex-row font-mono space-x-12 md:space-x-24 items-center justify-around bg-surface p-4 rounded-md border border-text-heading"
+					class="flex flex-row font-mono text-xs space-x-12 md:space-x-24 items-center justify-around bg-desk-background p-4 rounded-md border border-surface-alt"
 				>
 					<svg
 						width="16"

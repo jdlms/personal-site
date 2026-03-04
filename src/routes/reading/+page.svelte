@@ -26,8 +26,8 @@
 </script>
 
 <div class="max-w-2xl mx-auto px-4 pb-20">
-	<div class="mb-8 mt-4 text-center">
-		<p class="text-xs italic text-text-muted">More and more of my reading time on the web is taken up by blogs and less and less by pretty much everything else. This running, auto-updating list is an attempt to bookmark posts and projects about software development that I've found particularly interesting and want to hold on to. If you're passing through, you might find something to enjoy too.</p>
+	<div class="mb-12 mt-4 text-center">
+		<p class="text-xs italic text-text-muted">A running, auto-updating list of the most interesting blog posts and writing about technology and development I've read recently.</p>
 	</div>
 
 	<div class="space-y-4">
@@ -63,7 +63,7 @@
 	</div>
 
 	{#if totalPages > 1}
-		<div class="mt-8 flex justify-end gap-2">
+		<div class="mt-8 flex justify-center gap-2">
 			<button
 				onclick={prevPage}
 				disabled={currentPage === 1}

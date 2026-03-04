@@ -13,5 +13,5 @@
 			<path d="M18.5411 2L23 6.01478L21.6617 7.50107L17.2029 3.48629L18.5411 2Z" fill="currentColor" />
 		</svg>
 	{/snippet}
-	<p>In {year}, I'm focused on AWS and containerization, while playing with Go for fun.</p>
+	<p>In {year}, I'm focused on Linux, AWS, and containerization, while playing with Go for fun.</p>
 </Callout>

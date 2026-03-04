@@ -25,9 +25,16 @@
 	</div>
 
 	{#if isBlogRoute}
-		<div class="flex items-center">
+		<div class="flex items-center gap-1">
 			<a
-				class="text-xs text-text-muted border-b border-link p-2 flex gap-2 font-bold"
+				href="/rss.xml"
+				target="_blank"
+				class="px-2 py-2 text-xs text-text-muted font-bold underline decoration-green decoration-1 hover:text-highlight transition-colors"
+			>
+				rss
+			</a>
+			<a
+				class="px-2 py-2 text-xs text-text-muted font-bold underline decoration-green decoration-1 flex items-center gap-2 hover:text-highlight transition-colors"
 				href={pathname.includes('/post/') ? '/blog' : '/'}
 			>
 				more
@@ -57,7 +64,7 @@
 			<li>
 				<a
 					href="/reading"
-					class="px-2 py-2 text-xs md:text-sm text-link font-bold underline decoration-green decoration-1"
+					class="px-2 py-2 text-xs md:text-sm text-link font-bold underline decoration-green decoration-1 hover:text-highlight transition-colors"
 				>
 					reading
 				</a>
@@ -65,7 +72,7 @@
 			<li>
 				<a
 					href="/projects"
-					class="px-2 py-2 text-xs md:text-sm text-text-muted font-bold underline decoration-green decoration-1"
+					class="px-2 py-2 text-xs md:text-sm text-text-muted font-bold underline decoration-green decoration-1 hover:text-highlight transition-colors"
 				>
 					projects
 				</a>
@@ -73,7 +80,7 @@
 			<li>
 				<a
 					href="/blog"
-					class="px-2 py-2 text-xs md:text-sm text-link font-bold underline decoration-green decoration-1"
+					class="px-2 py-2 text-xs md:text-sm text-link font-bold underline decoration-green decoration-1 hover:text-highlight transition-colors"
 				>
 					blog
 				</a>

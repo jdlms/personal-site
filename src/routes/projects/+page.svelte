@@ -10,8 +10,8 @@
 		.sort((a, b) => b.id - a.id);
 </script>
 
-<div class="mb-8 mt-4 text-center">
-	<p class="text-xs italic text-text-muted">A collection of projects I've built — some practical, some just for fun. Most are open source.</p>
+<div class="mb-12 mt-4 text-center">
+	<p class="text-xs italic text-text-muted">My own elephants' graveyard  of projects and repos, growing and decomposing gradually over time.</p>
 </div>
 
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pb-30">

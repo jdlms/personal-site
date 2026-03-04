@@ -9,7 +9,7 @@
 			<span class="font-normal">Hi, I'm Joshua</span>. I have a deep enthusisam for cloud-engineering, infrastructure, and automation. I value creativity, iteration, and failing fast to learn more than I knew before. This is my personal site, where I bookmark what I've been reading and try to collect what I've been learning.  🌱
 		</p>
 	</div>
-	<div class="shrink-0">
+	<div class="shrink-0 hidden md:block">
 		<img
 			src="/image.jpg"
 			alt="Profile"
@@ -24,7 +24,16 @@
 	</p>
 </div>
 
-<div class="flex justify-center items-center gap-22 my-10 md:my-16">
+<div class="flex flex-col items-center gap-6 my-10 md:flex-row md:justify-center md:gap-22 md:my-16">
 	<Now />
-	<Wave />
+	<div class="flex items-center gap-6 md:gap-22">
+		<div class="md:hidden shrink-0">
+			<img
+				src="/image.jpg"
+				alt="Profile"
+				class="w-36 h-36 rounded-full object-cover border-2 border-zinc-800"
+			/>
+		</div>
+		<Wave />
+	</div>
 </div>

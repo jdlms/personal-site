@@ -28,7 +28,7 @@
 			{#each posts as post}
 				<a
 					href={`/post/${post.slug}`}
-					class="flex flex-row font-mono text-xs space-x-12 md:space-x-24 items-center justify-around bg-desk-background p-4 rounded-md border border-surface-alt"
+					class="flex flex-row font-mono text-xs space-x-12 md:space-x-24 items-center justify-around bg-desk-background p-4 rounded-md"
 				>
 					<svg
 						width="16"

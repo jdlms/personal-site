@@ -1,7 +1,7 @@
 ---
 id: 7
 title: "Go Dojo"
-tags: ["golang"]
+tags: ["go"]
 link: "https://github.com/jdlms/go-dojo"
 blurb: "Tiny Go programs for fun and learning"
 ---

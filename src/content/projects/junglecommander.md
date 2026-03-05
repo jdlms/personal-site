@@ -1,7 +1,7 @@
 ---
 id: 1
 title: "Jungle Commander"
-tags: ["js", "p5"]
+tags: ["p5"]
 link: "https://jdlms.github.io/jungle-commander/"
 blurb: "Splat the fruit! An arcade-style browser game."
 ---
